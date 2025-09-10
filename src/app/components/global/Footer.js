@@ -1,0 +1,255 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { Icon } from "@iconify/react";
+
+export default function Footer({ year }) {
+  const BG_URL = "/images/footer.jpg";
+
+  return (
+    <div className="relative w-full">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover"
+        style={{ backgroundImage: `url(${BG_URL})` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+
+      <footer className="relative z-10">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10 text-white">
+          {/* Mobile layout */}
+          <div className="block md:hidden text-center">
+            <div className="w-28 mx-auto">
+              <Image
+                src="/images/2.png"
+                alt="QTS - Quality Team Solution"
+                width={160}
+                height={80}
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+
+            <p className="mt-6 text-sm leading-6 text-white/80">
+              Quality Team Solution (QTS) is Dubai’s leading interior design and
+              fit-out partner, known for turning ideas into exceptional spaces.
+              We deliver innovative, functional, and timeless designs — serving
+              clients across the UAE and beyond.
+            </p>
+
+            <p className="mt-6 text-sm text-white/80">
+              Office 706, Business Bay Tower, Business Bay, Dubai, UAE
+            </p>
+
+            <p className="mt-6 text-sm text-white/80">+971 56 806 8070</p>
+
+            <p className="mt-6 text-sm text-white/80">info@qts-fitout.com</p>
+
+            {/* Social icons */}
+            <div className="flex justify-center gap-8 mt-8">
+              <a
+                href="https://wa.me/971568068070"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="logos:whatsapp-icon" width="28" height="28" />
+              </a>
+              <a
+                href="https://wa.me/971568068070"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="logos:youtube-icon" width="28" height="28" />
+              </a>
+              <a
+                href="https://wa.me/971568068070"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="skill-icons:instagram" width="28" height="28" />
+              </a>
+              <a
+                href="https://wa.me/971568068070"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon="logos:facebook" width="28" height="28" />
+              </a>
+            </div>
+          </div>
+
+          {/* Desktop layout */}
+          <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-4">
+            {/* Column 1: Brand */}
+            <div className="space-y-4">
+              <div className="w-28">
+                <Image
+                  src="/images/2.png"
+                  alt="QTS - Quality Team Solution"
+                  width={160}
+                  height={80}
+                  className="h-auto w-full"
+                  priority
+                />
+              </div>
+              <p className="text-sm leading-6 text-white/80">
+                Quality Team Solution (QTS) is Dubai’s leading interior design
+                and fit-out partner, known for turning ideas into exceptional
+                spaces. We deliver innovative, functional, and timeless designs
+                — serving clients across the UAE and beyond.
+              </p>
+              <p className="text-sm text-white/80 mt-4">
+                Office 706, Business Bay Tower, Business Bay, Dubai, UAE
+              </p>
+            </div>
+
+            {/* Column 2: Services */}
+            <div>
+              <h3 className="mb-4 text-xl font-bold ml-12">Services</h3>
+              <ul className="space-y-3 text-sm ml-12 text-white/80">
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Design Drawings &amp; Approvals
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Demolition, Build &amp; Refurbish
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    MEP Works
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Joinery Works
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Turnkey Fit-Outs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Design and Space Planning
+                  </Link>
+                </li>
+              </ul>
+              <p className="mt-12 text-sm text-white/80 ml-12">
+                +971 56 806 8070
+              </p>
+            </div>
+
+            {/* Column 3: Company */}
+            <div>
+              <h3 className="mb-6 text-lg font-bold ml-12">Company</h3>
+              <ul className="space-y-3 text-sm ml-12 text-white/80">
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    About QTS
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Brands
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white">
+                    Contact Us
+                  </Link>
+                </li>
+              </ul>
+              <p className="mt-27 text-sm text-white/80 ml-12">
+                info@qts-fitout.com
+              </p>
+            </div>
+
+            {/* Column 4: Newsletter */}
+            <div className="space-y-4">
+              <h2 className="text-xl font-bold mb-12">
+                Stay informed with the
+                <br /> Latest News and Insights <br />
+                from QTS
+              </h2>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="w-full rounded-md border border-white/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/60 outline-none focus:border-white"
+                    readOnly
+                  />
+                </div>
+                <button
+                  type="button"
+                  className="w-full rounded-md bg-red-600 px-4 py-2 mt-3 text-sm font-semibold text-white hover:bg-red-700"
+                  disabled
+                >
+                  GET IN TOUCH
+                </button>
+              </div>
+
+              {/* Socials */}
+              <div className="flex items-center gap-12 pt-2 mt-9">
+                <a
+                  href="https://wa.me/971568068070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="logos:whatsapp-icon" width="30" height="30" />
+                </a>
+                <a
+                  href="https://wa.me/971568068070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="logos:youtube-icon" width="30" height="30" />
+                </a>
+                <a
+                  href="https://wa.me/971568068070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="skill-icons:instagram" width="30" height="30" />
+                </a>
+                <a
+                  href="https://wa.me/971568068070"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon icon="logos:facebook" width="30" height="30" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom bar (only for md and up) */}
+        <div className="hidden md:block border-t border-white/10">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
+            <p>© {year} Quality Team Solution (QTS)</p>
+            <div className="flex items-center gap-6">
+              <Link href="#" className="hover:text-white">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-white">
+                Terms and Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
