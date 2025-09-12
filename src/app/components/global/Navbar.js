@@ -3,33 +3,78 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar({
-  firstSectionId = "hero",   // id of the first section; after this, nav gets grey bg
-  includeSpacer = true,      // prevents content hiding under fixed nav
-  videoSrc = "",             // OPTIONAL: show a small video inside the mobile drawer
+  firstSectionId = "hero",   // Har page ke hero ka id yahi rakhein
+  includeSpacer = true,
+  videoSrc = "",
 }) {
   const [open, setOpen] = useState(false);
   const [showBg, setShowBg] = useState(false);
   const navRef = useRef(null);
+  const thresholdRef = useRef(80); // fallback
+  const pathname = usePathname();
 
-  // Toggle navbar background after passing the first section (client-only)
+  // Recalculate threshold (hero center) and apply initial state
   useEffect(() => {
     const navEl = navRef.current;
-    const first = document.getElementById(firstSectionId);
+    const hero = document.getElementById(firstSectionId);
 
-    let threshold = 80; // fallback if section not found
-    if (first) {
-      const firstBottomFromPageTop = first.offsetTop + first.offsetHeight;
-      const navH = navEl ? navEl.offsetHeight : 80;
-      threshold = firstBottomFromPageTop - navH;
+    // Default fallback
+    let threshold = 80;
+    let navH = navEl ? navEl.offsetHeight : 80;
+
+    if (hero) {
+      const heroTop = hero.offsetTop;
+      const heroHeight = hero.offsetHeight;
+      const heroCenter = heroTop + heroHeight * 0.5;
+
+      // Condition: jab NAVBAR ka "mid-line" hero ke center ko cross kare
+      // window.scrollY => viewport top
+      // Navbar mid ~ top + navH/2
+      threshold = heroCenter - navH * 0.5;
     }
 
-    const onScroll = () => setShowBg(window.scrollY >= threshold);
-    onScroll();
+    thresholdRef.current = Math.max(0, threshold);
+
+    const apply = () => {
+      const navHNow = navRef.current ? navRef.current.offsetHeight : 80;
+      const current = window.scrollY + navHNow * 0.5; // navbar mid
+      setShowBg(current >= thresholdRef.current);
+    };
+
+    // Initial set + listeners
+    apply();
+
+    const onScroll = () => apply();
+    const onResize = () => {
+      // Recompute on resize/orientation change (hero height may change)
+      const hero = document.getElementById(firstSectionId);
+      const navEl = navRef.current;
+      let navH = navEl ? navEl.offsetHeight : 80;
+
+      if (hero) {
+        const heroTop = hero.offsetTop;
+        const heroHeight = hero.offsetHeight;
+        const heroCenter = heroTop + heroHeight * 0.5;
+        thresholdRef.current = Math.max(0, heroCenter - navH * 0.5);
+      } else {
+        thresholdRef.current = 80;
+      }
+      // Re-apply after recompute
+      const current = window.scrollY + navH * 0.5;
+      setShowBg(current >= thresholdRef.current);
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [firstSectionId]);
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [firstSectionId, pathname]); // route change par bhi re-run (naya hero pick hoga)
 
   // Close with ESC
   const onKeyDown = useCallback((e) => {
@@ -55,11 +100,10 @@ export default function Navbar({
 
   const links = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/", caret: true },
+    { label: "Services", href: "/Servicess", caret: true },
     { label: "Brand", href: "/" },
-    { label: "About Us", href: "/" },
+    { label: "About Us", href: "/About" },
     { label: "Contact Us", href: "/Contact" },
-
   ];
 
   return (
@@ -204,7 +248,7 @@ export default function Navbar({
             ))}
           </ul>
 
-          {/* OPTIONAL: small video (mobile/tablet). Adjusted to be compact */}
+          {/* OPTIONAL: small video (mobile/tablet) */}
           {videoSrc ? (
             <div className="mt-6">
               <div className="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden rounded-lg ring-1 ring-white/10">

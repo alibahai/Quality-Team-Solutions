@@ -107,8 +107,8 @@ export default function Footer({ year }) {
 
             {/* Column 2: Services */}
             <div>
-              <h3 className="mb-4 text-xl font-bold ml-12">Services</h3>
-              <ul className="space-y-3 text-sm ml-12 text-white/80">
+              <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
+              <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
                   <Link href="#" className="hover:text-white">
                     Design Drawings &amp; Approvals
@@ -147,8 +147,8 @@ export default function Footer({ year }) {
 
             {/* Column 3: Company */}
             <div>
-              <h3 className="mb-6 text-lg font-bold ml-12">Company</h3>
-              <ul className="space-y-3 text-sm ml-12 text-white/80">
+              <h3 className="mb-9 text-lg font-bold ml-12">Company</h3>
+              <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
                   <Link href="#" className="hover:text-white">
                     About QTS
@@ -201,7 +201,7 @@ export default function Footer({ year }) {
               </div>
 
               {/* Socials */}
-              <div className="flex items-center gap-12 pt-2 mt-9">
+              <div className="flex items-center gap-12 pt-2 mt-15">
                 <a
                   href="https://wa.me/971568068070"
                   target="_blank"
