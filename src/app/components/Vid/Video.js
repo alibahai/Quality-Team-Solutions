@@ -2,7 +2,7 @@
 
 
 export default function Video({
-  src = "/videos/1.mp4",
+  src = "/videos/4.mp4",
   poster = "/images/2ndImage.jpg",
   autoPlay = true,
   loop = true,

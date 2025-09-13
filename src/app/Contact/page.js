@@ -41,7 +41,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-bold mb-4">
               Let’s{" "}
-              <span className="text-orange-600">Collaborate On Your Next Project</span>
+              <span className="text-[#F58321]">Collaborate On Your Next Project</span>
             </h2>
             <p className="text-gray-600 mb-6">
               At QTS, we turn conversations into timeless designs.<br />
@@ -127,15 +127,15 @@ export default function ContactPage() {
           <div>
             <ul className="space-y-4 mt-2">
               <li className="flex items-center gap-3 text-gray-700">
-                <Phone className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <Phone className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 +971 56 806 8070
               </li>
               <li className="flex items-center gap-3 text-gray-700">
-                <Mail className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <Mail className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 info@qts-fitout.com
               </li>
               <li className="flex items-center gap-3 text-gray-700">
-                <MapPin className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <MapPin className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 Office 705, Business Bay Tower, Business Bay, Dubai, UAE
               </li>
             </ul>
@@ -153,7 +153,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Let’s{" "}
-              <span className="text-orange-600">Collaborate On Your Next Project</span>
+              <span className="text-[#F58321]">Collaborate On Your Next Project</span>
             </h2>
             <p className="text-gray-600 mb-8">
               At QTS, we turn conversations into timeless designs.<br/> Get in touch
@@ -162,15 +162,15 @@ export default function ContactPage() {
 
             <ul className="space-y-4 mb-6">
               <li className="flex items-center gap-3 text-gray-700">
-                <Phone className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <Phone className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 +971 56 806 8070
               </li>
               <li className="flex items-center gap-3 text-gray-700">
-                <Mail className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <Mail className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 info@qts-fitout.com
               </li>
               <li className="flex items-center gap-3 text-gray-700">
-                <MapPin className="shrink-0 text-orange-600 w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
+                <MapPin className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
                 Office 705, Business Bay Tower, Business Bay, Dubai, UAE
               </li>
             </ul>

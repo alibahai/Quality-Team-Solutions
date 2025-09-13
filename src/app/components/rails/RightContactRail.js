@@ -3,7 +3,7 @@ export default function RightContactRail({
   whatsappHref = "https://wa.me/971568068070",
 }) {
   return (
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 block md:block z-30">
+    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block z-30 mt-12">
       <a
         href={whatsappHref}
         target="_blank"

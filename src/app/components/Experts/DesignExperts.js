@@ -40,11 +40,11 @@ export default function DesignExperts({
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14">
           {/* MOBILE/TABLET: centered heading & text */}
           <div className="block lg:hidden text-center">
-            <h2 className="text-4xl font-bold tracking-widest mb-6 text-orange-500">
+            <h2 className="text-4xl font-bold tracking-widest mb-6 text-[#F58321]">
               OUR DESIGN EXPERTS
             </h2>
             <p className="mt-2 text-xl sm:text-3xl  leading-tight text-white">
-              The <span className="text-orange-500">Creative Force</span> Behind Our Work <br/> Is Unmatched
+              The <span className="text-[#F58321]">Creative Force</span> Behind Our Work <br/> Is Unmatched
             </p>
             <p className="mt-3 text-base sm:text-lg text-white/80">
               Our team of passionate designers, architects, and specialists bring together
@@ -56,11 +56,11 @@ export default function DesignExperts({
 
           {/* DESKTOP: original heading & text (unchanged) */}
           <div className="hidden lg:block">
-            <h2 className="text-4xl font-bold tracking-widest mb-6 text-orange-500">
+            <h2 className="text-4xl font-bold tracking-widest mb-6 text-[#F58321]">
               OUR DESIGN EXPERTS
             </h2>
             <p className="mt-2 text-xl sm:text-3xl  leading-tight text-white">
-              The <span className="text-orange-500">Creative Force</span> Behind Our Work
+              The <span className="text-[#F58321]">Creative Force</span> Behind Our Work
             </p>
             <p className="mt-3 text-base sm:text-lg text-white/80">
               Our team of passionate designers, architects, and specialists bring together
@@ -100,14 +100,14 @@ export default function DesignExperts({
                     >
                       <span
                         className={`block text-xs sm:text-sm font-semibold transition-colors ${
-                          isActive ? "text-orange-500" : "text-white"
+                          isActive ? "text-[#F58321]" : "text-white"
                         }`}
                       >
                         {m.name}
                       </span>
                       <span
                         className={`mx-auto mt-1 block h-[2px] w-10 rounded-full transition-colors ${
-                          isActive ? "bg-orange-500" : "bg-white/70"
+                          isActive ? "bg-[#F58321]" : "bg-white/70"
                         }`}
                       />
                     </button>
@@ -135,8 +135,8 @@ export default function DesignExperts({
                           <span
                             className={`text-lg font-semibold ${
                               isActive
-                                ? "text-orange-500"
-                                : "text-white group-hover:text-orange-500 transition-colors"
+                                ? "text-[#F58321]"
+                                : "text-white group-hover:text-[#F58321] transition-colors"
                             }`}
                           >
                             {m.name}
@@ -154,7 +154,7 @@ export default function DesignExperts({
                       {/* underline (white → orange if active) */}
                       <span
                         className={`absolute bottom-0 left-0 h-[2px] w-3/4 sm:w-2/3 transition-colors duration-300 ${
-                          isActive ? "bg-orange-500" : "bg-white"
+                          isActive ? "bg-[#F58321]" : "bg-white"
                         }`}
                       />
                     </li>

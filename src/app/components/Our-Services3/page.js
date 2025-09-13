@@ -148,31 +148,13 @@ export default function ServicesRail({
   ]);
 
   return (
-    <section className="w-full overflow-hidden">
+    <section className="w-full overflow-hidden my-[30px]">
       {/* Header (constrained) */}
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center md:text-left">
           <h2 className="text-4xl font-bold tracking-widest text-[#F58321] mb-4 sm:mb-7">
             OUR SERVICES
           </h2>
-          <p className="mt-2 text-xl sm:text-xl md:text-3xl leading-tight text-gray-900">
-            Transforming Spaces With{" "}
-            <span className="text-[#F58321]">Creativity</span> And{" "}
-            <span className="text-[#F58321]">Care</span>
-          </p>
-
-          {/* Mobile & Tablet version */}
-          <p className="block lg:hidden mt-3 text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto md:mx-0">
-            As one of Dubai’s most sought-after creative and modern interior design and fit-out companies, our multidisciplinary team ensures exceptional results across
-            <span className="font-bold"> all phases</span> of the project. From conceptualization to completion, we work hand-in-hand with clients, managing every detail to create, enhance, and deliver spaces that inspire.
-          </p>
-
-          {/* Desktop / LED version */}
-          <p className="hidden lg:block mt-3 text-sm sm:text-base md:text-lg text-gray-600 max-w-4xl mx-auto md:mx-0 whitespace-nowrap">
-            As one of Dubai’s most sought-after creative and modern interior design and fit-out companies, our multidisciplinary team <br /> ensures exceptional
-            results across <span className="font-bold">all phases</span> of the project. From conceptualization to completion, we work hand-in-hand <br /> with clients, managing every detail to
-            create, enhance, and deliver spaces that inspire.
-          </p>
         </div>
       </div>
 
@@ -241,7 +223,7 @@ export default function ServicesRail({
                     sizes="100vw"
                   />
 
-                  {/* Red tint (non-interactive to avoid pointer bounce) */}
+                  {/* Red tint */}
                   <div
                     className={[
                       "pointer-events-none",
@@ -251,7 +233,7 @@ export default function ServicesRail({
                     ].join(" ")}
                   />
 
-                  {/* Overlay: description panel (also non-interactive) */}
+                  {/* Overlay: description panel */}
                   <div
                     className={[
                       "pointer-events-none",
@@ -274,20 +256,19 @@ export default function ServicesRail({
                         {item.title}
                       </h3>
 
-                     <p
-  className={[
-    "mt-1 sm:mt-2",
-    isMobile
-      ? "text-[11px] sm:text-sm leading-snug"
-      : "text-xs sm:text-sm md:text-base leading-relaxed",
-  ].join(" ")}
-  style={{
-    whiteSpace: "normal", // allow wrapping
-  }}
->
-  {displayDesc}
-</p>
-
+                      <p
+                        className={[
+                          "mt-1 sm:mt-2",
+                          isMobile
+                            ? "text-[11px] sm:text-sm leading-snug"
+                            : "text-xs sm:text-sm md:text-base leading-relaxed",
+                        ].join(" ")}
+                        style={{
+                          whiteSpace: "normal", // allow wrapping
+                        }}
+                      >
+                        {displayDesc}
+                      </p>
                     </div>
                   </div>
 

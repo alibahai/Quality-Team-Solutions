@@ -101,7 +101,6 @@ export default function Navbar({
   const links = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/Servicess", caret: true },
-    { label: "Brand", href: "/" },
     { label: "About Us", href: "/About" },
     { label: "Contact Us", href: "/Contact" },
   ];
@@ -267,7 +266,7 @@ export default function Navbar({
             <Link
               href="/Contact"
               onClick={() => setOpen(false)}
-              className="block w-full text-center rounded-md bg-gradient-to-r from-orange-600 to-red-600 py-3 text-white font-semibold shadow hover:opacity-95 active:opacity-90"
+              className="block w-full text-center rounded-md bg-gradient-to-r from-[#F58321] to-red-600 py-3 text-white font-semibold shadow hover:opacity-95 active:opacity-90"
             >
               Contact Us
             </Link>

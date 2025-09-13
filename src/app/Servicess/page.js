@@ -14,7 +14,7 @@ export default function Service() {
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/new4.jpg')" }}
+          style={{ backgroundImage: "url('/images/services.jpg')" }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full items-center justify-center px-4">

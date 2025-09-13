@@ -32,7 +32,7 @@ export default function BackgroundWithRightImage({
         >
           {/* Left: text (always visible) */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <h2 className="text-4xl font-bold uppercase tracking-wider mb-4 text-orange-400">
+            <h2 className="text-4xl font-bold uppercase tracking-wider mb-4 text-[#F58321]">
               Started in 2018
             </h2>
 
@@ -40,9 +40,9 @@ export default function BackgroundWithRightImage({
               <span className="block">Where Creativity Meets</span>
               <span className="block">
                 Function, And{" "}
-                <span className="inline text-orange-400">Style Comes</span>
+                <span className="inline text-[#F58321]">Style Comes</span>
               </span>
-              <span className="block text-orange-400">Alive</span>
+              <span className="block text-[#F58321]">Alive</span>
             </p>
 
             <div className="mt-4 mb-8 grid grid-cols-1 gap-3 text-white/90 sm:grid-cols-2">
@@ -55,7 +55,7 @@ export default function BackgroundWithRightImage({
                 <div key={item} className="flex items-start gap-2">
                   <svg
                     viewBox="0 0 24 24"
-                    className="mt-1 h-5 w-5 flex-none text-orange-400"
+                    className="mt-1 h-5 w-5 flex-none text-[#F58321]"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="3"
@@ -78,7 +78,7 @@ export default function BackgroundWithRightImage({
 
             <a
               href=""
-              className="mt-6 inline-block text-sm font-semibold text-orange-400 hover:text-orange-300"
+              className="mt-6 inline-block text-sm font-semibold text-[#F58321] hover:text-orange-300"
             >
               Discover QTS →
             </a>

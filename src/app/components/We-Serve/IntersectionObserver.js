@@ -84,11 +84,11 @@ export default function SectorWeServe() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Mobile heading */}
         <div className="block lg:hidden text-center">
-          <h2 className="text-4xl font-bold tracking-widest mb-4 text-orange-500">
+          <h2 className="text-4xl font-bold tracking-widest mb-4 text-[#F58321]">
             SECTOR WE SERVE
           </h2>
           <h2 className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
-            Experience The <span className="text-orange-500"> Craft Of Bespoke Design </span> Of <br/> This Platform
+            Experience The <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of <br/> This Platform
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-600">
             QTS delivers a complete design experience, offering clients access to a wide
@@ -99,11 +99,11 @@ export default function SectorWeServe() {
 
         {/* Desktop heading */}
         <div className="hidden lg:block">
-          <h2 className="text-4xl font-bold tracking-widest mb-6 text-orange-500">
+          <h2 className="text-4xl font-bold tracking-widest mb-6 text-[#F58321]">
             SECTOR WE SERVE
           </h2>
           <p className="mt-2 text-xl sm:text-3xl  leading-tight text-gray-900">
-            Experience The <span className="text-orange-500">Craft Of Bespoke Design</span>
+            Experience The <span className="text-[#F58321]">Craft Of Bespoke Design</span>
           </p>
           <p className="mt-3 text-base sm:text-lg text-gray-600 whitespace-nowrap">
             QTS delivers a complete design experience, offering clients access to a
@@ -145,8 +145,8 @@ export default function SectorWeServe() {
                       <div
                         className={`text-lg font-semibold ${
                           isActive
-                            ? "text-orange-500"
-                            : "text-gray-900 group-hover:text-orange-500 transition-colors"
+                            ? "text-[#F58321]"
+                            : "text-gray-900 group-hover:text-[#F58321] transition-colors"
                         }`}
                       >
                         {s.title}
@@ -174,7 +174,7 @@ export default function SectorWeServe() {
                       type="button"
                       onClick={() => setActiveKey(s.key)}
                       className={`w-full rounded-md px-2 py-2 text-xs sm:text-sm font-semibold
-                        ${isActive ? "bg-orange-500 text-white" : "bg-white text-gray-900"}
+                        ${isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900"}
                         active:scale-95 transition`}
                     >
                       {s.title}

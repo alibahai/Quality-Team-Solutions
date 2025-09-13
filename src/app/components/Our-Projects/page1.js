@@ -72,11 +72,11 @@ export default function ServicesRailExact({
         {/* Heading */}
         {/* Mobile / tablet — centered */}
         <div className="mb-14 block lg:hidden text-center px-4">
-          <p className="text-4xl font-bold tracking-widest  mb-4 text-orange-500">
+          <p className="text-4xl font-bold tracking-widest  mb-4 text-[#F58321]">
             OUR PROJECTS
           </p>
           <h2 className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
-            Designs <span className="text-orange-500">That Define QTS</span>
+            Designs <span className="text-[#F58321]">That Define QTS</span>
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-600">
             Our Portfolio highlights a diverse range of projects, spanning from elegantly
@@ -86,11 +86,11 @@ export default function ServicesRailExact({
 
         {/* Desktop / TV — original (unchanged) */}
         <div className="mb-14 hidden lg:block">
-          <h2 className="text-4xl ml-6  font-bold tracking-widest mb-6 text-orange-500">
+          <h2 className="text-4xl ml-6  font-bold tracking-widest mb-6 text-[#F58321]">
             OUR PROJECTS
           </h2>
           <h2 className="mt-2 ml-6  text-xl sm:text-3xl  leading-tight text-gray-900">
-            Designs <span className="text-orange-500">That Define QTS</span>
+            Designs <span className="text-[#F58321]">That Define QTS</span>
           </h2>
           <p className="mt-3  ml-6 text-base sm:text-lg text-gray-600">
             Our Portfolio highlights a diverse range of projects, spanning from elegantly designed residential spaces
