@@ -93,7 +93,7 @@ export default function LeftServicesRail({ menuOpen }) {
   return (
     <div className="absolute left-0 top-1/2 -translate-y-1/2 z-30 mt-13">
       {/* Desktop panel */}
-      <div className="bg-neutral-900/25 backdrop-blur-sm rounded-r-xl rounded-l-none py-3 hidden md:block">
+      <div className="bg-neutral-900/25 backdrop-blur-m rounded-r-sm rounded-l-none py-3  md:block">
         <div className="flex flex-col">
           {ITEMS.map(({ title, Icon, href }) => (
             <Link

@@ -12,7 +12,7 @@ export default function RightContactRail({
         className="flex h-48 w-12 items-center justify-center bg-red-600 text-white shadow-md [writing-mode:vertical-rl] rotate-180"
         style={{
           writingMode: "vertical-rl",
-          borderRadius: 6, // small round edges on all four sides
+          borderRadius: 2, // small round edges on all four sides
         }}
       >
         {/* number first */}

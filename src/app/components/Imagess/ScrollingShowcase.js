@@ -70,37 +70,38 @@ export default function ScrollingShowcase({
     <section className="w-full overflow-hidden bg-gray-50 py-10">
       {/* Full-bleed wrapper: makes rows touch the viewport edges */}
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
-        {/* Row 1 (left) */}
-        <div className="relative overflow-hidden">
-          <ul
-            ref={row1Ref}
-            className="flex will-change-transform"
-            style={{
-              gap: `${gap}px`,
-              whiteSpace: "nowrap",
-              transform: "translateX(0px)",
-            }}
-            aria-live="off"
-          >
-            {doubled.map((item, i) => (
-              <li key={`row1-${i}`} className="shrink-0">
-                <Card size={item.size}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt || "Showcase image"}
-                    fill
-                    sizes="(min-width:1536px) 420px, (min-width:1280px) 360px, (min-width:1024px) 300px, 90vw"
-                    className="object-cover"
-                    priority={i < images.length}
-                  />
-                </Card>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Row 1 (left) */}
+<div className="relative overflow-hidden mt-10">
+  <ul
+    ref={row1Ref}
+    className="flex will-change-transform items-end"   // ⬅️ add items-end
+    style={{
+      gap: `${gap}px`,
+      whiteSpace: "nowrap",
+      transform: "translateX(0px)",
+    }}
+    aria-live="off"
+  >
+    {doubled.map((item, i) => (
+      <li key={`row1-${i}`} className="shrink-0 flex items-end"> {/* ⬅️ also safe */}
+        <Card size={item.size}>
+          <Image
+            src={item.src}
+            alt={item.alt || "Showcase image"}
+            fill
+            sizes="(min-width:1536px) 420px, (min-width:1280px) 360px, (min-width:1024px) 300px, 90vw"
+            className="object-cover"
+            priority={i < images.length}
+          />
+        </Card>
+      </li>
+    ))}
+  </ul>
+</div>
+
 
         {/* Row 2 (right) */}
-        <div className="relative overflow-hidden mt-6">
+        <div className="relative overflow-hidden mt-6  mb-10">
           <ul
             ref={row2Ref}
             className="flex will-change-transform"

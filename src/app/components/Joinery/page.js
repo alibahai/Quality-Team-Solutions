@@ -130,17 +130,17 @@ export default function Joinery ()  {
                       ].join(" ")}
                     >
                       <button
-                        type="button"
-                        onClick={() => setActiveKey(item.key)}
-                        className={[
-                          // MOBILE: straight-edge pills in a row; active turns orange
-                          "px-3 py-2 rounded-none text-sm font-semibold",
-                          isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
-                          "shadow-sm ring-1 ring-black/5",
-                          // DESKTOP: reset to list style
-                          "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
-                        ].join(" ")}
-                      >
+                      type="button"
+                      onClick={() => setActiveKey(item.key)}
+                      onMouseEnter={() => setActiveKey(item.key)}   // 👈 hover changes image
+                      onFocus={() => setActiveKey(item.key)}        // 👈 keyboard focus also changes
+                      className={[
+                        "px-3 py-2 rounded-none text-sm font-semibold",
+                        isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
+                        "shadow-sm ring-1 ring-black/5",
+                        "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
+                      ].join(" ")}
+                    >
                         {/* Mobile label */}
                         <span className="lg:hidden">{item.title}</span>
 

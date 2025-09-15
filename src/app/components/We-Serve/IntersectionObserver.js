@@ -43,7 +43,8 @@ export default function SectorWeServe() {
       {
         key: "exhibition",
         title: "Exhibition Stands",
-        blurb: "Premium booths with brand-first design and modular builds. A great environment for everyone.",
+        blurb:
+          "Premium booths with brand-first design and modular builds. A great environment for everyone.",
         image: "/images/stands.png",
       },
       {
@@ -80,15 +81,17 @@ export default function SectorWeServe() {
   const statValues = useCountUp(statsRef, statTargets, 1400);
 
   return (
-    <section className="w-full">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+    /* ➜ Add bottom padding so there is space AFTER stats at the end of the section */
+    <section className="w-full pb-10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 mt-12 lg:px-8 py-12">
         {/* Mobile heading */}
         <div className="block lg:hidden text-center">
-          <h2 className="text-4xl font-bold tracking-widest mb-4 text-[#F58321]">
+          <h2 className="text-4xl font-bold tracking-widest mb-4  text-[#F58321]">
             SECTOR WE SERVE
           </h2>
           <h2 className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
-            Experience The <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of <br/> This Platform
+            Experience The <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of{" "}
+            <br /> This Platform
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-600">
             QTS delivers a complete design experience, offering clients access to a wide
@@ -106,10 +109,10 @@ export default function SectorWeServe() {
             Experience The <span className="text-[#F58321]">Craft Of Bespoke Design</span>
           </p>
           <p className="mt-3 text-base sm:text-lg text-gray-600 whitespace-nowrap">
-            QTS delivers a complete design experience, offering clients access to a
-            wide selection of products and customization options.<br /> Through premium 
-            materials and expert artisan know-how, we transform spaces into
-            personalized living environments.
+            QTS delivers a complete design experience, offering clients access to a wide
+            selection of products and customization options.
+            <br /> Through premium materials and expert artisan know-how, we transform spaces
+            into personalized living environments.
           </p>
         </div>
 
@@ -139,6 +142,9 @@ export default function SectorWeServe() {
                   <li key={s.key} className="pb-4 border-b border-gray-200 mb-13">
                     <button
                       type="button"
+                      /* ➜ Desktop hover should preview: set active on hover */
+                      onMouseEnter={() => setActiveKey(s.key)}
+                      /* keep click too (nice for accessibility / sticky selection) */
                       onClick={() => setActiveKey(s.key)}
                       className="w-full text-left group"
                     >
@@ -164,7 +170,7 @@ export default function SectorWeServe() {
           </div>
 
           {/* Mobile tabs row (no borders, no blurb) */}
-          <div className="lg:col-span-5 lg:hidden">
+          <div className="lg:col-span-5 lg:hidden ">
             <ul className="mt-5 grid grid-cols-4 gap-2 text-center">
               {services.map((s) => {
                 const isActive = s.key === activeKey;

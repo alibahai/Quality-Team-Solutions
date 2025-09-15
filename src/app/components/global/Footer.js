@@ -18,7 +18,7 @@ export default function Footer({ year }) {
       <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
 
       <footer className="relative z-10">
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8 lg:py-10 text-white">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-white">
           {/* Mobile layout */}
           <div className="block md:hidden text-center">
             <div className="w-28 mx-auto">
@@ -106,7 +106,7 @@ export default function Footer({ year }) {
             </div>
 
             {/* Column 2: Services */}
-            <div>
+            <div className="ml-4" >
               <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
@@ -146,7 +146,7 @@ export default function Footer({ year }) {
             </div>
 
             {/* Column 3: Company */}
-            <div>
+            <div  >
               <h3 className="mb-9 text-lg font-bold ml-12">Company</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
@@ -176,10 +176,10 @@ export default function Footer({ year }) {
             </div>
 
             {/* Column 4: Newsletter */}
-            <div className="space-y-4">
+            <div className="space-y-4 mr-10">
               <h2 className="text-xl font-bold mb-12">
                 Stay informed with the
-                <br /> Latest News and Insights <br />
+                 Latest News and Insights 
                 from QTS
               </h2>
               <div className="space-y-3">
@@ -201,7 +201,7 @@ export default function Footer({ year }) {
               </div>
 
               {/* Socials */}
-              <div className="flex items-center gap-12 pt-2 mt-15">
+              <div className="flex items-center gap-10 pt-5 mt-10">
                 <a
                   href="https://wa.me/971568068070"
                   target="_blank"
@@ -237,13 +237,13 @@ export default function Footer({ year }) {
 
         {/* Bottom bar (only for md and up) */}
         <div className="hidden md:block border-t border-white/10">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
             <p>© {year} Quality Team Solution (QTS)</p>
             <div className="flex items-center gap-6">
               <Link href="#" className="hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-white">
+              <Link href="#" className="hover:text-white  mr-10">
                 Terms and Conditions
               </Link>
             </div>

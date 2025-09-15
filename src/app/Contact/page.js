@@ -192,7 +192,7 @@ export default function ContactPage() {
           <div>
             <form
               onSubmit={onSubmit}
-              className="w-full p-6 bg-gray-200/80 rounded-lg   shadow-lg"
+              className="w-full p-6 bg-gray-100/80 rounded-lg   shadow-lg"
             >
               <label htmlFor="name" className="block text-sm font-medium text-black ">
                 Full Name

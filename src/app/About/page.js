@@ -167,27 +167,31 @@ export default function About() {
 
           {/* Desktop grid */}
           <div className="mt-10 hidden lg:grid lg:grid-cols-12 gap-6">
-            {/* Left: images */}
-            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-              <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
-                <Image
-                  src="/images/about1.jpg"
-                  alt="QTS office display"
-                  fill
-                  sizes="(min-width:1024px) 25vw, 45vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
-                <Image
-                  src="/images/about2.jpg"
-                  alt="Retail interior"
-                  fill
-                  sizes="(min-width:1024px) 25vw, 45vw"
-                  className="object-cover"
-                />
-              </div>
+          {/* Left: images */}
+          <div className="lg:col-span-6 grid grid-cols-12 gap-4">
+            {/* First image, a bit narrower */}
+            <div className="relative col-span-5 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
+              <Image
+                src="/images/about1.jpg"
+                alt="QTS office display"
+                fill
+                sizes="(min-width:1024px) 20vw, 40vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Second image, slightly wider */}
+            <div className="relative col-span-7 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
+              <Image
+                src="/images/about2.jpg"
+                alt="Retail interior"
+                fill
+                sizes="(min-width:1024px) 30vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+
             </div>
 
             {/* Right: copy */}
@@ -311,6 +315,8 @@ export default function About() {
                 <button
                   type="button"
                   onClick={() => setActiveValueKey(v.key)}
+                    onMouseEnter={() => setActiveValueKey(v.key)}   // 👈 hover changes image
+                    onFocus={() => setActiveValueKey(v.key)}        // 👈 keyboard focus also changes
                   className={[
                     // mobile pill styles (straight edges)
                     "px-3 py-2 rounded-none text-sm font-semibold",

@@ -178,11 +178,21 @@ export default function ServicesRail({
 
       {/* Full-bleed rail (edge-to-edge), overflow hidden = no scrollbar */}
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
-        <div
-          className="relative overflow-hidden select-none"
-          onMouseEnter={() => {}}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
+      <div
+  className="relative overflow-hidden select-none"
+  onMouseEnter={() => {
+    if (!isMobile) {
+      setPaused(true);           // ⬅ stop scrolling on desktop hover
+    }
+  }}
+  onMouseLeave={() => {
+    setHoveredIndex(null);
+    if (!isMobile) {
+      setPaused(false);          // ⬅ resume scrolling when hover ends
+    }
+  }}
+>
+
           <ul
             ref={trackRef}
             className="flex gap-4 sm:gap-6 will-change-transform px-0"
@@ -212,7 +222,7 @@ export default function ServicesRail({
                   className="group relative inline-block shrink-0 overflow-hidden rounded-md bg-white ring-1 ring-black/5 first:ml-0 last:mr-0"
                   style={{
                     width: `calc(((100vw - ${GAP_PX * (cardsPer - 1)}px) / ${cardsPer}) * ${scale})`,
-                    height: isMobile ? "18rem" : "20rem",
+                    height: isMobile ? "18rem" : "24rem",
                   }}
                   onMouseEnter={() => {
                     if (!isMobile) setHoveredIndex(i);
