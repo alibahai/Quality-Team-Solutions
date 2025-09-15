@@ -74,17 +74,17 @@ export default function DesignExperts({
           {/* Image first, then the 4 links as a single-row grid with underline */}
           <div className="mt-8 lg:hidden">
             {/* Active portrait */}
-          <div className="relative h-96 sm:h-[28rem] lg:h-[32rem] overflow-hidden mt-3 rounded-lg mr-auto">
-    <Image
-      key={active.image}
-      src={active.image}
-      alt={active.name}
-      fill
-      className="object-cover object-[center_03%]" // 👈 shifted downward
-      sizes="(min-width:1024px) 40vw, 90vw"
-      priority
-    />
-  </div>
+            <div className="relative h-96 sm:h-[28rem] lg:h-[32rem] overflow-hidden mt-3 rounded-lg mr-auto">
+              <Image
+                key={active.image}
+                src={active.image}
+                alt={active.name}
+                fill
+                className="object-cover object-[center_03%]"
+                sizes="(min-width:1024px) 40vw, 90vw"
+                priority
+              />
+            </div>
 
             {/* Links row: grid of 4, name + underline that turns orange when active */}
             <ul className="mt-6 grid grid-cols-4 gap-3 text-center">
@@ -94,9 +94,15 @@ export default function DesignExperts({
                   <li key={m.key}>
                     <button
                       type="button"
-                      onClick={() => setActiveKey(m.key)}
-                      className="group w-full"
-                      aria-pressed={isActive}
+                      /* hover/focus only — click removed */
+                      onMouseEnter={() => setActiveKey(m.key)}
+                      onFocus={() => setActiveKey(m.key)}
+                      className={[
+                        "px-3 py-2 rounded-none text-sm font-semibold",
+                        isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
+                        "shadow-sm ring-1 ring-black/5",
+                        "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
+                      ].join(" ")}
                     >
                       <span
                         className={`block text-xs sm:text-sm font-semibold transition-colors ${
@@ -105,11 +111,6 @@ export default function DesignExperts({
                       >
                         {m.name}
                       </span>
-                      <span
-                        className={`mx-auto mt-1 block h-[2px] w-10 rounded-full transition-colors ${
-                          isActive ? "bg-[#F58321]" : "bg-white/70"
-                        }`}
-                      />
                     </button>
                   </li>
                 );
@@ -117,7 +118,7 @@ export default function DesignExperts({
             </ul>
           </div>
 
-          {/* ===== DESKTOP LAYOUT (unchanged) ===== */}
+          {/* ===== DESKTOP LAYOUT ===== */}
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-1">
             {/* Left: List (desktop with roles & underline like before) */}
             <div className="lg:col-span-7 hidden lg:block">
@@ -128,7 +129,9 @@ export default function DesignExperts({
                     <li key={m.key} className="relative py-5 sm:py-6">
                       <button
                         type="button"
-                        onClick={() => setActiveKey(m.key)}
+                        /* hover/focus only — click removed */
+                        onMouseEnter={() => setActiveKey(m.key)}
+                        onFocus={() => setActiveKey(m.key)}
                         className="group w-full text-left"
                       >
                         <div className="flex items-center justify-between">

@@ -120,7 +120,7 @@ export default function SectorWeServe() {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left image */}
           <div className="lg:col-span-7">
-            <div className="relative h-72 sm:h-96 lg:h-[26rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+            <div className="relative h-72 sm:h-96 lg:h-[31rem] overflow-hidden rounded-lg ring-1 ring-black/10">
               <Image
                 key={active.image}
                 src={active.image}
@@ -139,7 +139,7 @@ export default function SectorWeServe() {
               {services.map((s) => {
                 const isActive = s.key === activeKey;
                 return (
-                  <li key={s.key} className="pb-4 border-b border-gray-200 mb-13">
+                  <li key={s.key} className="pb-9 border-b border-gray-200 mb-13">
                     <button
                       type="button"
                       /* ➜ Desktop hover should preview: set active on hover */
