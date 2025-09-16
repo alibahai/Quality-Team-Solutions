@@ -14,19 +14,19 @@ export default function Turnkey  ()  {
         key: "concept",
         title: "End-to-End Project Management",
         desc: "Coordinated delivery across all trades.",
-        image: "/images/1122.jpg",
+        image: "/images/end.jpg",
       },
       {
         key: "planning",
         title: "Design Development & Execution",
         desc: "Coordinated delivery across all trades.",
-        image: "/images/1122.jpg",
+        image: "/images/ex.jpg",
       },
       {
         key: "ergonomics",
         title: "Civil, MEP & Finishing Works",
         desc: "Coordinated delivery across all trades.",
-        image: "/images/1122.jpg",
+        image: "/images/building.jpg",
       },
       {
         key: "renders",
@@ -38,13 +38,13 @@ export default function Turnkey  ()  {
         key: "sustainability",
         title: "Final Styling & Decor",
         desc: "Coordinated delivery across all trades.",
-        image: "/images/1122.jpg",
+        image: "/images/about1.jpg",
       },
       {
         key: "furnishing",
         title: "On-Time, On-Budget Delivery",
         desc: "Coordinated delivery across all trades.",
-        image: "/images/1122.jpg",
+        image: "/images/buildings.jpg",
       },
     ],
     []
