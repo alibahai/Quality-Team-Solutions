@@ -110,32 +110,32 @@ export default function Footer({ year }) {
               <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
-                  <Link href="./components/Drawing" className="hover:text-white">
+                  <Link href="/components/Drawing" className="hover:text-white">
                     Design Drawings &amp; Approvals
                   </Link>
                 </li>
                 <li>
-                  <Link href="./components/Demolishing" className="hover:text-white">
+                  <Link href="/components/Demolishing" className="hover:text-white">
                     Demolition, Build &amp; Refurbish
                   </Link>
                 </li>
                 <li>
-                  <Link href="./components/Mep" className="hover:text-white">
+                  <Link href="/components/Mep" className="hover:text-white">
                     MEP Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="./components/Joinery" className="hover:text-white">
+                  <Link href="/components/Joinery" className="hover:text-white">
                     Joinery Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="./components/Turnkey" className="hover:text-white">
+                  <Link href="/components/Turnkey" className="hover:text-white">
                     Turnkey Fit-Outs
                   </Link>
                 </li>
                 <li>
-                  <Link href="./components/space" className="hover:text-white">
+                  <Link href="/components/space" className="hover:text-white">
                     Design and Space Planning
                   </Link>
                 </li>
@@ -150,27 +150,27 @@ export default function Footer({ year }) {
               <h3 className="mb-9 text-lg font-bold ml-12">Company</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
-                  <Link href="./About" className="hover:text-white">
+                  <Link href="/About" className="hover:text-white">
                     About QTS
                   </Link>
                 </li>
                 <li>
-                  <Link href="./Servicess" className="hover:text-white">
+                  <Link href="/Servicess" className="hover:text-white">
                     Services
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="#" className="hover:text-white">
                     Brands
                   </Link>
-                </li>
+                </li> */}
                 <li>
-                  <Link href="./Contact" className="hover:text-white">
+                  <Link href="/Contact" className="hover:text-white">
                     Contact Us
                   </Link>
                 </li>
               </ul>
-              <p className="mt-27 text-sm text-white/80 ml-12">
+              <p className="mt-36 text-sm text-white/80 ml-12">
                 info@qts-fitout.com
               </p>
             </div>

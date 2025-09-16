@@ -82,7 +82,7 @@ export default function Joinery ()  {
           {/* Heading + intro */}
           <header className="mb-6 lg:mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Joinery<span className="text-[#F58321]">Works</span>
+              Joinery<span className="text-[#F58321]"> Works</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-5xl">
              Craftsmanship is the foundation of exceptional interiors. Our joinery solutions combine precision, artistry, and durability to create unique elements that elevate your space.

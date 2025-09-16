@@ -81,7 +81,7 @@ export default function Turnkey  ()  {
           {/* Heading + intro */}
           <header className="mb-6 lg:mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Turnkey<span className="text-[#F58321]">Fit-Outs</span>
+              Turnkey<span className="text-[#F58321]"> Fit-Outs</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-5xl">
               From design to handover, we deliver ready-to-use spaces without the hassle of multiple contractors. Our turnkey model ensures consistency, efficiency, and peace of mind.

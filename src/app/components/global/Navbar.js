@@ -43,12 +43,12 @@ const IconBuilding = (p) => (
 
 /* ================= DATA ================= */
 const SERVICES = [
-  { title: "Design & Space Planning", Icon: IconBook, href: "#" },
-  { title: "Joinery Works", Icon: IconPencil, href: "#" },
-  { title: "Drawings & Approvals", Icon: IconCompass, href: "#" },
-  { title: "MEP Works", Icon: IconGauge, href: "#" },
-  { title: "Turnkey Fit-Outs", Icon: IconBarcode, href: "#" },
-  { title: "Demolition, Construction & Refurbishment", Icon: IconBuilding, href: "#" },
+  { title: "Design & Space Planning", Icon: IconBook, href: "/components/space" },
+  { title: "Joinery Works", Icon: IconPencil, href: "/components/Joinery" },
+  { title: "Drawings & Approvals", Icon: IconCompass, href: "/components/Drawing" },
+  { title: "MEP Works", Icon: IconGauge, href: "/components/Mep" },
+  { title: "Turnkey Fit-Outs", Icon: IconBarcode, href: "/components/Turnkey" },
+  { title: "Demolition, Construction & Refurbishment", Icon: IconBuilding, href: "/components/Demolishing" },
 ];
 
 export default function Navbar({
