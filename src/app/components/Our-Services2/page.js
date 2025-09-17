@@ -306,41 +306,41 @@ const DEFAULT_SERVICES = [
     description:
       "From concept to approvals, we handle drawings and authority coordination end to end.",
     image: "/images/Design1.jpg",
-    href: "./components/Drawing",
+    href: "/Servicess/Drawings-Approvals",
   },
   {
     title: "MEP Works",
     description:
       "From plumbing and drainage to HVAC systems we deliver comprehensive Mechanical Electrical and Plumbing solutions.",
     image: "/images/MEP.jpeg",
-    href: "./components/Mep",
+    href: "/Servicess/Mep",
   },
   {
     title: "Turnkey Fit-Outs",
     description:
       "Complete fit out delivery from procurement to handover managed to schedule with tight coordination quality control.",
     image: "/images/turnkey.png",
-    href: "./components/Turnkey",
+    href: "/Servicess/Turnkey-Fit",
   },
   {
     title: "Design & Space",
     description:
       "Optimized layouts materials and lighting plans to elevate experience while balancing function. ",
     image: "/images/space.png",
-    href: "./components/space",
+    href: "/Servicess/Design-Drawings",
   },
   {
     title: "Demolition, Build & Refurbish",
     description:
       "Our expert team handles every stage of the build process with precision and care.",
     image: "/images/buildings.jpg",
-    href: "./components/Demolishing",
+    href: "/Servicess/Demolishing",
   },
   {
     title: "Joinery Works",
     description:
       "Our skilled craftsmen deliver precision joinery tailored to your design and space.",
     image: "/images/stands.png",
-    href: "./components/Joinery",
+    href: "/Servicess/Joinery-work",
   },
 ];

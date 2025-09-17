@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import React, { useMemo, useState } from "react";
-import ScrollingShowcase from "../Imagess/ScrollingShowcase";
-import ServicesRail from "../Our-Services3/page.js";
+import ScrollingShowcase from "src/app/components/Imagess/ScrollingShowcase";
+import ServicesRail from "src/app/components/Our-Services3/page";
+
 
 export default function Space() {
   // Tabs for Designing & Space Planning
@@ -55,13 +56,25 @@ export default function Space() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-      <section id="hero" className="relative h-[300px] w-full -mt-20">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/cardsImages.jpg')" }} />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 flex h-full items-center justify-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">Drawings & Approvals</h1>
-        </div>
-      </section>
+     <section id="hero" className="relative h-[300px] w-full -mt-20">
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{ backgroundImage: "url('/images/cardsImages.jpg')" }}
+  />
+  <div className="absolute inset-0 bg-black/40" />
+  <div className="relative z-10 flex h-full items-center justify-center px-4">
+    <h1
+      className="
+        text-center font-bold text-white drop-shadow
+        text-3xl sm:text-3xl md:text-5xl
+        leading-snug md:leading-tight
+      "
+    >
+      Drawings &amp; Approvals
+    </h1>
+  </div>
+</section>
+
 
       {/* Designing & Space Planning (tabs + image swap) */}
       <section className="w-full my-12">

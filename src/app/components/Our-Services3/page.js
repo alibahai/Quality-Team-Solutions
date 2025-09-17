@@ -318,7 +318,7 @@ const DEFAULT_SERVICES = [
     description:
       "From concept to approvals, we handle drawings and authority coordination end to end. This block clamps to six lines so longer text remains tidy inside the white box.",
     image: "/images/Design1.jpg",
-    href: "/components/Drawing",
+    href: "/Servicess/Drawings-Approvals",
 
   },
   {
@@ -326,14 +326,14 @@ const DEFAULT_SERVICES = [
     description:
       "From plumbing and drainage to HVAC systems we deliver comprehensive Mechanical Electrical and Plumbing solutions. Our services ensure seamless integration efficiency and reliability for every project.",
     image: "/images/MEP.jpeg",
-     href: "/components/Mep",
+     href: "/Servicess/Mep",
   },
   {
     title: "Turnkey Fit-Outs",
     description:
       "Complete fit out delivery from procurement to handover managed to schedule with tight coordination quality control and budget discipline across suppliers and trades.",
     image: "/images/turnkey.png",
-    href: "/components/Turnkey",
+    href: "/Servicess/Turnkey-Fit",
 
   },
   {
@@ -341,7 +341,7 @@ const DEFAULT_SERVICES = [
     description:
       "Optimized layouts materials and lighting plans to elevate experience while balancing function comfort circulation and brand expression across your environment.",
     image: "/images/space.png",
-        href: "/components/space",
+        href: "/Servicess/Design-Drawings",
 
   },
 ];

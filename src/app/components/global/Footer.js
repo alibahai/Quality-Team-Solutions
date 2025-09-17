@@ -7,6 +7,12 @@ import { Icon } from "@iconify/react";
 export default function Footer({ year }) {
   const BG_URL = "/images/footer.jpg";
 
+  // Read dynamic values from env
+  const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE_E164 || "+971568068070";
+  const PHONE_DISPLAY =
+    process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+971 56 806 8070";
+  const EMAIL = process.env.NEXT_PUBLIC_EMAIL || "info@qts-fitout.com";
+
   return (
     <div className="relative w-full">
       {/* Background image */}
@@ -43,9 +49,23 @@ export default function Footer({ year }) {
               Office 706, Business Bay Tower, Business Bay, Dubai, UAE
             </p>
 
-            <p className="mt-6 text-sm text-white/80">+971 56 806 8070</p>
+            {/* Dynamic phone */}
+            <a
+              href={`tel:${PHONE_E164}`}
+              className="mt-6 block text-sm text-white/80 hover:text-white"
+              aria-label={`Call ${PHONE_DISPLAY}`}
+            >
+              {PHONE_DISPLAY}
+            </a>
 
-            <p className="mt-6 text-sm text-white/80">info@qts-fitout.com</p>
+            {/* Dynamic email */}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="mt-6 block text-sm text-white/80 hover:text-white"
+              aria-label={`Email ${EMAIL}`}
+            >
+              {EMAIL}
+            </a>
 
             {/* Social icons */}
             <div className="flex justify-center gap-8 mt-8">
@@ -106,47 +126,71 @@ export default function Footer({ year }) {
             </div>
 
             {/* Column 2: Services */}
-            <div className="ml-4" >
+            <div className="ml-4">
               <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
-                  <Link href="/components/Drawing" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Drawings-Approvals"
+                    className="hover:text-white"
+                  >
                     Design Drawings &amp; Approvals
                   </Link>
                 </li>
                 <li>
-                  <Link href="/components/Demolishing" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Demolishing"
+                    className="hover:text-white"
+                  >
                     Demolition, Build &amp; Refurbish
                   </Link>
                 </li>
                 <li>
-                  <Link href="/components/Mep" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Mep"
+                    className="hover:text-white"
+                  >
                     MEP Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="/components/Joinery" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Joinery-work"
+                    className="hover:text-white"
+                  >
                     Joinery Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="/components/Turnkey" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Turnkey-Fit"
+                    className="hover:text-white"
+                  >
                     Turnkey Fit-Outs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/components/space" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Design-Drawings"
+                    className="hover:text-white"
+                  >
                     Design and Space Planning
                   </Link>
                 </li>
               </ul>
-              <p className="mt-12 text-sm text-white/80 ml-12">
-                +971 56 806 8070
-              </p>
+
+              {/* Dynamic phone */}
+              <a
+                href={`tel:${PHONE_E164}`}
+                className="mt-12 block text-sm text-white/80 ml-12 hover:text-white"
+                aria-label={`Call ${PHONE_DISPLAY}`}
+              >
+                {PHONE_DISPLAY}
+              </a>
             </div>
 
             {/* Column 3: Company */}
-            <div  >
+            <div>
               <h3 className="mb-9 text-lg font-bold ml-12">Company</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
@@ -159,28 +203,27 @@ export default function Footer({ year }) {
                     Services
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="#" className="hover:text-white">
-                    Brands
-                  </Link>
-                </li> */}
                 <li>
                   <Link href="/Contact" className="hover:text-white">
                     Contact Us
                   </Link>
                 </li>
               </ul>
-              <p className="mt-36 text-sm text-white/80 ml-12">
-                info@qts-fitout.com
-              </p>
+
+              {/* Dynamic email */}
+              <a
+                href={`mailto:${EMAIL}`}
+                className="mt-36 block text-sm text-white/80 ml-12 hover:text-white"
+                aria-label={`Email ${EMAIL}`}
+              >
+                {EMAIL}
+              </a>
             </div>
 
             {/* Column 4: Newsletter */}
             <div className="space-y-4 mr-10">
               <h2 className="text-xl font-bold mb-12">
-                Stay informed with the
-                 Latest News and Insights 
-                from QTS
+                Stay informed with the Latest News and Insights from QTS
               </h2>
               <div className="space-y-3">
                 <div className="flex items-center">
@@ -235,7 +278,7 @@ export default function Footer({ year }) {
           </div>
         </div>
 
-        {/* Bottom bar (only for md and up) */}
+        {/* Bottom bar */}
         <div className="hidden md:block border-t border-white/10">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
             <p>© {year} Quality Team Solution (QTS)</p>
@@ -243,7 +286,7 @@ export default function Footer({ year }) {
               <Link href="#" className="hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-white  mr-10">
+              <Link href="#" className="hover:text-white mr-10">
                 Terms and Conditions
               </Link>
             </div>

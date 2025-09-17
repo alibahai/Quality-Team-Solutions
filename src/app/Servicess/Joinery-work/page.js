@@ -2,48 +2,48 @@
 
 import Image from "next/image";
 import React, { useMemo, useState } from "react";
-import ScrollingShowcase from "../Imagess/ScrollingShowcase";
-import ServicesRail from "../Our-Services3/page.js";
+import ScrollingShowcase from "src/app/components/Imagess/ScrollingShowcase";
+import ServicesRail from "src/app/components/Our-Services3/page";
 
-export default function Space() {
+export default function Joinery() {
   // Tabs for Designing & Space Planning
   const tabs = useMemo(
     () => [
       {
         key: "concept",
-        title: "Architectural & Interior Drawings",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space5.jpg",
+        title: "Bespoke Furniture & Cabinetry",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/stands.png",
       },
       {
         key: "planning",
-        title: "MEP Drawings for Compliance",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/MEP.jpeg",
+        title: "Wooden Partitions & Panels",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/fit.jpg",
       },
       {
         key: "ergonomics",
-        title: "Authority Submissions & Follow-Ups",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space3.jpg",
+        title: "Reception Counters & Wardrobes",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/counter.jpg",
       },
       {
         key: "renders",
-        title: "Regulation Advisory",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space2.jpg",
+        title: "Shelving & Display Units",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/shelves.jpeg",
       },
       {
         key: "sustainability",
-        title: "Fast-Track Approvals",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space.png",
+        title: "Premium Finishes & Materials",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/villa.png",
       },
       {
         key: "furnishing",
-        title: "Revision & Update Handling",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space3.jpg",
+        title: "Custom Joinery Design Solutions",
+        desc: "Functional and aesthetic space dividers.",
+        image: "/images/about3.jpg",
       },
     ],
     []
@@ -56,10 +56,15 @@ export default function Space() {
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
       <section id="hero" className="relative h-[300px] w-full -mt-20">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/cardsImages.jpg')" }} />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/cardsImages.jpg')" }}
+        />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full items-center justify-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">Drawings & Approvals</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">
+            Joinery Works
+          </h1>
         </div>
       </section>
 
@@ -69,10 +74,10 @@ export default function Space() {
           {/* Heading + intro */}
           <header className="mb-6 lg:mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Drawing & <span className="text-[#F58321]">Approvals</span>
+              Joinery<span className="text-[#F58321]"> Works</span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-5xl">
-              We simplify complex approvals so your project moves forward smoothly. Our technical team ensures every document is prepared, submitted, and approved with accuracy and efficiency.
+              Craftsmanship is the foundation of exceptional interiors. Our joinery solutions combine precision, artistry, and durability to create unique elements that elevate your space.
             </p>
           </header>
 
@@ -81,18 +86,24 @@ export default function Space() {
             {/* Image: changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
               <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden rounded-lg ring-1 ring-black/10">
-                <Image key={active.image} src={active.image} alt={active.title} fill sizes="(min-width:1024px) 55vw, 90vw" className="object-cover" priority />
+                <Image
+                  key={active.image}
+                  src={active.image}
+                  alt={active.title}
+                  fill
+                  sizes="(min-width:1024px) 55vw, 90vw"
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
 
             {/* Tabs: mobile row (pills), desktop vertical list with only bottom borders + gap */}
             <div className="order-3 lg:order-2 lg:col-span-5">
               <ul
-                className="
-                  flex gap-3 overflow-x-auto no-scrollbar pb-4
+                className="flex gap-3 overflow-x-auto no-scrollbar pb-4
                   lg:block lg:overflow-visible lg:pb-0
-                  lg:border-b lg:border-gray-200 border-0
-                "
+                  lg:border-b lg:border-gray-200 border-0"
               >
                 {tabs.map((item, idx, arr) => {
                   const isActive = item.key === activeKey;
@@ -109,10 +120,10 @@ export default function Space() {
                       <button
                         type="button"
                         onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={(e) => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
                         className={[
-                          "px-3 py-2 rounded-md text-sm font-semibold", // Added rounded-md for rounded edges
-                          isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900", // Active and inactive state
+                          "px-3 py-2 rounded-none text-sm font-semibold",
+                          isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
                           "shadow-sm ring-1 ring-black/5",
                           "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
                         ].join(" ")}

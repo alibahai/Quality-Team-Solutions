@@ -3,8 +3,8 @@
 import Image from "next/image";
 import React, { useMemo, useState } from "react";
 
-export default function About() {
-  /** Our Values data (from the last section you approved) */
+export default function Demolishing() {
+  // Tabs for Demolishing & Construction
   const values = useMemo(
     () => [
       {
@@ -12,14 +12,14 @@ export default function About() {
         title: "Productivity",
         desc:
           "We streamline processes and remove friction so teams can deliver consistently and at speed.",
-        image: "/images/11.jpg",
+        image: "/images/building.jpg",
       },
       {
         key: "quality",
         title: "Quality",
         desc:
           "We choose to be safe by protecting ourselves and our team — and we never compromise on standards.",
-        image: "/images/11.jpg",
+        image: "/images/counter.jpg",
       },
       {
         key: "excellence",
@@ -33,49 +33,50 @@ export default function About() {
         title: "Integrity",
         desc:
           "We are honest, transparent, and accountable — doing the right thing even when no one is watching.",
-        image: "/images/11.jpg",
+        image: "/images/buildings.jpg",
       },
       {
         key: "learning",
         title: "Learning",
         desc:
           "We improve through feedback, experimentation, and sharing knowledge across teams.",
-        image: "/images/about1.jpg",
+        image: "/images/space3.jpg",
       },
       {
         key: "performance",
         title: "Performance",
         desc:
           "Measured by results. We align on goals and execute with clarity, focus, and discipline.",
-        image: "/images/11.jpg",
+        image: "/images/fire.jpeg",
       },
       {
         key: "customer",
         title: "Customer-Driven",
         desc:
           "We start from user needs and work backward, creating experiences people love to use.",
-        image: "/images/11.jpg",
+        image: "/images/services.jpg",
       },
       {
         key: "honesty",
         title: "Honesty",
         desc:
           "We communicate directly and respectfully, building trust with clients and colleagues.",
-        image: "/images/11.jpg",
+        image: "/images/ex.jpg",
       },
     ],
     []
   );
+
   const [activeValueKey, setActiveValueKey] = useState("quality");
   const activeValue = values.find((v) => v.key === activeValueKey) || values[1];
+
+  // Function to determine if the screen is large enough for hover
+  const isDesktop = typeof window !== "undefined" && window.innerWidth >= 1024;
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-      <section
-        id="hero"
-        className="relative h-[300px] w-full -mt-20"
-      >
+      <section id="hero" className="relative h-[300px] w-full -mt-20">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/images/new4.jpg')" }}
@@ -125,7 +126,7 @@ export default function About() {
               and elegance to reflect your unique vision.
             </p>
 
- {/* 5) Images stacked */}
+            {/* 5) Images stacked */}
             <div className="mt-6 grid grid-cols-1 gap-4">
               <div className="relative h-56 overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
@@ -161,37 +162,34 @@ export default function About() {
               projects are completed on time, within budget, and with uncompromising
               quality, we make every space a true reflection of purpose and style.
             </p>
-
-          
           </div>
 
           {/* Desktop grid */}
           <div className="mt-10 hidden lg:grid lg:grid-cols-12 gap-6">
-          {/* Left: images */}
-          <div className="lg:col-span-6 grid grid-cols-12 gap-4">
-            {/* First image, a bit narrower */}
-            <div className="relative col-span-5 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
-              <Image
-                src="/images/about1.jpg"
-                alt="QTS office display"
-                fill
-                sizes="(min-width:1024px) 20vw, 40vw"
-                className="object-cover"
-                priority
-              />
-            </div>
+            {/* Left: images */}
+            <div className="lg:col-span-6 grid grid-cols-12 gap-4">
+              {/* First image, a bit narrower */}
+              <div className="relative col-span-5 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
+                <Image
+                  src="/images/about1.jpg"
+                  alt="QTS office display"
+                  fill
+                  sizes="(min-width:1024px) 20vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
 
-            {/* Second image, slightly wider */}
-            <div className="relative col-span-7 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
-              <Image
-                src="/images/about2.jpg"
-                alt="Retail interior"
-                fill
-                sizes="(min-width:1024px) 30vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-
+              {/* Second image, slightly wider */}
+              <div className="relative col-span-7 h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg ring-1 ring-black/10">
+                <Image
+                  src="/images/about2.jpg"
+                  alt="Retail interior"
+                  fill
+                  sizes="(min-width:1024px) 30vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
 
             {/* Right: copy */}
@@ -215,148 +213,123 @@ export default function About() {
         </div>
       </section>
 
-   {/* Vision / Mission with background */}
-<section
-  className="w-full relative bg-cover bg-center bg-no-repeat h-auto md:h-[380px]"
-  style={{ backgroundImage: "url('/images/about3.jpg')" }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/50"></div>
+      {/* Vision / Mission with background */}
+      <section
+        className="w-full relative bg-cover bg-center bg-no-repeat h-auto md:h-[380px]"
+        style={{ backgroundImage: "url('/images/about3.jpg')" }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
 
-  <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 md:h-full">
-    {/* Middle line (desktop only) */}
-    <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
-      <div className="w-px bg-white/80" style={{ height: "560px" }} />
-    </div>
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 md:h-full">
+          {/* Middle line (desktop only) */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
+            <div className="w-px bg-white/80" style={{ height: "560px" }} />
+          </div>
 
-    {/* Content: column on mobile, row on md+; absolute only on md+ */}
-    <div className="relative z-10 flex flex-col gap-6 text-white py-8 md:absolute md:inset-x-0 md:bottom-8 md:flex-row md:items-end md:gap-10">
-      {/* Vision */}
-      <div className="w-full md:w-1/2 md:pr-8">
-        <h2 className="text-2xl font-semibold mb-3">Our Vision</h2>
-        <p className="text-base leading-relaxed">
-          We are committed to providing our clients with value-driven and efficient
-          fit-out solutions. At QTS, we believe design has the power to enhance the
-          spaces we live in and, in turn, improve quality of life. Our focus remains on
-          delivering interiors that inspire, endure, and add meaningful value to every
-          project.
-        </p>
-      </div>
+          {/* Content: column on mobile, row on md+; absolute only on md+ */}
+          <div className="relative z-10 flex flex-col gap-6 text-white py-8 md:absolute md:inset-x-0 md:bottom-8 md:flex-row md:items-end md:gap-10">
+            {/* Vision */}
+            <div className="w-full md:w-1/2 md:pr-8">
+              <h2 className="text-2xl font-semibold mb-3">Our Vision</h2>
+              <p className="text-base leading-relaxed">
+                We are committed to providing our clients with value-driven and efficient
+                fit-out solutions. At QTS, we believe design has the power to enhance the
+                spaces we live in and, in turn, improve quality of life. Our focus remains on
+                delivering interiors that inspire, endure, and add meaningful value to every
+                project.
+              </p>
+            </div>
 
-      {/* Mission */}
-      <div className="w-full md:w-1/2 md:pl-8">
-        <h2 className="text-2xl font-semibold mb-3">Our Mission</h2>
-        <p className="text-base leading-relaxed">
-          We are dedicated to providing sustainable solutions that create a positive
-          impact on society. At QTS, we deliver and implement interior design solutions
-          on a global scale, offering clients a complete design experience while
-          leveraging our expertise, knowledge, and strong network of partners and
-          collaborators.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-     {/* Our Values */}
-<section className="w-full">
-  <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
-    <header className="mb-6">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center lg:text-left">
-        Our Values
-      </h2>
-      <p className="mt-2 text-base sm:text-lg text-gray-600 max-w-6xl mb-20 text-center lg:text-left">
-        At QTS, our values define who we are and how we work. They guide our
-        commitment to creating interiors that are not only beautiful but functional,
-        ethical, and sustainable. Each value reflects our promise to clients,
-        employees, and partners — ensuring excellence at every step.
-      </p>
-    </header>
-
-    <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
-      {/* Image first on mobile, second on desktop */}
-      <div className="order-1 lg:order-2 lg:col-span-6">
-        <div className="relative h-72 sm:h-96 lg:h-[33rem] overflow-hidden rounded-lg">
-          <Image
-            key={activeValue.image}
-            src={activeValue.image}
-            alt={activeValue.title}
-            fill
-            sizes="(min-width:1024px) 40vw, 90vw"
-            className="object-cover"
-            priority
-          />
+            {/* Mission */}
+            <div className="w-full md:w-1/2 md:pl-8">
+              <h2 className="text-2xl font-semibold mb-3">Our Mission</h2>
+              <p className="text-base leading-relaxed">
+                We are dedicated to providing sustainable solutions that create a positive
+                impact on society. At QTS, we deliver and implement interior design solutions
+                on a global scale, offering clients a complete design experience while
+                leveraging our expertise, knowledge, and strong network of partners and
+                collaborators.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Links/list: row on mobile, vertical list on desktop */}
-      <div className="order-2 lg:order-1 lg:col-span-6">
-        <ul
-          className="
-            flex gap-3 overflow-x-auto no-scrollbar pb-4   /* space above scrollbar */
-            lg:block lg:gap-0 lg:overflow-visible lg:pb-0  /* desktop reset */
-            lg:border-b lg:border-gray-200 border-0
+      {/* Our Values */}
+      <section className="w-full">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+          <header className="mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center lg:text-left">
+              Our Values
+            </h2>
+            <p className="mt-2 text-base sm:text-lg text-gray-600 max-w-6xl mb-20 text-center lg:text-left">
+              At QTS, our values define who we are and how we work. They guide our
+              commitment to creating interiors that are not only beautiful but functional,
+              ethical, and sustainable. Each value reflects our promise to clients,
+              employees, and partners — ensuring excellence at every step.
+            </p>
+          </header>
 
-          "
-        >
-          {values.map((v, idx) => {
-            const isActive = v.key === activeValueKey;
-            return (
-              <li
-                key={v.key}
-                className={[
-                  "shrink-0",                               // mobile: row pills
-                  "lg:shrink",                              // desktop: normal flow
-                  idx !== values.length - 1 ? "lg:border-b lg:border-gray-200" : "",
-                  "py-0 lg:py-4",
-                ].join(" ")}
-              >
-                <button
-                  type="button"
-                  onClick={() => setActiveValueKey(v.key)}
-                    onMouseEnter={() => setActiveValueKey(v.key)}   // 👈 hover changes image
-                    onFocus={() => setActiveValueKey(v.key)}        // 👈 keyboard focus also changes
-                  className={[
-                    // mobile pill styles (straight edges)
-                    "px-3 py-2 rounded-none text-sm font-semibold",
-                    isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
-                    "shadow-sm ring-1 ring-black/5",
-                    // desktop reset
-                    "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0",
-                    "group w-full text-left",
-                  ].join(" ")}
-                >
-                  {/* Desktop title */}
-                  <div
-                    className={[
-                      "hidden lg:block text-base sm:text-lg font-semibold",
-                      isActive ? "lg:text-[#F58321]" : "lg:text-gray-900",
-                    ].join(" ")}
-                  >
-                    <span className="hidden lg:inline">{v.title}</span>
-                  </div>
+          <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Image first on mobile, second on desktop */}
+            <div className="order-1 lg:order-2 lg:col-span-6">
+              <div className="relative h-72 sm:h-96 lg:h-[33rem] overflow-hidden rounded-lg">
+                <Image
+                  key={activeValue.image}
+                  src={activeValue.image}
+                  alt={activeValue.title}
+                  fill
+                  sizes="(min-width:1024px) 40vw, 90vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
 
-                  {/* Mobile title inside pill */}
-                  <span className="lg:hidden">{v.title}</span>
+            {/* Links/list: row on mobile, vertical list on desktop */}
+            <div className="order-2 lg:order-1 lg:col-span-6">
+              <ul className="flex gap-3 overflow-x-auto no-scrollbar pb-4 lg:block lg:gap-0 lg:overflow-visible lg:pb-0 lg:border-b lg:border-gray-200 border-0">
+                {values.map((v, idx) => {
+                  const isActive = v.key === activeValueKey;
+                  return (
+                    <li key={v.key} className={["shrink-0 lg:shrink", idx !== values.length - 1 ? "lg:border-b lg:border-gray-200" : "", "py-0 lg:py-4"].join(" ")}>
+                      <button
+                        type="button"
+                        onClick={() => setActiveValueKey(v.key)}
+                        onMouseEnter={() => setActiveValueKey(v.key)} // 👈 hover changes image
+                        onFocus={() => setActiveValueKey(v.key)} // 👈 keyboard focus also changes
+                        className={[
+                          "px-3 py-2 rounded-none text-sm font-semibold",
+                          isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
+                          "shadow-sm ring-1 ring-black/5",
+                          "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0",
+                          "group w-full text-left",
+                        ].join(" ")}
+                      >
+                        {/* Desktop title */}
+                        <div className={["hidden lg:block text-base sm:text-lg font-semibold", isActive ? "lg:text-[#F58321]" : "lg:text-gray-900"].join(" ")}>
+                          <span className="hidden lg:inline">{v.title}</span>
+                        </div>
 
-                  {/* Description only on desktop */}
-                  {isActive && (
-                    <p className="hidden lg:block mt-1 text-sm text-gray-600 max-w-2xl">
-                      {v.desc}
-                    </p>
-                  )}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+                        {/* Mobile title inside pill */}
+                        <span className="lg:hidden">{v.title}</span>
 
-
+                        {/* Description only on desktop */}
+                        {isActive && (
+                          <p className="hidden lg:block mt-1 text-sm text-gray-600 max-w-2xl">
+                            {v.desc}
+                          </p>
+                        )}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

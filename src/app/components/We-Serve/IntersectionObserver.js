@@ -91,7 +91,7 @@ export default function SectorWeServe() {
           </h2>
           <h2 className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
             Experience The <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of{" "}
-            <br /> This Platform
+             This Platform
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-600">
             QTS delivers a complete design experience, offering clients access to a wide

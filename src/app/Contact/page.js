@@ -6,6 +6,12 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
 
+  // Dynamic contact values (env or fallbacks)
+  const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE_E164 || "+971568068070";
+  const PHONE_DISPLAY =
+    process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+971 56 806 8070";
+  const EMAIL = process.env.NEXT_PUBLIC_EMAIL || "info@qts-fitout.com";
+
   async function onSubmit(e) {
     e.preventDefault();
     setSubmitting(true);
@@ -16,7 +22,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
       <section
-        id="hero"                     // ✅ lets Navbar detect hero
+        id="hero" // ✅ lets Navbar detect hero
         className="relative h-[300px] w-full -mt-20" // ✅ pull up 80px so hero sits behind fixed navbar
       >
         <div
@@ -33,15 +39,13 @@ export default function ContactPage() {
 
       {/* ============================== */}
       {/* 📱 Mobile-only layout (md:hidden) */}
-      {/* Order: Text -> Form -> Contact info; Map removed */}
       {/* ============================== */}
       <section className="py-16 md:hidden">
         <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 gap-10">
           {/* Text */}
           <div>
             <h2 className="text-2xl font-bold mb-4">
-              Let’s{" "}
-              <span className="text-[#F58321]">Collaborate On Your Next Project</span>
+              Let’s <span className="text-[#F58321]">Collaborate On Your Next Project</span>
             </h2>
             <p className="text-gray-600 mb-6">
               At QTS, we turn conversations into timeless designs.<br />
@@ -123,16 +127,28 @@ export default function ContactPage() {
             </form>
           </div>
 
-          {/* Contact info (map intentionally not shown on mobile) */}
+          {/* Contact info (mobile; map hidden) */}
           <div>
             <ul className="space-y-4 mt-2">
               <li className="flex items-center gap-3 text-gray-700">
                 <Phone className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
-                +971 56 806 8070
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  aria-label={`Call ${PHONE_DISPLAY}`}
+                  className="text-gray-700"
+                >
+                  {PHONE_DISPLAY}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-700">
                 <Mail className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
-                info@qts-fitout.com
+                <a
+                  href={`mailto:${EMAIL}`}
+                  aria-label={`Email ${EMAIL}`}
+                  className="text-gray-700"
+                >
+                  {EMAIL}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-700">
                 <MapPin className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
@@ -144,30 +160,40 @@ export default function ContactPage() {
       </section>
 
       {/* ============================== */}
-      {/* 🖥️ Desktop/Window layout (your original) */}
-      {/* Wrapped in md:block so it only shows on md+; code inside unchanged except icons) */}
+      {/* 🖥️ Desktop/Window layout */}
       {/* ============================== */}
       <section className="py-16 hidden md:block">
         <div className="mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Left column */}
           <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Let’s{" "}
-              <span className="text-[#F58321]">Collaborate On Your Next Project</span>
+              Let’s <span className="text-[#F58321]">Collaborate On Your Next Project</span>
             </h2>
             <p className="text-gray-600 mb-8">
-              At QTS, we turn conversations into timeless designs.<br/> Get in touch
-              and let’s craft a space that defines<br/> elegance and comfort.
+              At QTS, we turn conversations into timeless designs.<br /> Get in touch
+              and let’s craft a space that defines<br /> elegance and comfort.
             </p>
 
             <ul className="space-y-4 mb-6">
               <li className="flex items-center gap-3 text-gray-700">
                 <Phone className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
-                +971 56 806 8070
+                <a
+                  href={`tel:${PHONE_E164}`}
+                  aria-label={`Call ${PHONE_DISPLAY}`}
+                  className="text-gray-700"
+                >
+                  {PHONE_DISPLAY}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-700">
                 <Mail className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
-                info@qts-fitout.com
+                <a
+                  href={`mailto:${EMAIL}`}
+                  aria-label={`Email ${EMAIL}`}
+                  className="text-gray-700"
+                >
+                  {EMAIL}
+                </a>
               </li>
               <li className="flex items-center gap-3 text-gray-700">
                 <MapPin className="shrink-0 text-[#F58321] w-6 h-6" strokeWidth={1.8} aria-hidden="true" />
@@ -175,8 +201,8 @@ export default function ContactPage() {
               </li>
             </ul>
 
-            {/* Map (desktop only, as you had it) */}
-            <div className="w-full h-90 rounded-lg overflow-hidden border"> {/* ✅ taller map */}
+            {/* Map (desktop only) */}
+            <div className="w-full h-90 rounded-lg overflow-hidden border">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115837.33475961476!2d55.17128!3d25.093077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f4343e69c8b11%3A0x92f0bbfc7d82e9a4!2sBusiness%20Bay%20-%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000"
                 width="100%"

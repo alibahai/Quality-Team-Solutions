@@ -8,11 +8,11 @@ export default function DesignExperts({
 }) {
   const members = useMemo(
     () => [
-      { key: "omar",  name: "Omar Sheikh",  role: "Senior Architect",                image: "/images/Omar.jpg" },
-      { key: "sara",  name: "Sara Malik",   role: "Lighting Specialist",             image: "/images/Omar.jpg" },
-      { key: "amina", name: "Amina Zahra",  role: "3D Visualization Artist",         image: "/images/Omar.jpg" },
-      { key: "karim", name: "Karim Haddad", role: "Furniture & Material Consultant", image: "/images/Omar.jpg" },
-      { key: "layla", name: "Layla Al-Farouq", role: "Interior Designer",            image: "/images/Omar.jpg" },
+      { key: "omar", name: "Omar Sheikh", role: "Senior Architect", image: "/images/Omar.jpg" },
+      { key: "sara", name: "Sara Malik", role: "Lighting Specialist", image: "/images/Omar.jpg" },
+      { key: "amina", name: "Amina Zahra", role: "3D Visualization Artist", image: "/images/Omar.jpg" },
+      { key: "karim", name: "Karim Haddad", role: "Furniture & Material Consultant", image: "/images/sheikh1.jpg" },
+      { key: "layla", name: "Layla Al-Farouq", role: "Interior Designer", image: "/images/Omar.jpg" },
     ],
     []
   );
@@ -44,7 +44,7 @@ export default function DesignExperts({
               OUR DESIGN EXPERTS
             </h2>
             <p className="mt-2 text-xl sm:text-3xl  leading-tight text-white">
-              The <span className="text-[#F58321]">Creative Force</span> Behind Our Work <br/> Is Unmatched
+              The <span className="text-[#F58321]">Creative Force</span> Behind Our Work <br /> Is Unmatched
             </p>
             <p className="mt-3 text-base sm:text-lg text-white/80">
               Our team of passionate designers, architects, and specialists bring together
@@ -70,7 +70,8 @@ export default function DesignExperts({
             </p>
           </div>
 
-          {/* ===== MOBILE/TABLET LAYOUT ===== */}
+         
+              {/* ===== MOBILE/TABLET LAYOUT ===== */}
           {/* Image first, then the 4 links as a single-row grid with underline */}
           <div className="mt-8 lg:hidden">
             {/* Active portrait */}
@@ -86,37 +87,36 @@ export default function DesignExperts({
               />
             </div>
 
-            {/* Links row: grid of 4, name + underline that turns orange when active */}
-            <ul className="mt-6 grid grid-cols-4 gap-3 text-center">
-              {members.slice(0, 4).map((m) => {
-                const isActive = m.key === activeKey;
-                return (
-                  <li key={m.key}>
-                    <button
-                      type="button"
-                      /* hover/focus only — click removed */
-                      onMouseEnter={() => setActiveKey(m.key)}
-                      onFocus={() => setActiveKey(m.key)}
-                      className={[
-                        "px-3 py-2 rounded-none text-sm font-semibold",
-                        isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
-                        "shadow-sm ring-1 ring-black/5",
-                        "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
-                      ].join(" ")}
-                    >
-                      <span
-                        className={`block text-xs sm:text-sm font-semibold transition-colors ${
-                          isActive ? "text-[#F58321]" : "text-white"
-                        }`}
-                      >
-                        {m.name}
-                      </span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+  {/* Links row: grid of 4, name + underline that turns orange when active */}
+  <ul className="mt-6 grid grid-cols-4 gap-3 text-center">
+    {members.slice(0, 4).map((m) => {
+      const isActive = m.key === activeKey;
+      return (
+        <li key={m.key}>
+          <button
+            type="button"
+            onClick={() => setActiveKey(m.key)} // Use only onClick for mobile
+            className={[
+              "px-3 py-2 rounded-md text-sm font-semibold",
+              isActive ? "bg-[#F58321] text-gray-900" : "bg-white text-gray-900", // Fix: Ensure active text is black (text-gray-900)
+              "shadow-sm ring-1 ring-black/5",
+              "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
+            ].join(" ")}
+          >
+            <span
+              className={`block text-xs sm:text-sm font-semibold transition-colors ${
+                isActive ? "text-white" : "text-gray-900" // When active, text is white, otherwise it's gray
+              }`}
+            >
+              {m.name}
+            </span>
+          </button>
+        </li>
+      );
+    })}
+  </ul>
+</div>
+
 
           {/* ===== DESKTOP LAYOUT ===== */}
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-1">
@@ -129,9 +129,8 @@ export default function DesignExperts({
                     <li key={m.key} className="relative py-5 sm:py-6">
                       <button
                         type="button"
-                        /* hover/focus only — click removed */
-                        onMouseEnter={() => setActiveKey(m.key)}
-                        onFocus={() => setActiveKey(m.key)}
+                        onMouseEnter={() => setActiveKey(m.key)} // Hover behavior for desktop
+                        onFocus={() => setActiveKey(m.key)} // Ensures accessibility for keyboard navigation
                         className="group w-full text-left"
                       >
                         <div className="flex items-center justify-between">
@@ -146,15 +145,13 @@ export default function DesignExperts({
                           </span>
                         </div>
                         <p
-                          className={`mt-1.5 text-sm ${
-                            isActive ? "text-white/85" : "text-white/65"
-                          }`}
+                          className={`mt-1.5 text-sm ${isActive ? "text-white/85" : "text-white/65"}`}
                         >
                           {m.role}
                         </p>
                       </button>
 
-                      {/* underline (white → orange if active) */}
+                      {/* Underline (changes to orange when active) */}
                       <span
                         className={`absolute bottom-0 left-0 h-[2px] w-3/4 sm:w-2/3 transition-colors duration-300 ${
                           isActive ? "bg-[#F58321]" : "bg-white"

@@ -43,12 +43,12 @@ const IconBuilding = (p) => (
 
 /* ================= DATA ================= */
 const SERVICES = [
-  { title: "Design & Space Planning", Icon: IconBook, href: "/components/space" },
-  { title: "Joinery Works", Icon: IconPencil, href: "/components/Joinery" },
-  { title: "Drawings & Approvals", Icon: IconCompass, href: "/components/Drawing" },
-  { title: "MEP Works", Icon: IconGauge, href: "/components/Mep" },
-  { title: "Turnkey Fit-Outs", Icon: IconBarcode, href: "/components/Turnkey" },
-  { title: "Demolition, Construction & Refurbishment", Icon: IconBuilding, href: "/components/Demolishing" },
+  { title: "Design & Space Planning", Icon: IconBook, href: "/Servicess/Design-Drawings" },
+  { title: "Joinery Works", Icon: IconPencil, href: "/Servicess/Joinery-work" },
+  { title: "Drawings & Approvals", Icon: IconCompass, href: "/Servicess/Drawings-Approvals" },
+  { title: "MEP Works", Icon: IconGauge, href: "/Servicess/Mep" },
+  { title: "Turnkey Fit-Outs", Icon: IconBarcode, href: "/Servicess/Turnkey-Fit" },
+  { title: "Demolition, Construction & Refurbishment", Icon: IconBuilding, href: "/Servicess/Demolishing" },
 ];
 
 export default function Navbar({
@@ -257,7 +257,7 @@ export default function Navbar({
             <li>
               <Link
                 href="/Contact"
-                className="px-4 py-2 rounded-md text-white font-medium"
+                className="px-4 py-2 bg-red-600 rounded-md text-white font-medium"
               >
                 Contact Us
               </Link>
@@ -401,7 +401,7 @@ export default function Navbar({
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between text-base font-medium hover:text-white/80"
               >
-                <span>Contact Us</span>
+                {/* <span>Contact Us</span> */}
               </Link>
             </li>
           </ul>
@@ -421,15 +421,15 @@ export default function Navbar({
           ) : null}
 
           {/* CTA */}
-          {/* <div className="mt-8">
+          <div className="mt-8">
             <Link
               href="/Contact"
               onClick={() => setOpen(false)}
-              className="block w-full text-center rounded-md bg-gradient-to-r from-[#F58321] to-red-600 py-3 text-white font-semibold shadow hover:opacity-95 active:opacity-90"
+              className="block w-full text-center rounded-md bg-red-600 py-3 text-white font-semibold shadow hover:opacity-95 active:opacity-90"
             >
               Contact Us
             </Link>
-          </div> */}
+          </div>
         </nav>
       </aside>
     </>
