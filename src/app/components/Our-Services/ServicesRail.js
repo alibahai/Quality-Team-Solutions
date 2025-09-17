@@ -29,9 +29,11 @@ export default function ServicesRail({
   const [paused, setPaused] = useState(false);            // only used on mobile
 
   // 👉 MOBILE: show only first 3 cards and REMOVE "Design & Space"
-  const mobileServices = services
-    .filter((s) => s.title !== "Design & Space")
-    .slice(0, 3);
+ // 👉 MOBILE: show only first 3 cards and REMOVE "Drawings & Approvals"
+const mobileServices = services
+  .filter((s) => s.title !== "Drawings & Approvals")
+  .slice(0, 2);
+
 
   const displayed = isMobile ? mobileServices : services;
   const doubled = [...displayed, ...displayed];
@@ -140,7 +142,7 @@ export default function ServicesRail({
   }, [paused, speed]);
 
   // Decide cards-per-row and widthScale per breakpoint
-  const cardsPer = isMobile ? 3 : visibleCards;
+const cardsPer = isMobile ? Math.min(3, displayed.length) : visibleCards;
   const scale = isMobile ? mobileWidthScale : widthScale;
 
   const LONG_TITLES = new Set([

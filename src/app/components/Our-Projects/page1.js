@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function ServicesRailExact({
   title = "OUR PROJECTS",     // controls first heading
-  showSecondary = true,       // 👈 add this
+  showSecondary = true,
   services = DEFAULT_SERVICES,
   speed = 70,
   visibleCards = 4,
@@ -15,7 +15,10 @@ export default function ServicesRailExact({
   const trackRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  const doubled = [...services, ...services];
+  // ✅ Only 2 cards on mobile; all cards on desktop
+  const displayed = isMobile ? services.slice(0, 2) : services;
+  const doubled = [...displayed, ...displayed];
+
   const GAP_PX = 24;
 
   useEffect(() => {
@@ -59,10 +62,11 @@ export default function ServicesRailExact({
 
     rafId = requestAnimationFrame(step);
     return () => cancelAnimationFrame(rafId);
-  }, [speed]);
+  }, [speed, displayed.length]);
 
-  const cardsPerViewport = isMobile ? 3 : visibleCards;
-  const scale = isMobile ? 1.05 : widthScale;
+  // ✅ Use the actual mobile count (2) so the cards expand
+  const cardsPerViewport = isMobile ? displayed.length : visibleCards;
+  const scale = isMobile ? 1 : widthScale;
 
   return (
     <section className="w-full overflow-hidden">
@@ -106,7 +110,7 @@ export default function ServicesRailExact({
         </div>
       </div>
 
-      {/* --- rail stays the same --- */}
+      {/* --- rail --- */}
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
         <div className="relative overflow-hidden">
           <ul
@@ -130,17 +134,18 @@ export default function ServicesRailExact({
                 </div>
               );
 
+              // ✅ Mobile-friendly text (smaller, centered)
+              const titleClass = isMobile
+                ? "text-sm font-semibold text-gray-900"
+                : "text-base sm:text-lg font-semibold text-gray-900";
+              const metaClass = isMobile ? "text-xs text-gray-500" : "text-sm text-gray-500";
+              const textWrap = isMobile ? "text-center" : "text-center lg:text-left";
+
               const TitleBlock = (
-                <div className="mt-3 px-1 text-center lg:text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">
-                    {item.title}
-                  </h3>
-                  {item.location && (
-                    <p className="text-sm text-gray-500">{item.location}</p>
-                  )}
-                  {item.year && (
-                    <p className="text-sm text-gray-500">{item.year}</p>
-                  )}
+                <div className={`mt-2 px-1 ${textWrap}`}>
+                  <h3 className={titleClass}>{item.title}</h3>
+                  {item.location && <p className={metaClass}>{item.location}</p>}
+                  {item.year && <p className={metaClass}>{item.year}</p>}
                 </div>
               );
 
@@ -151,16 +156,12 @@ export default function ServicesRailExact({
                   aria-label={item.title}
                 >
                   {CardMedia}
-                  <div className="mt-3 px-1 text-center lg:text-left">
-                    <span className="text-base sm:text-lg font-semibold text-gray-900 underline-offset-4 group-hover:underline">
+                  <div className={`mt-2 px-1 ${textWrap}`}>
+                    <span className={`${titleClass} underline-offset-4 group-hover:underline`}>
                       {item.title}
                     </span>
-                    {item.location && (
-                      <p className="text-sm text-gray-500">{item.location}</p>
-                    )}
-                    {item.year && (
-                      <p className="text-sm text-gray-500">{item.year}</p>
-                    )}
+                    {item.location && <p className={metaClass}>{item.location}</p>}
+                    {item.year && <p className={metaClass}>{item.year}</p>}
                   </div>
                 </Link>
               ) : (

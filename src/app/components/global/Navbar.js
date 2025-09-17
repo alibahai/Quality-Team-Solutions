@@ -51,21 +51,30 @@ const SERVICES = [
   { title: "Demolition, Construction & Refurbishment", Icon: IconBuilding, href: "/Servicess/Demolishing" },
 ];
 
+/** Separate data for Our Support (mirrors Services for now — edit later) */
+const SUPPORT = [
+  { title: "Arabian Oud", Icon: IconBook, href: "/Our-Project/Arabian-Oud" },
+  { title: "Galaxy Hockey", Icon: IconPencil, href: "/Our-Project/Galaxy-Hockey" },
+  { title: "Hashim Villa", Icon: IconCompass, href: "/Our-Project/Hashim-Villa" },
+  { title: "Jorgee", Icon: IconGauge, href: "/Our-Project/Jorgee" },
+ 
+];
+
 export default function Navbar({
   firstSectionId = "hero",
   includeSpacer = true,
   videoSrc = "",
 }) {
-  const [open, setOpen] = useState(false);           // mobile drawer
-  const [openMenu, setOpenMenu] = useState("none");  // desktop services popover
-  const [mServices, setMServices] = useState(false); // mobile services accordion
+  const [open, setOpen] = useState(false);                // mobile drawer
+  const [openMenu, setOpenMenu] = useState("none");       // "none" | "services" | "support"
+  const [mServices, setMServices] = useState(false);      // mobile services accordion
+  const [mSupport, setMSupport] = useState(false);        // mobile support accordion
   const [showBg, setShowBg] = useState(false);
 
   const navRef = useRef(null);
   const thresholdRef = useRef(80);
   const closeTimerRef = useRef(null);
   const pathname = usePathname();
-  const servicesRef = useRef(null);
 
   /* ===== Scroll background ===== */
   useEffect(() => {
@@ -106,6 +115,7 @@ export default function Navbar({
       setOpen(false);
       setOpenMenu("none");
       setMServices(false);
+      setMSupport(false);
     }
   }, []);
   useEffect(() => {
@@ -124,7 +134,7 @@ export default function Navbar({
     };
   }, [open]);
 
-  /* ===== Desktop hover delay (services only) ===== */
+  /* ===== Desktop hover delay for popovers ===== */
   const clearCloseTimer = () => {
     if (closeTimerRef.current) {
       window.clearTimeout(closeTimerRef.current);
@@ -133,12 +143,40 @@ export default function Navbar({
   };
   const scheduleClose = () => {
     clearCloseTimer();
-    closeTimerRef.current = window.setTimeout(() => {
-      setOpenMenu("none");
-    }, 160);
+    closeTimerRef.current = window.setTimeout(() => setOpenMenu("none"), 160);
   };
 
   const LOGO_SRC = "/images/2.png";
+
+  /** Reusable dropdown panel */
+  const Dropdown = ({ id, open, items }) => (
+    <div
+      id={id}
+      role="menu"
+      aria-label={id}
+      className={`${
+        open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+      } absolute left-1/2 top-full -translate-x-1/2 mt-4 z-[60] w-[720px]
+         rounded-2xl bg-gray-800 text-white shadow-2xl transition duration-150 origin-top`}
+    >
+      <div className="p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-x-10 gap-y-3">
+          {items.map(({ title, Icon, href }, i) => (
+            <Link
+              key={i}
+              href={href}
+              role="menuitem"
+              className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
+              onClick={() => setOpenMenu("none")}
+            >
+              <Icon className="h-6 w-6" />
+              <span className="text-sm font-medium leading-snug">{title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -183,9 +221,8 @@ export default function Navbar({
               </Link>
             </li>
 
-            {/* Desktop Services dropdown (gray bg, white text, hover red, bigger icons, no circles) */}
+            {/* Desktop: Services */}
             <li
-              ref={servicesRef}
               className="relative"
               onMouseEnter={() => {
                 clearCloseTimer();
@@ -215,33 +252,7 @@ export default function Navbar({
                   <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
                 </svg>
               </button>
-
-              <div
-                id="services-menu"
-                role="menu"
-                aria-label="Services"
-                className={`${
-                  openMenu === "services" ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
-                } absolute left-1/2 top-full -translate-x-1/2 mt-4 z-[60] w-[720px]
-                   rounded-2xl bg-gray-800 text-white shadow-2xl transition duration-150 origin-top`}
-              >
-                <div className="p-4 sm:p-5">
-                  <div className="grid grid-cols-2 gap-x-10 gap-y-3">
-                    {SERVICES.map(({ title, Icon, href }, i) => (
-                      <Link
-                        key={i}
-                        href={href}
-                        role="menuitem"
-                        className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
-                        onClick={() => setOpenMenu("none")}
-                      >
-                        <Icon className="h-6 w-6" />
-                        <span className="text-sm font-medium leading-snug">{title}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <Dropdown id="services-menu" open={openMenu === "services"} items={SERVICES} />
             </li>
 
             <li>
@@ -253,7 +264,41 @@ export default function Navbar({
               </Link>
             </li>
 
-            {/* Contact Us simple button (NO dropdown on desktop) */}
+            {/* Desktop: Our Support */}
+            <li
+              className="relative"
+              onMouseEnter={() => {
+                clearCloseTimer();
+                setOpenMenu("support");
+              }}
+              onMouseLeave={scheduleClose}
+            >
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={openMenu === "support"}
+                aria-controls="support-menu"
+                onClick={() =>
+                  setOpenMenu(openMenu === "support" ? "none" : "support")
+                }
+                className="inline-flex items-center gap-1 text-sm xl:text-base font-medium tracking-wide transition hover:text-white/80"
+              >
+                Our Support
+                <svg
+                  aria-hidden="true"
+                  className={`h-3.5 w-3.5 opacity-90 transition-transform ${
+                    openMenu === "support" ? "rotate-180" : ""
+                  }`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+                </svg>
+              </button>
+              <Dropdown id="support-menu" open={openMenu === "support"} items={SUPPORT} />
+            </li>
+
+            {/* Contact Us simple button */}
             <li>
               <Link
                 href="/Contact"
@@ -330,7 +375,7 @@ export default function Navbar({
         </div>
 
         {/* Drawer content */}
-<nav className="px-4 py-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
+        <nav className="px-4 py-6 overflow-y-auto max-h-[calc(100vh-4rem)]">
           <ul className="space-y-4">
             {/* Home */}
             <li>
@@ -343,7 +388,7 @@ export default function Navbar({
               </Link>
             </li>
 
-            {/* Services (MOBILE — the ONLY dropdown/accordion) */}
+            {/* Services (MOBILE) */}
             <li>
               <button
                 type="button"
@@ -383,6 +428,46 @@ export default function Navbar({
               </div>
             </li>
 
+            {/* Our Support (MOBILE) */}
+            <li>
+              <button
+                type="button"
+                onClick={() => setMSupport((v) => !v)}
+                className="w-full flex items-center justify-between text-base font-medium hover:text-white/80"
+                aria-expanded={mSupport}
+                aria-controls="m-support"
+              >
+                <span>Our Support</span>
+                <svg
+                  aria-hidden="true"
+                  className={`h-4 w-4 transition-transform ${mSupport ? "rotate-180" : ""}`}
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+                </svg>
+              </button>
+
+              <div
+                id="m-support"
+                className={`overflow-hidden transition-all duration-200 ${mSupport ? "max-h-[1000px] mt-3" : "max-h-0"}`}
+              >
+                <div className="grid grid-cols-1 gap-2">
+                  {SUPPORT.map(({ title, Icon, href }, i) => (
+                    <Link
+                      key={i}
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className="group flex items-center gap-3 rounded-lg p-2.5 hover:bg-red-600"
+                    >
+                      <Icon className="h-6 w-6" />
+                      <span className="text-sm font-medium">{title}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </li>
+
             {/* About */}
             <li>
               <Link
@@ -394,14 +479,14 @@ export default function Navbar({
               </Link>
             </li>
 
-            {/* Contact — SIMPLE LINK (no dropdown on mobile) */}
+            {/* Contact */}
             <li>
               <Link
                 href="/Contact"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between text-base font-medium hover:text-white/80"
               >
-                {/* <span>Contact Us</span> */}
+                <span>Contact Us</span>
               </Link>
             </li>
           </ul>
