@@ -255,14 +255,6 @@ export default function Navbar({
               <Dropdown id="services-menu" open={openMenu === "services"} items={SERVICES} />
             </li>
 
-            <li>
-              <Link
-                href="/About"
-                className="inline-flex items-center gap-1 text-sm xl:text-base font-medium tracking-wide transition hover:text-white/80"
-              >
-                About Us
-              </Link>
-            </li>
 
             {/* Desktop: Our Support */}
             <li
@@ -297,6 +289,17 @@ export default function Navbar({
               </button>
               <Dropdown id="support-menu" open={openMenu === "support"} items={SUPPORT} />
             </li>
+
+
+           <li>
+              <Link
+                href="/About"
+                className="inline-flex items-center gap-1 text-sm xl:text-base font-medium tracking-wide transition hover:text-white/80"
+              >
+                About Us
+              </Link>
+            </li>
+
 
             {/* Contact Us simple button */}
             <li>
@@ -486,7 +489,7 @@ export default function Navbar({
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between text-base font-medium hover:text-white/80"
               >
-                <span>Contact Us</span>
+                {/* <span>Contact Us</span> */}
               </Link>
             </li>
           </ul>
