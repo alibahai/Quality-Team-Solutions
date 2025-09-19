@@ -2,7 +2,7 @@ import LeftServicesRail from "../rails/LeftServicesRail";
 import RightContactRail from "../rails/RightContactRail";
 
 export default function HeroVideo() {
-  const VIDEO_SRC = "/videos/QTS.mp4";
+  const VIDEO_SRC = "https://res.cloudinary.com/dwwibqeao/video/upload/4_ei6xcd.mp4";
   const POSTER_SRC = "/images/2ndImage.jpg";
 
   return (
