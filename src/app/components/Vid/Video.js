@@ -2,7 +2,7 @@
 
 
 export default function Video({
-  src = "/videos/4.mp4",
+  src = "https://res.cloudinary.com/dwwibqeao/video/upload/4_ei6xcd.mp4",
   poster = "/images/2ndImage.jpg",
   autoPlay = true,
   loop = true,
@@ -25,7 +25,7 @@ export default function Video({
         controls={controls}
         aria-hidden={true}
       >
-        <source src={src} type="video/mp4" />
+        <source src={src} />
         Your browser does not support the video tag.
       </video>
 
