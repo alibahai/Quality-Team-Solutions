@@ -44,28 +44,28 @@ export default function SectorWeServe() {
         key: "ceiling",
         title: "Ceiling & Partitions",
         blurb:
-          "Suspended ceilings, acoustic panels, and fire-rated partitions.Clean lines that improve acoustics, privacy, and services access.",
+          "Suspended ceilings, acoustic panels, and partitions.",
         image: "/images/stands.png",
       },
       {
         key: "fitout",
         title: "Fitout Interior & MEP Services",
         blurb:
-          "Turnkey interiors fully integrated with MEP.Coordinated delivery for safety, efficiency, and compliance.",
+          "Turnkey interiors fully integrated with MEP.",
         image: "/images/residential.jpg",
       },
       {
         key: "gym",
         title: "Gym Fitout",
         blurb:
-          "Shock-absorbing floors, mirrors, and ventilation.Zoned layouts for cardio, strength, and studios with brand energy.",
+          "Shock-absorbing floors, mirrors, and ventilation.",
         image: "/images/outdoor.png",
       },
       {
         key: "office",
         title: "Office Fitout",
         blurb:
-          "Ergonomic workstations, meeting rooms, and acoustic control.Agile layouts with power/data, storage, and biophilic touches.",
+          "Ergonomic workstations, meeting rooms, and  control.",
         image: "/images/retail.png",
       },
 
@@ -73,7 +73,7 @@ export default function SectorWeServe() {
         key: "restaurant",
         title: "Restaurant Fitout",
         blurb:
-          "Kitchen-fronts, hygienic finishes, and guest flow.Ambient lighting, HVAC balance, and code-compliant materials.",
+          "Kitchen-fronts, hygienic finishes, and guest flow.",
         image: "/images/retail.png",
       },
 
@@ -81,7 +81,7 @@ export default function SectorWeServe() {
         key: "residential",
         title: "Residential Fitout",
         blurb:
-          "Bespoke cabinetry, premium finishes, and smart storage.Comfort-first planning with intelligent lighting and climate.",
+          "Bespoke cabinetry, premium finishes, and smart storage.",
         image: "/images/retail.png",
       },
 
@@ -89,7 +89,7 @@ export default function SectorWeServe() {
         key: "retail",
         title: "Retail Fitout",
         blurb:
-          "Modular displays, cashwraps, and visual merchandising.Lighting that sells, tidy back-of-house, and security readiness.",
+          "Modular displays, cashwraps, and visual merchandising.",
         image: "/images/retail.png",
       },
 
@@ -146,7 +146,7 @@ export default function SectorWeServe() {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left image */}
           <div className="lg:col-span-7 mt-6">
-            <div className="relative h-72 sm:h-96 lg:h-[40rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+            <div className="relative h-72 sm:h-96 lg:h-[36.5rem] overflow-hidden rounded-lg ring-1 ring-black/10">
               <Image
                 key={active.image}
                 src={active.image}

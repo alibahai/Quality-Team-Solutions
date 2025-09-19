@@ -35,26 +35,51 @@ export default function RightContactRail({
   }, [footerSelector]);
 
   return (
-    <div
-      ref={railRef}
-      className="hidden md:block fixed right-0 z-40"
-      style={{ top: "50%", transform: `translateY(calc(-50% - ${pushUp}px))` }}
-    >
+    <>
+      {/* ✅ Desktop vertical rail (unchanged) */}
+      <div
+        ref={railRef}
+        className="hidden md:block fixed right-0 z-40"
+        style={{ top: "50%", transform: `translateY(calc(-50% - ${pushUp}px))` }}
+      >
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`WhatsApp ${phone}`}
+          className="flex flex-col items-center justify-center h-48 w-12 bg-[red] text-white shadow-md rounded-l-md"
+        >
+          {/* number (vertical) */}
+          <span className="text-sm font-semibold tracking-wider [writing-mode:vertical-rl] rotate-180">
+            {phone}
+          </span>
+
+          {/* icon below */}
+          <Icon icon="ic:round-whatsapp" className="mt-2 h-5 w-5" />
+        </a>
+      </div>
+
+      {/* ✅ Mobile floating button (fixed so it moves with scroll) */}
       <a
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`WhatsApp ${phone}`}
-        className="flex flex-col items-center justify-center h-48 w-12 bg-[red] text-white shadow-md rounded-l-md"
+        className="
+          md:hidden
+          fixed
+          right-4
+          z-50
+          inline-flex h-12 w-12 items-center justify-center
+          rounded-full bg-green-500 shadow-lg
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-600
+        "
+        // Safe-area friendly bottom spacing on iOS
+        style={{ bottom: "calc(16px + env(safe-area-inset-bottom))" }}
       >
-        {/* number (vertical) */}
-        <span className="text-sm font-semibold tracking-wider [writing-mode:vertical-rl] rotate-180">
-          {phone}
-        </span>
-
-        {/* icon below */}
-        <Icon icon="ic:round-whatsapp" className="mt-2 h-5 w-5" />
+        <Icon icon="ic:round-whatsapp" className="h-7 w-7 text-white" />
+        <span className="sr-only">Open WhatsApp</span>
       </a>
-    </div>
+    </>
   );
 }
