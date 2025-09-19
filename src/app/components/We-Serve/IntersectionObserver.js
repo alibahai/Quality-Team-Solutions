@@ -146,7 +146,7 @@ export default function SectorWeServe() {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left image */}
           <div className="lg:col-span-7 mt-6">
-            <div className="relative h-72 sm:h-96 lg:h-[39rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+            <div className="relative h-72 sm:h-96 lg:h-[40rem] overflow-hidden rounded-lg ring-1 ring-black/10">
               <Image
                 key={active.image}
                 src={active.image}
