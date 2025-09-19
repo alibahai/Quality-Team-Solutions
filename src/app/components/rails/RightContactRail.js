@@ -1,37 +1,59 @@
+"use client";
 
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
-
 
 export default function RightContactRail({
   phone = "+971 56 806 8070",
   whatsappHref = "https://wa.me/971568068070",
+  footerSelector = "footer", // change to "#site-footer" if your footer isn't a <footer>
 }) {
+  const railRef = useRef(null);
+  const [pushUp, setPushUp] = useState(0); // how much to push up when footer is visible
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const btn = railRef.current;
+    const footer = document.querySelector(footerSelector);
+    if (!btn || !footer) return;
+
+    const calc = () => {
+      const footerTop = footer.getBoundingClientRect().top;
+      const btnRect = btn.getBoundingClientRect();
+      const overlap = btnRect.bottom - footerTop; // > 0 means overlapping footer
+      setPushUp(overlap > 0 ? overlap + 12 : 0); // keep a 12px gap above footer
+    };
+
+    calc();
+    window.addEventListener("scroll", calc, { passive: true });
+    window.addEventListener("resize", calc);
+    return () => {
+      window.removeEventListener("scroll", calc);
+      window.removeEventListener("resize", calc);
+    };
+  }, [footerSelector]);
+
   return (
-    <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden md:block z-30 mt-12">
+    <div
+      ref={railRef}
+      className="hidden md:block fixed right-0 z-40"
+      style={{ top: "50%", transform: `translateY(calc(-50% - ${pushUp}px))` }}
+    >
       <a
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`WhatsApp ${phone}`}
-        className="flex h-48 w-12 items-center justify-center bg-red-600 text-white shadow-md [writing-mode:vertical-rl] rotate-180"
-        style={{
-          writingMode: "vertical-rl",
-          borderRadius: 2, // small round edges on all four sides
-        }}
+        className="flex flex-col items-center justify-center h-48 w-12 bg-[red] text-white shadow-md rounded-l-md"
       >
-        {/* number first */}
-        <span className="text-sm font-semibold tracking-wider mb-2">
+        {/* number (vertical) */}
+        <span className="text-sm font-semibold tracking-wider [writing-mode:vertical-rl] rotate-180">
           {phone}
         </span>
 
         {/* icon below */}
-        <svg
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          className="h-5 w-5 self-center rotate-180"
-          aria-hidden="true"
-        >
-<Icon icon="ic:round-whatsapp" width="24" height="24" />        </svg>
+        <Icon icon="ic:round-whatsapp" className="mt-2 h-5 w-5" />
       </a>
     </div>
   );
