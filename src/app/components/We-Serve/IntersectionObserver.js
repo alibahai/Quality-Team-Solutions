@@ -41,33 +41,59 @@ export default function SectorWeServe() {
   const services = useMemo(
     () => [
       {
-        key: "exhibition",
-        title: "Exhibition Stands",
+        key: "ceiling",
+        title: "Ceiling & Partitions",
         blurb:
-          "Premium booths with brand-first design and modular builds. A great environment for everyone.",
+          "Suspended ceilings, acoustic panels, and fire-rated partitions.Clean lines that improve acoustics, privacy, and services access.",
         image: "/images/stands.png",
       },
       {
-        key: "residential",
-        title: "Residential Interior Works",
+        key: "fitout",
+        title: "Fitout Interior & MEP Services",
         blurb:
-          "Residential interior solutions that transform homes into beautiful, functional living spaces.",
+          "Turnkey interiors fully integrated with MEP.Coordinated delivery for safety, efficiency, and compliance.",
         image: "/images/residential.jpg",
       },
       {
-        key: "outdoor",
-        title: "Outdoor Restaurants",
+        key: "gym",
+        title: "Gym Fitout",
         blurb:
-          "Alfresco dining spaces with durable materials and ambiance lighting.",
+          "Shock-absorbing floors, mirrors, and ventilation.Zoned layouts for cardio, strength, and studios with brand energy.",
         image: "/images/outdoor.png",
       },
       {
-        key: "retail",
-        title: "Retail Stores",
+        key: "office",
+        title: "Office Fitout",
         blurb:
-          "Shop-fit works focused on circulation, merchandising and brand recall.",
+          "Ergonomic workstations, meeting rooms, and acoustic control.Agile layouts with power/data, storage, and biophilic touches.",
         image: "/images/retail.png",
       },
+
+      {
+        key: "restaurant",
+        title: "Restaurant Fitout",
+        blurb:
+          "Kitchen-fronts, hygienic finishes, and guest flow.Ambient lighting, HVAC balance, and code-compliant materials.",
+        image: "/images/retail.png",
+      },
+
+      {
+        key: "residential",
+        title: "Residential Fitout",
+        blurb:
+          "Bespoke cabinetry, premium finishes, and smart storage.Comfort-first planning with intelligent lighting and climate.",
+        image: "/images/retail.png",
+      },
+
+      {
+        key: "retail",
+        title: "Retail Fitout",
+        blurb:
+          "Modular displays, cashwraps, and visual merchandising.Lighting that sells, tidy back-of-house, and security readiness.",
+        image: "/images/retail.png",
+      },
+
+
     ],
     []
   );
@@ -77,7 +103,7 @@ export default function SectorWeServe() {
 
   /** Stats (will count-up on scroll) */
   const statsRef = useRef(null);
-  const statTargets = [2018, 120, 240, 74];
+  const statTargets = [18, 500, 490, 50];
   const statValues = useCountUp(statsRef, statTargets, 1400);
 
   return (
@@ -119,8 +145,8 @@ export default function SectorWeServe() {
         {/* Two-column layout */}
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left image */}
-          <div className="lg:col-span-7">
-            <div className="relative h-72 sm:h-96 lg:h-[31rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+          <div className="lg:col-span-7 mt-6">
+            <div className="relative h-72 sm:h-96 lg:h-[39rem] overflow-hidden rounded-lg ring-1 ring-black/10">
               <Image
                 key={active.image}
                 src={active.image}
@@ -135,11 +161,11 @@ export default function SectorWeServe() {
 
           {/* Right list (desktop with blurb) */}
           <div className="lg:col-span-5 hidden lg:block">
-            <ul className="mt-7">
+            <ul className="mt-5">
               {services.map((s) => {
                 const isActive = s.key === activeKey;
                 return (
-                  <li key={s.key} className="pb-9 border-b border-gray-200 mb-13">
+                  <li key={s.key} className="pb-5 border-b border-gray-200 mb-9">
                     <button
                       type="button"
                       /* ➜ Desktop hover should preview: set active on hover */
