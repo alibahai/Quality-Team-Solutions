@@ -30,7 +30,7 @@ export default function Video({
       </video>
 
       {/* Dark overlay for legibility */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 " />
 
 
       {/* Bottom gradient feather (optional) */}

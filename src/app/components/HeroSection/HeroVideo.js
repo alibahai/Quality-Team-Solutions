@@ -20,7 +20,7 @@ export default function HeroVideo() {
       />
 
       {/* dark tint over the video (still shows through transparent navbar) */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 " />
 
       {/* Navbar sits on top */}
       <div className="relative z-20">

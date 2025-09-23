@@ -586,7 +586,7 @@ export default function Navbar({
                 aria-expanded={mSupport}
                 aria-controls="m-support"
               >
-                <span>Our Support</span>
+                <span>Our Products</span>
                 <svg
                   aria-hidden="true"
                   className={`h-4 w-4 transition-transform ${

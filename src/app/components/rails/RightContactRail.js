@@ -6,10 +6,10 @@ import { Icon } from "@iconify/react";
 export default function RightContactRail({
   phone = "+971 56 806 8070",
   whatsappHref = "https://wa.me/971568068070",
-  footerSelector = "footer", // change to "#site-footer" if your footer isn't a <footer>
+  footerSelector = "footer",
 }) {
   const railRef = useRef(null);
-  const [pushUp, setPushUp] = useState(0); // how much to push up when footer is visible
+  const [pushUp, setPushUp] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -21,8 +21,8 @@ export default function RightContactRail({
     const calc = () => {
       const footerTop = footer.getBoundingClientRect().top;
       const btnRect = btn.getBoundingClientRect();
-      const overlap = btnRect.bottom - footerTop; // > 0 means overlapping footer
-      setPushUp(overlap > 0 ? overlap + 12 : 0); // keep a 12px gap above footer
+      const overlap = btnRect.bottom - footerTop;
+      setPushUp(overlap > 0 ? overlap + 12 : 0);
     };
 
     calc();
@@ -36,30 +36,29 @@ export default function RightContactRail({
 
   return (
     <>
-      {/* ✅ Desktop vertical rail (unchanged) */}
+      {/* Desktop vertical rail — red box, footer-style WhatsApp logo */}
       <div
         ref={railRef}
         className="hidden md:block fixed right-0 z-40"
-        style={{ top: "50%", transform: `translateY(calc(-50% - ${pushUp}px))` }}
+        style={{ top: "57%", transform: `translateY(calc(-50% - ${pushUp}px))` }}
       >
         <a
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`WhatsApp ${phone}`}
-          className="flex flex-col items-center justify-center h-48 w-12 bg-[red] text-white shadow-md rounded-l-md"
+          className="flex flex-col items-center justify-center h-48 w-12 bg-red-500 text-white shadow-md rounded-l-md"
         >
-          {/* number (vertical) */}
           <span className="text-sm font-semibold tracking-wider [writing-mode:vertical-rl] rotate-180">
             {phone}
           </span>
 
-          {/* icon below */}
-          <Icon icon="ic:round-whatsapp" className="mt-2 h-5 w-5" />
+          {/* EXACT same icon as footer */}
+          <Icon icon="logos:whatsapp-icon" width="20" height="20" className="mt-2" />
         </a>
       </div>
 
-      {/* ✅ Mobile floating button (fixed so it moves with scroll) */}
+      {/* Mobile floating button — red circle, footer-style WhatsApp logo */}
       <a
         href={whatsappHref}
         target="_blank"
@@ -67,17 +66,14 @@ export default function RightContactRail({
         aria-label={`WhatsApp ${phone}`}
         className="
           md:hidden
-          fixed
-          right-4
-          z-50
+          fixed right-4 z-50
           inline-flex h-12 w-12 items-center justify-center
           rounded-full bg-green-500 shadow-lg
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-600
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-600
         "
-        // Safe-area friendly bottom spacing on iOS
         style={{ bottom: "calc(16px + env(safe-area-inset-bottom))" }}
       >
-        <Icon icon="ic:round-whatsapp" className="h-7 w-7 text-white" />
+        <Icon icon="logos:whatsapp-icon" width="28" height="28" />
         <span className="sr-only">Open WhatsApp</span>
       </a>
     </>
