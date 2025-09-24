@@ -45,28 +45,28 @@ export default function SectorWeServe() {
         title: "Ceiling & Partitions",
         blurb:
           "Suspended ceilings, acoustic panels, and partitions.",
-        image: "/images/stands.png",
+        image: "/images/buildings.jpg",
       },
       {
         key: "fitout",
         title: "Fitout Interior & MEP Services",
         blurb:
           "Turnkey interiors fully integrated with MEP.",
-        image: "/images/residential.jpg",
+        image: "/images/MEP.jpeg",
       },
       {
         key: "gym",
         title: "Gym Fitout",
         blurb:
           "Shock-absorbing floors, mirrors, and ventilation.",
-        image: "/images/outdoor.png",
+        image: "/images/gym.jpeg",
       },
       {
         key: "office",
         title: "Office Fitout",
         blurb:
           "Ergonomic workstations, meeting rooms, and  control.",
-        image: "/images/retail.png",
+        image: "/images/about1.jpg",
       },
 
       {
@@ -82,7 +82,7 @@ export default function SectorWeServe() {
         title: "Residential Fitout",
         blurb:
           "Bespoke cabinetry, premium finishes, and smart storage.",
-        image: "/images/retail.png",
+        image: "/images/C1.JPG",
       },
 
       {
@@ -90,7 +90,7 @@ export default function SectorWeServe() {
         title: "Retail Fitout",
         blurb:
           "Modular displays, cashwraps, and visual merchandising.",
-        image: "/images/retail.png",
+        image: "/images/P5.jpg",
       },
 
 

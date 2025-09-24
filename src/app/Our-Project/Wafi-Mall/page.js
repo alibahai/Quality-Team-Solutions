@@ -8,19 +8,11 @@ import {  useEffect, useRef, useState } from "react";
 export default function Arabian() {
   // 🔧 Add/adjust images here
   const images = [
-    "/images/H1.JPG",
-    "/images/H2.JPG",
-    "/images/H3.JPG",
-    "/images/H4.JPG",
-    "/images/H5.JPG",
-    "/images/H6.JPG",
-    "/images/H7.JPG",
-    "/images/H8.JPG",
-    "/images/H9.JPG",
-    "/images/H10.JPG",
-    
-    
-    
+    "/images/W1.jpg",
+    "/images/W2.jpg",
+    "/images/W3.jpg",
+    "/images/W4.jpg",
+   
     // "/images/your-more-images.png",
   ];
 
@@ -35,18 +27,19 @@ export default function Arabian() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full items-center justify-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">
-            Hashim Villa
+            Wafi Mall
           </h1>
         </div>
       </section>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 pb-16 mt-16">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Hashim Villa</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Wafi Mall</h2>
         <p className="text-gray-700 leading-relaxed">
-         Hashim Villa pairs calm geometry with natural textures to create a quiet, resort-like feel.
-         The plan prioritizes open living with clear sightlines to a private courtyard, layered lighting for mood and task, and discreet storage to keep spaces uncluttered. 
-         Finishes are durable yet refined, designed to age gracefully.
+      Wafi Mall stands as a symbol of luxury shopping, blending culture with modern elegance.
+      Its unique architecture and themed design make it more than a mall — it’s a destination.
+      Visitors enjoy a world-class mix of fashion, dining, and lifestyle experiences under one roof.
+      Wafi Mall reflects sophistication and innovation, making every visit memorable and inspiring.
         </p>
       </div>
 

@@ -143,6 +143,52 @@ const Spark = (p) => (
   </svg>
 );
 
+
+const Coop = (p) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 1024 1024">
+		<path fill="currentColor" d="M320 288v-22.336C320 154.688 405.504 64 512 64s192 90.688 192 201.664v22.4h131.072a32 32 0 0 1 31.808 28.8l57.6 576a32 32 0 0 1-31.808 35.2H131.328a32 32 0 0 1-31.808-35.2l57.6-576a32 32 0 0 1 31.808-28.8H320zm64 0h256v-22.336C640 189.248 582.272 128 512 128s-128 61.248-128 137.664v22.4zm-64 64H217.92l-51.2 512h690.56l-51.264-512H704v96a32 32 0 1 1-64 0v-96H384v96a32 32 0 0 1-64 0z" />
+	</svg>
+);
+
+const Villaa = (p) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 15 15">
+		<path fill="currentColor" d="M6.176 1.176a.25.25 0 0 0-.352 0l-4.4 4.4A.25.25 0 0 0 1.6 6H3v6.751a.25.25 0 0 0 .249.249h3.5A.25.25 0 0 0 7 12.753v-7.43c0-.066.026-.13.073-.176L8.5 3.5zM6 11H5v-1h1zm0-2H5V8h1zm0-3v1H5V6zm6.75-3h-.5a.25.25 0 0 0-.25.25V5l-1.324-1.824a.25.25 0 0 0-.352 0L8.056 5.932A.25.25 0 0 0 8 6.088v6.66a.25.25 0 0 0 .246.252h1.5a.253.253 0 0 0 .254-.252V11h1v1.747a.253.253 0 0 0 .253.253h1.5a.25.25 0 0 0 .247-.249V3.25a.25.25 0 0 0-.25-.25M10 8H9V7h1zm2 0h-1V7h1zm-2 2H9V9h1zm2 0h-1V9h1z" />
+	</svg>
+);
+
+
+const Peach = (p) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+		<path fill="currentColor" d="M10 1H9v2h1c.462 0 .847.338 1.157 1.144l.019.049c-2.093-.333-4.646.066-6.729 1.955c-1.755 1.592-2.979 4.629-2.215 7.873c1.117 4.748 5.655 7.44 9.872 9.104c3.744-2.547 6.171-6.44 5.783-11.085c-.228-2.728-1.552-5.292-3.846-6.772c2.89 1.584 4.687 4.598 4.959 7.851c.206 2.46-.355 4.693-1.437 6.663c1.503-1.09 3.084-2.585 3.797-4.434c1.634-4.236-.027-8.333-2.99-10.025c-1.723-.984-3.33-1.262-4.566-1.088l.033-.09C14.148 3.34 14.535 3 15 3h1V1h-1c-1.214 0-2.003.668-2.502 1.404C12 1.668 11.213 1 10 1" />
+	</svg>
+);
+
+
+const Care = (p) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="29" viewBox="0 0 24 24" {...p}>
+    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5">
+      <path d="M8.396 2.552c1.474-.914 2.762-.546 3.535.041c.317.24.476.36.569.36s.252-.12.569-.36c.773-.587 2.06-.955 3.535-.041c1.936 1.2 2.374 5.156-2.09 8.494c-.851.636-1.276.954-2.014.954s-1.163-.318-2.013-.954C6.022 7.708 6.46 3.751 8.396 2.552Z" />
+      <path strokeLinejoin="round" d="M4 14h2.395c.294 0 .584.066.847.194l2.042.988c.263.127.553.193.848.193h1.042c1.008 0 1.826.791 1.826 1.767c0 .04-.027.074-.066.085l-2.541.703a1.95 1.95 0 0 1-1.368-.124L6.842 16.75" />
+      <path strokeLinejoin="round" d="m13 16.5l4.593-1.411a1.985 1.985 0 0 1 2.204.753c.369.51.219 1.242-.319 1.552l-7.515 4.337a2 2 0 0 1-1.568.187L4 20.02" />
+    </g>
+  </svg>
+);
+
+const Mall = (p) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 48 48" {...p}>
+    <path
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="3"
+      d="M43 45H5V21.998C5 19.236 7.236 17 9.995 17.124c8.854.4 20.827 1.755 28.989 3.87c2.442.633 4.016 2.9 4.016 5.423zM5 33h38M3 45h42M17.5 33v12m13-12v12M34 13v6.5m-6.932-9.36c.096 1.462 1.154 2.58 2.614 2.704c1.02.087 2.426.156 4.318.156s3.298-.069 4.318-.156c1.46-.124 2.518-1.242 2.614-2.704c.04-.613.068-1.332.068-2.14s-.028-1.527-.068-2.14c-.096-1.462-1.154-2.58-2.614-2.704C37.298 3.069 35.892 3 34 3s-3.298.069-4.318.156c-1.46.124-2.518 1.242-2.614 2.704A33 33 0 0 0 27 8c0 .808.028 1.527.068 2.14"
+    />
+  </svg>
+);
+
+
+
 /* ================= DATA ================= */
 const SERVICES = [
   {
@@ -174,7 +220,13 @@ const SUPPORT = [
   { title: "Arabian Oud", Icon: Oud, href: "/Our-Project/Arabian-Oud" },
   { title: "Galaxy Hockey", Icon: Hockey, href: "/Our-Project/Galaxy-Hockey" },
   { title: "Hashim Villa", Icon: Villa, href: "/Our-Project/Hashim-Villa" },
-  { title: "Jorgee", Icon: Spark, href: "/Our-Project/Jorgee" },
+  { title: "Jorge", Icon: Coop, href: "/Our-Project/Jorgee" },
+    { title: "Sufoh Villa", Icon: Villaa, href: "/Our-Project/Sufoh-Villa" },
+  { title: "Peach Passion", Icon: Peach, href: "/Our-Project/Peach-Passion" },
+  { title: "Ayur Care", Icon: Care, href: "/Our-Project/Ayur-Care" },
+  { title: "Wafi Mall", Icon: Mall, href: "/Our-Project/Wafi-Mall" },
+ 
+
 ];
 
 export default function Navbar({

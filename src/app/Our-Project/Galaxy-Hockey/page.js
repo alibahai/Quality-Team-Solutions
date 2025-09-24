@@ -9,21 +9,10 @@ export default function Arabian() {
   // 🔧 Add/adjust images here
   const images = [
     "/images/drawing1.jpeg",
-    "/images/222.jpg",
-    "/images/333.jpg",
-    "/images/444.jpg",
-    "/images/555.jpg",
-    "/images/666.jpg",
-    "/images/777.jpg",
-    "/images/888.jpg",
-    "/images/999.jpg",
-    "/images/1000.jpg",
-    "/images/1001.jpg",
-    "/images/1002.jpg",
-    "/images/1003.jpg",
-    "/images/1004.jpg",
-    "/images/1005.jpg",
-    
+    "/images/hockey1.JPG",
+    "/images/hockey2.JPG",
+    "/images/hockey2.JPG",
+
     
     // "/images/your-more-images.png",
   ];

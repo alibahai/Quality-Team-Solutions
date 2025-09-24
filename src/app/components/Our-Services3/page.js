@@ -29,9 +29,11 @@ export default function ServicesRail({
   const [paused, setPaused] = useState(false);            // only used on mobile
 
   // 👉 MOBILE: show only first 3 cards and REMOVE "Design & Space"
-  const mobileServices = services
-    .filter((s) => s.title !== "Design & Space")
-    .slice(0, 3);
+ // 👉 MOBILE: show only first 3 cards and REMOVE "Drawings & Approvals"
+const mobileServices = services
+  .filter((s) => s.title !== "Drawings & Approvals")
+  .slice(0, 2);
+
 
   const displayed = isMobile ? mobileServices : services;
   const doubled = [...displayed, ...displayed];
@@ -140,7 +142,7 @@ export default function ServicesRail({
   }, [paused, speed]);
 
   // Decide cards-per-row and widthScale per breakpoint
-  const cardsPer = isMobile ? 3 : visibleCards;
+const cardsPer = isMobile ? Math.min(3, displayed.length) : visibleCards;
   const scale = isMobile ? mobileWidthScale : widthScale;
 
   const LONG_TITLES = new Set([
@@ -149,19 +151,21 @@ export default function ServicesRail({
   ]);
 
   return (
-    <section className="w-full overflow-hidden my-[30px]">
+    <section className="w-full overflow-hidden">
       {/* Header (constrained) */}
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-14 text-center md:text-left">
           <h2 className="text-4xl font-bold tracking-widest text-[#F58321] mb-4 sm:mb-7">
             OUR SERVICES
           </h2>
+         
+        
         </div>
       </div>
 
       {/* Full-bleed rail (edge-to-edge), overflow hidden = no scrollbar */}
       <div className="relative w-screen left-1/2 right-1/2 -mx-[50vw]">
-       <div
+      <div
   className="relative overflow-hidden select-none"
   onMouseEnter={() => {
     if (!isMobile) {
@@ -202,7 +206,7 @@ export default function ServicesRail({
               return (
                 <li
                   key={`${item.title}-${i}`}
-                  className="group relative inline-block shrink-0 overflow-hidden rounded-md bg-white ring-1 ring-black/5 first:ml-0 last:mr-0"
+  className="group relative inline-block shrink-0 overflow-hidden rounded-md bg-white ring-1 ring-black/5 mb-6" // ⬅ added mb-6
                   style={{
                     width: `calc(((100vw - ${GAP_PX * (cardsPer - 1)}px) / ${cardsPer}) * ${scale})`,
                     height: isMobile ? "18rem" : "24rem",
@@ -225,23 +229,23 @@ export default function ServicesRail({
                   aria-label={`${item.title}: ${item.description}`}
                 >
                   {/* Image */}
-               <Link href={item.href || "#"} aria-label={item.title} className="block h-full w-full">
-                                                 <div className="relative h-full w-full">
-                                                   <Image
-                                                     src={item.image}
-                                                     alt={item.title}
-                                                     fill
-                                                     priority={i < 6}
-                                                     className="object-cover rounded-md"
-                                                     sizes="100vw"
-                                                   />
-                               
-                                                   {/* Title chip only (no description) */}
-                                                  
-                                                 </div>
-                                               </Link>
+                 <Link href={item.href || "#"} aria-label={item.title} className="block h-full w-full">
+                                  <div className="relative h-full w-full mb-20">
+                                    <Image
+                                      src={item.image}
+                                      alt={item.title}
+                                      fill
+                                      priority={i < 6}
+                                      className="object-cover rounded-md"
+                                      sizes="100vw"
+                                    />
+                
+                                    {/* Title chip only (no description) */}
+                                   
+                                  </div>
+                                </Link>
 
-                  {/* Red tint */}
+                  {/* Red tint (non-interactive to avoid pointer bounce) */}
                   <div
                     className={[
                       "pointer-events-none",
@@ -251,7 +255,7 @@ export default function ServicesRail({
                     ].join(" ")}
                   />
 
-                  {/* Overlay: description panel */}
+                  {/* Overlay: description panel (also non-interactive) */}
                   <div
                     className={[
                       "pointer-events-none",
@@ -274,19 +278,20 @@ export default function ServicesRail({
                         {item.title}
                       </h3>
 
-                      <p
-                        className={[
-                          "mt-1 sm:mt-2",
-                          isMobile
-                            ? "text-[11px] sm:text-sm leading-snug"
-                            : "text-xs sm:text-sm md:text-base leading-relaxed",
-                        ].join(" ")}
-                        style={{
-                          whiteSpace: "normal", // allow wrapping
-                        }}
-                      >
-                        {displayDesc}
-                      </p>
+                     <p
+  className={[
+    "mt-1 sm:mt-2",
+    isMobile
+      ? "text-[11px] sm:text-sm leading-snug"
+      : "text-xs sm:text-sm md:text-base leading-relaxed",
+  ].join(" ")}
+  style={{
+    whiteSpace: "normal", // allow wrapping
+  }}
+>
+  {displayDesc}
+</p>
+
                     </div>
                   </div>
 

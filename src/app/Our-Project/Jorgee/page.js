@@ -8,21 +8,14 @@ import {  useEffect, useRef, useState } from "react";
 export default function Arabian() {
   // 🔧 Add/adjust images here
   const images = [
-    "/images/111.jpg",
-    "/images/222.jpg",
-    "/images/333.jpg",
-    "/images/444.jpg",
-    "/images/555.jpg",
-    "/images/666.jpg",
-    "/images/777.jpg",
-    "/images/888.jpg",
-    "/images/999.jpg",
-    "/images/1000.jpg",
-    "/images/1001.jpg",
-    "/images/1002.jpg",
-    "/images/1003.jpg",
-    "/images/1004.jpg",
-    "/images/1005.jpg",
+    "/images/jj1.JPG",
+    "/images/jj2.JPG",
+    "/images/jj3.JPG",
+    "/images/jj4.JPG",
+    "/images/jj5.JPG",
+    "/images/jj6.JPG",
+       "/images/jj7.JPG",
+
     
     
     // "/images/your-more-images.png",

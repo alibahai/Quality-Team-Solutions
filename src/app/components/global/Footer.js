@@ -208,12 +208,18 @@ export default function Footer({ year }) {
                     Contact Us
                   </Link>
                 </li>
+
+                  <li>
+                  <Link href="/Our-Project/Arabian-Oud" className="hover:text-white">
+                    Our Projects
+                  </Link>
+                </li>
               </ul>
 
               {/* Dynamic email */}
               <a
                 href={`mailto:${EMAIL}`}
-                className="mt-36 block text-sm text-white/80 ml-12 hover:text-white"
+                className="mt-28 block text-sm text-white/80 ml-12 hover:text-white"
                 aria-label={`Email ${EMAIL}`}
               >
                 {EMAIL}

@@ -8,17 +8,12 @@ import {  useEffect, useRef, useState } from "react";
 export default function Arabian() {
   // 🔧 Add/adjust images here
   const images = [
-    "/images/H1.JPG",
-    "/images/H2.JPG",
-    "/images/H3.JPG",
-    "/images/H4.JPG",
-    "/images/H5.JPG",
-    "/images/H6.JPG",
-    "/images/H7.JPG",
-    "/images/H8.JPG",
-    "/images/H9.JPG",
-    "/images/H10.JPG",
-    
+    "/images/P1.jpg",
+    "/images/P2.jpg",
+    "/images/P3.jpg",
+    "/images/P4.jpg",
+    "/images/P5.jpg",
+   
     
     
     // "/images/your-more-images.png",
@@ -35,18 +30,19 @@ export default function Arabian() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full items-center justify-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">
-            Hashim Villa
+            Peach Passion
           </h1>
         </div>
       </section>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 pb-16 mt-16">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Hashim Villa</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Peach Passion</h2>
         <p className="text-gray-700 leading-relaxed">
-         Hashim Villa pairs calm geometry with natural textures to create a quiet, resort-like feel.
-         The plan prioritizes open living with clear sightlines to a private courtyard, layered lighting for mood and task, and discreet storage to keep spaces uncluttered. 
-         Finishes are durable yet refined, designed to age gracefully.
+       Gallery of Peach Passion radiates warmth and charm with its soothing peach-inspired theme.
+       It creates a welcoming atmosphere where elegance meets comfort in every detail.
+       The gallery highlights artistic finesse, making it a perfect destination for inspiration and leisure.
+       Peach Passion reflects sophistication and creativity, leaving every visitor with a lasting impression.
         </p>
       </div>
 
