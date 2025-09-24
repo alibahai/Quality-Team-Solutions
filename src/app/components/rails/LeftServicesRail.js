@@ -81,7 +81,7 @@ const IconBuilding = (p) => (
 /* ================= DATA ================= */
 const ITEMS = [
   { title: "Designing and Space Planning", Icon: IconBook, href: "/Servicess/Design-Drawings" },
-  { title: "Joinery Works", Icon: IconPencil, href: "/Servicess/Joinery-work" },
+  { title: "Joinery Work", Icon: IconPencil, href: "/Servicess/Joinery-work" },
   { title: "Drawing and Approvals", Icon: IconCompass, href: "/Servicess/Drawings-Approvals" },
   { title: "MEP Works", Icon: IconGauge, href: "/Servicess/Mep" },
   { title: "Turnkey Fit Outs", Icon: IconBarcode, href: "/Servicess/Turnkey-Fit" },
