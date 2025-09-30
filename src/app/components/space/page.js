@@ -7,47 +7,48 @@ import ServicesRail from "../Our-Services3/page.js";
 
 export default function Space() {
   // Tabs for Designing & Space Planning
-  const tabs = useMemo(
-    () => [
-      {
-        key: "concept",
-        title: "Architectural & Interior Drawings",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space5.jpg",
-      },
-      {
-        key: "planning",
-        title: "MEP Drawings for Compliance",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/MEP.jpeg",
-      },
-      {
-        key: "ergonomics",
-        title: "Authority Submissions & Follow-Ups",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space3.jpg",
-      },
-      {
-        key: "renders",
-        title: "Regulation Advisory",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space2.jpg",
-      },
-      {
-        key: "sustainability",
-        title: "Fast-Track Approvals",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space.png",
-      },
-      {
-        key: "furnishing",
-        title: "Revision & Update Handling",
-        desc: "Accurate technical plans meeting authority standards.",
-        image: "/images/space3.jpg",
-      },
-    ],
-    []
-  );
+const tabs = useMemo(
+  () => [
+    {
+      key: "concept",
+      title: "Architectural & Interior Drawings",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/drawing1.jpeg", // was /images/space5.jpg
+    },
+    {
+      key: "planning",
+      title: "MEP Drawings for Compliance",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/drawing2.jpeg", // was /images/MEP.jpeg
+    },
+    {
+      key: "ergonomics",
+      title: "Authority Submissions & Follow-Ups",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/drawing3.jpeg", // was /images/space3.jpg
+    },
+    {
+      key: "renders",
+      title: "Regulation Advisory",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/drawing4.jpeg", // was /images/space2.jpg
+    },
+    {
+      key: "sustainability",
+      title: "Fast-Track Approvals",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/drawing5.jpeg", // was /images/space.png
+    },
+    {
+      key: "furnishing",
+      title: "Revision & Update Handling",
+      desc: "Accurate technical plans meeting authority standards.",
+      image: "/images/new.jpg", // was /images/space3.jpg
+    },
+  ],
+  []
+);
+
 
   const [activeKey, setActiveKey] = useState(tabs[1].key);
   const active = tabs.find((t) => t.key === activeKey) || tabs[0];

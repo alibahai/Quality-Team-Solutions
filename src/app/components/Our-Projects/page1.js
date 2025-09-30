@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 export default function ServicesRailExact({
-  title = "OUR PROJECTS",     // controls first heading
+  title = "OUR PROJECTS",
   showSecondary = true,
   services = DEFAULT_SERVICES,
   speed = 70,
@@ -15,7 +15,6 @@ export default function ServicesRailExact({
   const trackRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  // ✅ Only 2 cards on mobile; all cards on desktop
   const displayed = isMobile ? services.slice(0, 2) : services;
   const doubled = [...displayed, ...displayed];
 
@@ -32,6 +31,7 @@ export default function ServicesRailExact({
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
+
     const reduceMotion =
       typeof window !== "undefined" &&
       window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
@@ -64,7 +64,6 @@ export default function ServicesRailExact({
     return () => cancelAnimationFrame(rafId);
   }, [speed, displayed.length]);
 
-  // ✅ Use the actual mobile count (2) so the cards expand
   const cardsPerViewport = isMobile ? displayed.length : visibleCards;
   const scale = isMobile ? 1 : widthScale;
 
@@ -126,15 +125,16 @@ export default function ServicesRailExact({
                     src={item.image}
                     alt={item.title}
                     fill
-                    priority={i < 6}
                     className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
                     sizes="(min-width:1280px) 24vw, (min-width:1024px) 30vw, 90vw"
+                    /* 👇 performance: sirf pehli image eager/priority, baaqi sab lazy */
+                    priority={i === 0}
+                    loading={i === 0 ? "eager" : "lazy"}
                   />
                   <div className="pointer-events-none absolute inset-0 ring-1 ring-black/5" />
                 </div>
               );
 
-              // ✅ Mobile-friendly text (smaller, centered)
               const titleClass = isMobile
                 ? "text-sm font-semibold text-gray-900"
                 : "text-base sm:text-lg font-semibold text-gray-900";

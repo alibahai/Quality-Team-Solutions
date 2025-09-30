@@ -93,7 +93,7 @@ export default function Turnkey() {
                   fill
                   sizes="(min-width:1024px) 55vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → default lazy */
                 />
               </div>
             </div>
@@ -119,8 +119,12 @@ export default function Turnkey() {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onClick={() => setActiveKey(item.key)} // mobile
+                        onMouseEnter={() => {
+                          if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+                            setActiveKey(item.key);
+                          }
+                        }} // desktop hover
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",

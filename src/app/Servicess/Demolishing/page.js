@@ -5,47 +5,16 @@ import React, { useMemo, useState } from "react";
 import ScrollingShowcase from "src/app/components/Imagess/ScrollingShowcase";
 import ServicesRail from "src/app/components/Our-Services3/page";
 
-
 export default function Demolishing() {
   // Tabs for Demolishing & Construction
   const tabs = useMemo(
     () => [
-      {
-        key: "concept",
-        title: "Safe & Controlled Demolitions",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/buildings.jpg",
-      },
-      {
-        key: "planning",
-        title: "Structural & Interior Construction",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/turnkey.png",
-      },
-      {
-        key: "ergonomics",
-        title: "Refurbishment & Remodeling",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/fit.jpg",
-      },
-      {
-        key: "renders",
-        title: "Sustainable Waste Management",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/drain.jpeg",
-      },
-      {
-        key: "sustainability",
-        title: "Material Reuse & Recycling",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/MEP.jpeg",
-      },
-      {
-        key: "furnishing",
-        title: "Future-Ready Construction",
-        desc: "Reinventing spaces with modern design solution",
-        image: "/images/outdoor.png",
-      },
+      { key: "concept",       title: "Safe & Controlled Demolitions",  desc: "Reinventing spaces with modern design solution", image: "/images/buildings.jpg" },
+      { key: "planning",      title: "Structural & Interior Construction", desc: "Reinventing spaces with modern design solution", image: "/images/turnkey.png" },
+      { key: "ergonomics",    title: "Refurbishment & Remodeling",     desc: "Reinventing spaces with modern design solution", image: "/images/fit.jpg" },
+      { key: "renders",       title: "Sustainable Waste Management",   desc: "Reinventing spaces with modern design solution", image: "/images/drain.jpeg" },
+      { key: "sustainability",title: "Material Reuse & Recycling",     desc: "Reinventing spaces with modern design solution", image: "/images/MEP.jpeg" },
+      { key: "furnishing",    title: "Future-Ready Construction",      desc: "Reinventing spaces with modern design solution", image: "/images/outdoor.png" },
     ],
     []
   );
@@ -56,25 +25,15 @@ export default function Demolishing() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Banner */}
-    <section id="hero" className="relative h-[300px] w-full -mt-20">
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: "url('/images/cardsImages.jpg')" }}
-  />
-  <div className="absolute inset-0 bg-black/40" />
-  <div className="relative z-10 flex h-full items-center justify-center px-4">
-    <h1
-      className="
-        text-center font-bold text-white drop-shadow
-        text-2xl sm:text-2xl md:text-5xl
-        leading-snug md:leading-tight
-      "
-    >
-      Demolishing, Construction &amp; Refurbishment
-    </h1>
-  </div>
-</section>
-
+      <section id="hero" className="relative h-[300px] w-full -mt-20">
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/cardsImages.jpg')" }} />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex h-full items-center justify-center px-4">
+          <h1 className="text-center font-bold text-white drop-shadow text-2xl sm:text-2xl md:text-5xl leading-snug md:leading-tight">
+            Demolishing, Construction &amp; Refurbishment
+          </h1>
+        </div>
+      </section>
 
       {/* Demolishing & Construction Tabs + Image Swap */}
       <section className="w-full my-12">
@@ -101,18 +60,14 @@ export default function Demolishing() {
                   fill
                   sizes="(min-width:1024px) 55vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → default lazy */
                 />
               </div>
             </div>
 
-            {/* Tabs: Mobile Row (Pills), Desktop Vertical List */}
+            {/* Tabs */}
             <div className="order-3 lg:order-2 lg:col-span-5">
-              <ul
-                className="flex gap-3 overflow-x-auto no-scrollbar pb-4
-                  lg:block lg:overflow-visible lg:pb-0
-                  lg:border-b lg:border-gray-200 border-0"
-              >
+              <ul className="flex gap-3 overflow-x-auto no-scrollbar pb-4 lg:block lg:overflow-visible lg:pb-0 lg:border-b lg:border-gray-200 border-0">
                 {tabs.map((item, idx, arr) => {
                   const isActive = item.key === activeKey;
                   return (
@@ -127,8 +82,8 @@ export default function Demolishing() {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onClick={() => setActiveKey(item.key)}
+                        onMouseEnter={() => { if (typeof window !== "undefined" && window.innerWidth >= 1024) setActiveKey(item.key); }}
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
@@ -136,14 +91,9 @@ export default function Demolishing() {
                           "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
                         ].join(" ")}
                       >
-                        {/* Mobile label */}
                         <span className="lg:hidden">{item.title}</span>
-
-                        {/* Desktop label + optional description for the active one */}
                         <div className="hidden lg:block">
-                          <div
-                            className={`text-base font-semibold ${isActive ? "text-[#F58321]" : "text-gray-900"}`}
-                          >
+                          <div className={`text-base font-semibold ${isActive ? "text-[#F58321]" : "text-gray-900"}`}>
                             {item.title}
                           </div>
                           {isActive && item.desc && (

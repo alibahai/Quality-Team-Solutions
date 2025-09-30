@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
- import Page1 from "src/app/components/Our-Projects/page1";
-
-import {  useEffect, useRef, useState } from "react";
+import Page1 from "src/app/components/Our-Projects/page1";
+import { useEffect, useRef, useState } from "react";
 
 export default function Arabian() {
   // 🔧 Add/adjust images here
@@ -11,9 +10,7 @@ export default function Arabian() {
     "/images/drawing1.jpeg",
     "/images/hockey1.JPG",
     "/images/hockey2.JPG",
-    "/images/hockey2.JPG",
-
-    
+    "/images/hockey2.JPG", // (note: duplicate)
     // "/images/your-more-images.png",
   ];
 
@@ -35,17 +32,15 @@ export default function Arabian() {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 pb-16 mt-16">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Galaxy Hockey</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+          Gallery of Galaxy Hockey
+        </h2>
         <p className="text-gray-700 leading-relaxed">
           Galaxy Hockey blends bold branding with durable finishes and crisp lighting.
           The plan optimizes flow from entry to checkout, with clear product zoning for skates, sticks, and protective gear.
           Materials are tough, easy to maintain, and look premium without distractions.
         </p>
       </div>
-
-
-
-
 
       {/* Plain image rail + lightbox */}
       <section className="pb-16">
@@ -62,7 +57,6 @@ export default function Arabian() {
       <section className="pb-16">
         <Page1 title="Our Projects" showSecondary={false} />
       </section>
-
     </main>
   );
 }
@@ -177,7 +171,14 @@ function PlainImageRailLightbox({
                     onClick={() => openBox(i % images.length)}
                     aria-label="Open image"
                   >
-                    <Image src={src} alt="" fill className="object-cover" sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw" priority={i < 6} />
+                    {/* ✅ priority removed → Next/Image default lazy */}
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw"
+                    />
                   </button>
                 </li>
               ))}
@@ -204,7 +205,8 @@ function PlainImageRailLightbox({
           {/* Image behind, non-blocking */}
           <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center p-4 md:p-8">
             <div className="relative w-full h-full max-w-6xl">
-              <Image src={images[idx]} alt="" fill className="object-contain" sizes="100vw" priority />
+              {/* ✅ priority removed; mounts only when modal open */}
+              <Image src={images[idx]} alt="" fill className="object-contain" sizes="100vw" />
             </div>
           </div>
         </div>
@@ -212,4 +214,3 @@ function PlainImageRailLightbox({
     </>
   );
 }
-

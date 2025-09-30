@@ -28,7 +28,6 @@ export default function DesignExperts({
           src={backgroundSrc}
           alt=""
           fill
-          priority
           sizes="100vw"
           className="object-cover"
         />
@@ -70,9 +69,7 @@ export default function DesignExperts({
             </p>
           </div>
 
-         
-              {/* ===== MOBILE/TABLET LAYOUT ===== */}
-          {/* Image first, then the 4 links as a single-row grid with underline */}
+          {/* ===== MOBILE/TABLET LAYOUT ===== */}
           <div className="mt-8 lg:hidden">
             {/* Active portrait */}
             <div className="relative h-96 sm:h-[28rem] lg:h-[32rem] overflow-hidden mt-3 rounded-lg mr-auto">
@@ -83,44 +80,42 @@ export default function DesignExperts({
                 fill
                 className="object-cover object-[center_03%]"
                 sizes="(min-width:1024px) 40vw, 90vw"
-                priority
               />
             </div>
 
-  {/* Links row: grid of 4, name + underline that turns orange when active */}
-  <ul className="mt-6 grid grid-cols-4 gap-3 text-center">
-    {members.slice(0, 4).map((m) => {
-      const isActive = m.key === activeKey;
-      return (
-        <li key={m.key}>
-          <button
-            type="button"
-            onClick={() => setActiveKey(m.key)} // Use only onClick for mobile
-            className={[
-              "px-3 py-2 rounded-md text-sm font-semibold",
-              isActive ? "bg-[#F58321] text-gray-900" : "bg-white text-gray-900", // Fix: Ensure active text is black (text-gray-900)
-              "shadow-sm ring-1 ring-black/5",
-              "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
-            ].join(" ")}
-          >
-            <span
-              className={`block text-xs sm:text-sm font-semibold transition-colors ${
-                isActive ? "text-white" : "text-gray-900" // When active, text is white, otherwise it's gray
-              }`}
-            >
-              {m.name}
-            </span>
-          </button>
-        </li>
-      );
-    })}
-  </ul>
-</div>
-
+            {/* Links row */}
+            <ul className="mt-6 grid grid-cols-4 gap-3 text-center">
+              {members.slice(0, 4).map((m) => {
+                const isActive = m.key === activeKey;
+                return (
+                  <li key={m.key}>
+                    <button
+                      type="button"
+                      onClick={() => setActiveKey(m.key)}
+                      className={[
+                        "px-3 py-2 rounded-md text-sm font-semibold",
+                        isActive ? "bg-[#F58321] text-gray-900" : "bg-white text-gray-900",
+                        "shadow-sm ring-1 ring-black/5",
+                        "lg:px-0 lg:py-0 lg:bg-transparent lg:text-left lg:shadow-none lg:ring-0 w-full text-left",
+                      ].join(" ")}
+                    >
+                      <span
+                        className={`block text-xs sm:text-sm font-semibold transition-colors ${
+                          isActive ? "text-white" : "text-gray-900"
+                        }`}
+                      >
+                        {m.name}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
 
           {/* ===== DESKTOP LAYOUT ===== */}
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-1">
-            {/* Left: List (desktop with roles & underline like before) */}
+            {/* Left: List */}
             <div className="lg:col-span-7 hidden lg:block">
               <ul>
                 {members.map((m) => {
@@ -129,8 +124,8 @@ export default function DesignExperts({
                     <li key={m.key} className="relative py-5 sm:py-6">
                       <button
                         type="button"
-                        onMouseEnter={() => setActiveKey(m.key)} // Hover behavior for desktop
-                        onFocus={() => setActiveKey(m.key)} // Ensures accessibility for keyboard navigation
+                        onMouseEnter={() => setActiveKey(m.key)}
+                        onFocus={() => setActiveKey(m.key)}
                         className="group w-full text-left"
                       >
                         <div className="flex items-center justify-between">
@@ -151,7 +146,7 @@ export default function DesignExperts({
                         </p>
                       </button>
 
-                      {/* Underline (changes to orange when active) */}
+                      {/* Underline */}
                       <span
                         className={`absolute bottom-0 left-0 h-[2px] w-3/4 sm:w-2/3 transition-colors duration-300 ${
                           isActive ? "bg-[#F58321]" : "bg-white"
@@ -173,7 +168,6 @@ export default function DesignExperts({
                   fill
                   className="object-cover object-[center_08%]"
                   sizes="(min-width:1024px) 40vw, 90vw"
-                  priority
                 />
               </div>
             </div>

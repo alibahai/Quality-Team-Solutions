@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Page1 from "src/app/components/Our-Projects/page1";
-
 import { useEffect, useRef, useState } from "react";
 
 export default function Arabian() {
@@ -15,7 +14,6 @@ export default function Arabian() {
     "/images/mall5.JPG",
     "/images/mall6.JPG",
     "/images/mall7.JPG",
-
     // "/images/your-more-images.png",
   ];
 
@@ -139,9 +137,9 @@ function PlainImageRailLightbox({
     const track = trackRef.current;
     if (!track) return;
 
-    const prefersReduce = window.matchMedia?.(
-      "(prefers-reduced-motion: reduce)"
-    )?.matches;
+    const prefersReduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduce) {
       track.style.transform = "translateX(0px)";
       return;
@@ -196,13 +194,13 @@ function PlainImageRailLightbox({
                     onClick={() => openBox(i % images.length)}
                     aria-label="Open image"
                   >
+                    {/* ✅ priority removed → Next/Image default lazy */}
                     <Image
                       src={src}
                       alt=""
                       fill
                       className="object-cover"
                       sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw"
-                      priority={i < 6}
                     />
                   </button>
                 </li>
@@ -274,13 +272,13 @@ function PlainImageRailLightbox({
           {/* Image behind, non-blocking */}
           <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center p-4 md:p-8">
             <div className="relative w-full h-full max-w-6xl">
+              {/* ✅ priority removed; mounts only when modal open */}
               <Image
                 src={images[idx]}
                 alt=""
                 fill
                 className="object-contain"
                 sizes="100vw"
-                priority
               />
             </div>
           </div>

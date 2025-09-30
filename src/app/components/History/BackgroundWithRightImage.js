@@ -13,7 +13,6 @@ export default function BackgroundWithRightImage({
         src={backgroundSrc}
         alt=""
         fill
-        priority
         className="object-cover"
         sizes="100vw"
       />
@@ -99,7 +98,6 @@ export default function BackgroundWithRightImage({
                 height={700}
                 className="h-full w-full object-cover"
                 sizes="(min-width:1024px) 40vw, 460px"
-                priority
               />
             </div>
           </div>

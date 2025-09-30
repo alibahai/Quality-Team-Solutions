@@ -38,65 +38,54 @@ function useCountUp(startWhenVisibleRef, targets, duration = 1400) {
 }
 
 export default function SectorWeServe() {
-  const services = useMemo(
-    () => [
-      {
-        key: "ceiling",
-        title: "Ceiling & Partitions",
-        blurb:
-          "Suspended ceilings, acoustic panels, and partitions.",
-        image: "/images/buildings.jpg",
-      },
-      {
-        key: "fitout",
-        title: "Fitout Interior & MEP Services",
-        blurb:
-          "Turnkey interiors fully integrated with MEP.",
-        image: "/images/MEP.jpeg",
-      },
-      {
-        key: "gym",
-        title: "Gym Fitout",
-        blurb:
-          "Shock-absorbing floors, mirrors, and ventilation.",
-        image: "/images/gym.jpeg",
-      },
-      {
-        key: "office",
-        title: "Office Fitout",
-        blurb:
-          "Ergonomic workstations, meeting rooms, and  control.",
-        image: "/images/about1.jpg",
-      },
+ const services = useMemo(
+  () => [
+    {
+      key: "ceiling",
+      title: "Ceiling & Partitions",
+      blurb: "Suspended ceilings, acoustic panels, and partitions.",
+      image: "/images/space2.jpg",            // ⬅️ more on-theme than buildings.jpg
+    },
+    {
+      key: "fitout",
+      title: "Fitout Interior & MEP Services",
+      blurb: "Turnkey interiors fully integrated with MEP.",
+      image: "/images/turnkey.png",           // ⬅️ pairs with fit-out scope
+    },
+    {
+      key: "gym",
+      title: "Gym Fitout",
+      blurb: "Shock-absorbing floors, mirrors, and ventilation.",
+      image: "/images/gym.jpeg",
+    },
+    {
+      key: "office",
+      title: "Office Fitout",
+      blurb: "Ergonomic workstations, meeting rooms, and  control.",
+      image: "/images/buildings.jpg",         // ⬅️ clean, neutral office vibe
+    },
+    {
+      key: "restaurant",
+      title: "Restaurant Fitout",
+      blurb: "Kitchen-fronts, hygienic finishes, and guest flow.",
+      image: "/images/retail.png",            // ⬅️ storefront/retail-facing visual
+    },
+    {
+      key: "residential",
+      title: "Residential Fitout",
+      blurb: "Bespoke cabinetry, premium finishes, and smart storage.",
+      image: "/images/C1.JPG",
+    },
+    {
+      key: "retail",
+      title: "Retail Fitout",
+      blurb: "Modular displays, cashwraps, and visual merchandising.",
+      image: "/images/P5.jpg",
+    },
+  ],
+  []
+);
 
-      {
-        key: "restaurant",
-        title: "Restaurant Fitout",
-        blurb:
-          "Kitchen-fronts, hygienic finishes, and guest flow.",
-        image: "/images/retail.png",
-      },
-
-      {
-        key: "residential",
-        title: "Residential Fitout",
-        blurb:
-          "Bespoke cabinetry, premium finishes, and smart storage.",
-        image: "/images/C1.JPG",
-      },
-
-      {
-        key: "retail",
-        title: "Retail Fitout",
-        blurb:
-          "Modular displays, cashwraps, and visual merchandising.",
-        image: "/images/P5.jpg",
-      },
-
-
-    ],
-    []
-  );
 
   const [activeKey, setActiveKey] = useState(services[0].key);
   const active = services.find((s) => s.key === activeKey) || services[0];

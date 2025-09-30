@@ -135,7 +135,7 @@ export default function Demolishing() {
                   fill
                   sizes="90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → defaults to lazy */
                 />
               </div>
               <div className="relative h-56 overflow-hidden rounded-lg ring-1 ring-black/10">
@@ -282,7 +282,7 @@ export default function Demolishing() {
                   fill
                   sizes="(min-width:1024px) 40vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → defaults to lazy */
                 />
               </div>
             </div>
@@ -293,12 +293,19 @@ export default function Demolishing() {
                 {values.map((v, idx) => {
                   const isActive = v.key === activeValueKey;
                   return (
-                    <li key={v.key} className={["shrink-0 lg:shrink", idx !== values.length - 1 ? "lg:border-b lg:border-gray-200" : "", "py-0 lg:py-4"].join(" ")}>
+                    <li
+                      key={v.key}
+                      className={[
+                        "shrink-0 lg:shrink",
+                        idx !== values.length - 1 ? "lg:border-b lg:border-gray-200" : "",
+                        "py-0 lg:py-4",
+                      ].join(" ")}
+                    >
                       <button
                         type="button"
                         onClick={() => setActiveValueKey(v.key)}
-                        onMouseEnter={() => setActiveValueKey(v.key)} // 👈 hover changes image
-                        onFocus={() => setActiveValueKey(v.key)} // 👈 keyboard focus also changes
+                        onMouseEnter={() => setActiveValueKey(v.key)} // hover changes image
+                        onFocus={() => setActiveValueKey(v.key)} // keyboard focus also changes
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
@@ -308,7 +315,12 @@ export default function Demolishing() {
                         ].join(" ")}
                       >
                         {/* Desktop title */}
-                        <div className={["hidden lg:block text-base sm:text-lg font-semibold", isActive ? "lg:text-[#F58321]" : "lg:text-gray-900"].join(" ")}>
+                        <div
+                          className={[
+                            "hidden lg:block text-base sm:text-lg font-semibold",
+                            isActive ? "lg:text-[#F58321]" : "lg:text-gray-900",
+                          ].join(" ")}
+                        >
                           <span className="hidden lg:inline">{v.title}</span>
                         </div>
 

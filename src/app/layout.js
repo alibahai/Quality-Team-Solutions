@@ -2,6 +2,7 @@ import { Manrope, Poppins } from "next/font/google";
 
 import Footer from "./components/global/Footer";
 import Navbar from "./components/global/Navbar";
+import RightContactRailGlobal from "../app/components/rails/RightContactRail"; // ⬅️ add this
 import "./styles/globals.css";
 
 const manrope = Manrope({
@@ -33,6 +34,14 @@ export default function RootLayout({ children }) {
 
         {/* Page-specific content */}
         {children}
+
+        {/* ✅ Global WhatsApp rail on all pages except "/" */}
+        <RightContactRailGlobal
+          phone="+971 56 806 8070"
+          whatsappHref="https://wa.me/971568068070"
+          footerSelector="footer"
+        />
+
 
         {/* ✅ Footer always at bottom */}
         <Footer year={year} />

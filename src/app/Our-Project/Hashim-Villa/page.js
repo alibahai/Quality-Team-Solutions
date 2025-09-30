@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
- import Page1 from "src/app/components/Our-Projects/page1";
-
-import {  useEffect, useRef, useState } from "react";
+import Page1 from "src/app/components/Our-Projects/page1";
+import { useEffect, useRef, useState } from "react";
 
 export default function Arabian() {
   // 🔧 Add/adjust images here
@@ -18,10 +17,6 @@ export default function Arabian() {
     "/images/H8.JPG",
     "/images/H9.JPG",
     "/images/H10.JPG",
-    
-    
-    
-    // "/images/your-more-images.png",
   ];
 
   return (
@@ -42,17 +37,17 @@ export default function Arabian() {
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 pb-16 mt-16">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Hashim Villa</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+          Gallery of Hashim Villa
+        </h2>
         <p className="text-gray-700 leading-relaxed">
-         Hashim Villa pairs calm geometry with natural textures to create a quiet, resort-like feel.
-         The plan prioritizes open living with clear sightlines to a private courtyard, layered lighting for mood and task, and discreet storage to keep spaces uncluttered. 
-         Finishes are durable yet refined, designed to age gracefully.
+          Hashim Villa pairs calm geometry with natural textures to create a quiet,
+          resort-like feel. The plan prioritizes open living with clear sightlines to
+          a private courtyard, layered lighting for mood and task, and discreet
+          storage to keep spaces uncluttered. Finishes are durable yet refined,
+          designed to age gracefully.
         </p>
       </div>
-
-
-
-
 
       {/* Plain image rail + lightbox */}
       <section className="pb-16">
@@ -69,7 +64,6 @@ export default function Arabian() {
       <section className="pb-16">
         <Page1 title="Our Projects" showSecondary={false} />
       </section>
-
     </main>
   );
 }
@@ -115,8 +109,17 @@ function PlainImageRailLightbox({
     window.scrollTo(0, scrollY.current || 0);
   };
 
-  const openBox = (i) => { setIdx(i % images.length); setOpen(true); setPaused(true); lock(); };
-  const closeBox = () => { setOpen(false); setPaused(false); unlock(); };
+  const openBox = (i) => {
+    setIdx(i % images.length);
+    setOpen(true);
+    setPaused(true);
+    lock();
+  };
+  const closeBox = () => {
+    setOpen(false);
+    setPaused(false);
+    unlock();
+  };
   const prev = () => setIdx((i) => (i - 1 + images.length) % images.length);
   const next = () => setIdx((i) => (i + 1) % images.length);
 
@@ -135,8 +138,13 @@ function PlainImageRailLightbox({
     const track = trackRef.current;
     if (!track) return;
 
-    const prefersReduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-    if (prefersReduce) { track.style.transform = "translateX(0px)"; return; }
+    const prefersReduce =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduce) {
+      track.style.transform = "translateX(0px)";
+      return;
+    }
 
     const step = (ts) => {
       if (!t0.current) t0.current = ts;
@@ -153,7 +161,10 @@ function PlainImageRailLightbox({
     };
 
     raf.current = requestAnimationFrame(step);
-    return () => { cancelAnimationFrame(raf.current); t0.current = 0; };
+    return () => {
+      cancelAnimationFrame(raf.current);
+      t0.current = 0;
+    };
   }, [paused, speed, images.length, cardWidthPx, gapPx]);
 
   return (
@@ -184,7 +195,14 @@ function PlainImageRailLightbox({
                     onClick={() => openBox(i % images.length)}
                     aria-label="Open image"
                   >
-                    <Image src={src} alt="" fill className="object-cover" sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw" priority={i < 6} />
+                    {/* ✅ priority removed → Next/Image default lazy */}
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw"
+                    />
                   </button>
                 </li>
               ))}
@@ -195,23 +213,74 @@ function PlainImageRailLightbox({
 
       {/* Lightbox */}
       {open && (
-        <div className="fixed inset-0 z-50 bg-black/90" role="dialog" aria-modal="true">
+        <div
+          className="fixed inset-0 z-50 bg-black/90"
+          role="dialog"
+          aria-modal="true"
+        >
           {/* Buttons on top */}
-          <button type="button" onClick={closeBox} aria-label="Close" className="absolute right-3 top-3 md:right-6 md:top-6 z-20 rounded-full p-2 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
+          <button
+            type="button"
+            onClick={closeBox}
+            aria-label="Close"
+            className="absolute right-3 top-3 md:right-6 md:top-6 z-20 rounded-full p-2 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
           </button>
-          <div className="absolute left-3 top-3 md:left-6 md:top-6 z-20 text-white/80 text-sm md:text-base">{idx + 1} / {images.length}</div>
-          <button type="button" onClick={prev} aria-label="Previous image" className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className="absolute left-3 top-3 md:left-6 md:top-6 z-20 text-white/80 text-sm md:text-base">
+            {idx + 1} / {images.length}
+          </div>
+          <button
+            type="button"
+            onClick={prev}
+            aria-label="Previous image"
+            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M15 18l-6-6 6-6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
-          <button type="button" onClick={next} aria-label="Next image" className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <button
+            type="button"
+            onClick={next}
+            aria-label="Next image"
+            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 rounded-full p-3 text-white/90 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+          >
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 6l6 6-6 6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </button>
 
           {/* Image behind, non-blocking */}
           <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center p-4 md:p-8">
             <div className="relative w-full h-full max-w-6xl">
-              <Image src={images[idx]} alt="" fill className="object-contain" sizes="100vw" priority />
+              {/* ✅ priority removed; mounts only when modal open */}
+              <Image
+                src={images[idx]}
+                alt=""
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
             </div>
           </div>
         </div>
@@ -219,4 +288,3 @@ function PlainImageRailLightbox({
     </>
   );
 }
-

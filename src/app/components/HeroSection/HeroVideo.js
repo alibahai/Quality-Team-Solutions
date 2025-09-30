@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import LeftServicesRail from "../rails/LeftServicesRail";
 import RightContactRail from "../rails/RightContactRail";
 
@@ -5,27 +8,55 @@ export default function HeroVideo() {
   const VIDEO_SRC = "https://res.cloudinary.com/dwwibqeao/video/upload/v1758281716/QTS_1_jvullu.mp4";
   const POSTER_SRC = "/images/2ndImage.jpg";
 
+  const videoRef = useRef(null);
+  const [ready, setReady] = useState(false); // page fully loaded?
+
+  useEffect(() => {
+    const onLoaded = () => setReady(true);
+
+    if (document.readyState === "complete") {
+      setReady(true);
+    } else {
+      window.addEventListener("load", onLoaded, { once: true });
+      return () => window.removeEventListener("load", onLoaded);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (ready && videoRef.current) {
+      // try to play once source is present
+      const v = videoRef.current;
+      // small defer to let <source> attach
+      const id = requestAnimationFrame(() => {
+        v.play().catch(() => {});
+      });
+      return () => cancelAnimationFrame(id);
+    }
+  }, [ready]);
+
   return (
-    // 👇 Add the id so Navbar can detect when it's over the hero
+    // 👇 id same rehne do
     <section id="hero" className="relative min-h-screen w-full overflow-hidden -mt-20">
       <video
+        ref={videoRef}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-        src={VIDEO_SRC}
         poster={POSTER_SRC}
-        autoPlay
+        preload="none"     // 👉 don't prefetch
+        autoPlay           // autoplay allowed (muted + playsInline)
         muted
         playsInline
         loop
         aria-hidden="true"
-      />
+      >
+        {/* Source sirf tab add hoga jab pura page load ho chuka ho */}
+        {ready && <source src={VIDEO_SRC} type="video/mp4" />}
+      </video>
 
-      {/* dark tint over the video (still shows through transparent navbar) */}
+      {/* dark tint over the video */}
       <div className="absolute inset-0 " />
 
       {/* Navbar sits on top */}
-      <div className="relative z-20">
-        {/* If you used a different id, pass it: <Navbar firstSectionId="homeHero" /> */}
-      </div>
+      <div className="relative z-20">{/* Navbar slot */}</div>
 
       {/* Rails (flush edges) */}
       <LeftServicesRail />

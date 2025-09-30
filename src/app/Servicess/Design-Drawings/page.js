@@ -54,27 +54,26 @@ export default function Drawing() {
 
   return (
     <main className="min-h-screen bg-white">
-     {/* Hero Banner */}
-<section id="hero" className="relative h-[300px] w-full -mt-20">
-  <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: "url('/images/cardsImages.jpg')" }}
-  />
-  <div className="absolute inset-0 bg-black/40" />
-  <div className="relative z-10 flex h-full items-center justify-center px-4">
-    <h1
-      className="
-        text-center font-bold text-white drop-shadow
-        text-2xl sm:text-3xl md:text-5xl
-        leading-snug md:leading-tight
-        max-w-[900px]
-      "
-    >
-      Design Drawings &amp; Approvals
-    </h1>
-  </div>
-</section>
-
+      {/* Hero Banner */}
+      <section id="hero" className="relative h-[300px] w-full -mt-20">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/images/cardsImages.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex h-full items-center justify-center px-4">
+          <h1
+            className="
+              text-center font-bold text-white drop-shadow
+              text-2xl sm:text-3xl md:text-5xl
+              leading-snug md:leading-tight
+              max-w-[900px]
+            "
+          >
+            Design Drawings &amp; Approvals
+          </h1>
+        </div>
+      </section>
 
       {/* Designing & Space Planning (tabs + image swap) */}
       <section className="w-full my-12">
@@ -107,12 +106,12 @@ export default function Drawing() {
                   fill
                   sizes="(min-width:1024px) 55vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → default lazy */
                 />
               </div>
             </div>
 
-            {/* Tabs: mobile row (pills), desktop vertical list with only bottom borders + gap */}
+            {/* Tabs: mobile row (pills), desktop vertical list */}
             <div className="order-3 lg:order-2 lg:col-span-5">
               <ul
                 className="flex gap-3 overflow-x-auto no-scrollbar pb-4
@@ -133,8 +132,12 @@ export default function Drawing() {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onClick={() => setActiveKey(item.key)} // mobile
+                        onMouseEnter={() => {
+                          if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+                            setActiveKey(item.key);
+                          }
+                        }} // desktop hover
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
@@ -145,10 +148,12 @@ export default function Drawing() {
                         {/* Mobile label */}
                         <span className="lg:hidden">{item.title}</span>
 
-                        {/* Desktop label + optional description for the active one */}
+                        {/* Desktop label + optional description */}
                         <div className="hidden lg:block">
                           <div
-                            className={`text-base font-semibold ${isActive ? "text-[#F58321]" : "text-gray-900"}`}
+                            className={`text-base font-semibold ${
+                              isActive ? "text-[#F58321]" : "text-gray-900"
+                            }`}
                           >
                             {item.title}
                           </div>

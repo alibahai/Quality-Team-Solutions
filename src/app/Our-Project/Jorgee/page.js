@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
- import Page1 from "src/app/components/Our-Projects/page1";
-
-import {  useEffect, useRef, useState } from "react";
+import Page1 from "src/app/components/Our-Projects/page1";
+import { useEffect, useRef, useState } from "react";
 
 export default function Arabian() {
   // 🔧 Add/adjust images here
@@ -14,11 +13,7 @@ export default function Arabian() {
     "/images/jj4.JPG",
     "/images/jj5.JPG",
     "/images/jj6.JPG",
-       "/images/jj7.JPG",
-
-    
-    
-    // "/images/your-more-images.png",
+    "/images/jj7.JPG",
   ];
 
   return (
@@ -32,24 +27,24 @@ export default function Arabian() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex h-full items-center justify-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow">
-            Jorgee
+            Jargee
           </h1>
         </div>
       </section>
 
       {/* Content */}
       <div className="max-w-6xl mx-auto px-6 pb-16 mt-16">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-4">Gallery of Jorgee</h2>
+        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+          Gallery of Jargee
+        </h2>
         <p className="text-gray-700 leading-relaxed">
-        Jorgee pairs a warm, contemporary palette with precise lighting to highlight product without glare.
-        The plan organizes a simple circulation loop with focal moments for new drops, a flexible center table system, and discreet storage so the floor stays clear.
-        The result feels refined, welcoming, and effortless to navigate.
+          Jorgee pairs a warm, contemporary palette with precise lighting to highlight
+          product without glare. The plan organizes a simple circulation loop with
+          focal moments for new drops, a flexible center table system, and discreet
+          storage so the floor stays clear. The result feels refined, welcoming, and
+          effortless to navigate.
         </p>
       </div>
-
-
-
-
 
       {/* Plain image rail + lightbox */}
       <section className="pb-16">
@@ -66,7 +61,6 @@ export default function Arabian() {
       <section className="pb-16">
         <Page1 title="Our Projects" showSecondary={false} />
       </section>
-
     </main>
   );
 }
@@ -181,7 +175,14 @@ function PlainImageRailLightbox({
                     onClick={() => openBox(i % images.length)}
                     aria-label="Open image"
                   >
-                    <Image src={src} alt="" fill className="object-cover" sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw" priority={i < 6} />
+                    {/* ✅ priority removed → Next/Image default lazy */}
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(min-width:1280px) 25vw, (min-width:1024px) 33vw, 90vw"
+                    />
                   </button>
                 </li>
               ))}
@@ -208,7 +209,8 @@ function PlainImageRailLightbox({
           {/* Image behind, non-blocking */}
           <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center p-4 md:p-8">
             <div className="relative w-full h-full max-w-6xl">
-              <Image src={images[idx]} alt="" fill className="object-contain" sizes="100vw" priority />
+              {/* ✅ priority removed; mounts only when modal open */}
+              <Image src={images[idx]} alt="" fill className="object-contain" sizes="100vw" />
             </div>
           </div>
         </div>
@@ -216,4 +218,3 @@ function PlainImageRailLightbox({
     </>
   );
 }
-

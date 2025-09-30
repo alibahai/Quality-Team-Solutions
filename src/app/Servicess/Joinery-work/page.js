@@ -93,12 +93,12 @@ export default function Joinery() {
                   fill
                   sizes="(min-width:1024px) 55vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → default lazy */
                 />
               </div>
             </div>
 
-            {/* Tabs: mobile row (pills), desktop vertical list with only bottom borders + gap */}
+            {/* Tabs */}
             <div className="order-3 lg:order-2 lg:col-span-5">
               <ul
                 className="flex gap-3 overflow-x-auto no-scrollbar pb-4
@@ -119,8 +119,12 @@ export default function Joinery() {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onClick={() => setActiveKey(item.key)}
+                        onMouseEnter={() => {
+                          if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+                            setActiveKey(item.key);
+                          }
+                        }}
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",

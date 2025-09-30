@@ -73,10 +73,14 @@ export default function Mep() {
           {/* Heading + Intro */}
           <header className="mb-6 lg:mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              MEP <span className="text-[#F58321]">Works</span> <span className="text-3xl font-light">(Mechanical, Electrical & Plumbing)</span>
+              MEP <span className="text-[#F58321]">Works</span>{" "}
+              <span className="text-3xl font-light">
+                (Mechanical, Electrical & Plumbing)
+              </span>
             </h2>
             <p className="mt-3 text-base sm:text-lg text-gray-600 max-w-5xl">
-              Great interiors rely on seamless functionality. Our MEP services integrate comfort, safety, and sustainability with precision execution.
+              Great interiors rely on seamless functionality. Our MEP services integrate
+              comfort, safety, and sustainability with precision execution.
             </p>
           </header>
 
@@ -92,7 +96,7 @@ export default function Mep() {
                   fill
                   sizes="(min-width:1024px) 55vw, 90vw"
                   className="object-cover"
-                  priority
+                  /* priority removed → default lazy */
                 />
               </div>
             </div>
@@ -120,8 +124,12 @@ export default function Mep() {
                     >
                       <button
                         type="button"
-                        onClick={() => setActiveKey(item.key)} // Use only onClick for mobile
-                        onMouseEnter={() => { if (window.innerWidth >= 1024) setActiveKey(item.key); }} // Hover for desktop
+                        onClick={() => setActiveKey(item.key)} // mobile
+                        onMouseEnter={() => {
+                          if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+                            setActiveKey(item.key);
+                          }
+                        }} // desktop hover
                         className={[
                           "px-3 py-2 rounded-none text-sm font-semibold",
                           isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900",
@@ -132,10 +140,12 @@ export default function Mep() {
                         {/* Mobile label */}
                         <span className="lg:hidden">{item.title}</span>
 
-                        {/* Desktop label + optional description for the active one */}
+                        {/* Desktop label + optional description */}
                         <div className="hidden lg:block">
                           <div
-                            className={`text-base font-semibold ${isActive ? "text-[#F58321]" : "text-gray-900"}`}
+                            className={`text-base font-semibold ${
+                              isActive ? "text-[#F58321]" : "text-gray-900"
+                            }`}
                           >
                             {item.title}
                           </div>
