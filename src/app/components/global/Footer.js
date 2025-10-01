@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
@@ -12,6 +13,38 @@ export default function Footer({ year }) {
   const PHONE_DISPLAY =
     process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+971 56 806 8070";
   const EMAIL = process.env.NEXT_PUBLIC_EMAIL || "info@qts-fitout.com";
+
+  // state for footer form
+  const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [statusMsg, setStatusMsg] = useState("");
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    setStatusMsg("");
+
+    try {
+      const res = await fetch("http://localhost:5173/api/get-in-touch", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+      if (data.ok) {
+        setStatusMsg("Thanks! We’ll be in touch soon.");
+        setEmail("");
+      } else {
+        setStatusMsg("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error("Footer submit error", err);
+      setStatusMsg("Network error. Try again later.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <div className="relative w-full">
@@ -208,9 +241,11 @@ export default function Footer({ year }) {
                     Contact Us
                   </Link>
                 </li>
-
-                  <li>
-                  <Link href="/Our-Project/Arabian-Oud" className="hover:text-white">
+                <li>
+                  <Link
+                    href="/Our-Project/Arabian-Oud"
+                    className="hover:text-white"
+                  >
                     Our Projects
                   </Link>
                 </li>
@@ -231,23 +266,28 @@ export default function Footer({ year }) {
               <h2 className="text-xl font-bold mb-12">
                 Stay informed with the Latest News and Insights from QTS
               </h2>
-              <div className="space-y-3">
+              <form onSubmit={onSubmit} className="space-y-3">
                 <div className="flex items-center">
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
+                    required
                     className="w-full rounded-md border border-white/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/60 outline-none focus:border-white"
-                    readOnly
                   />
                 </div>
                 <button
-                  type="button"
-                  className="w-full rounded-md bg-red-600 px-4 py-2 mt-3 text-sm font-semibold text-white hover:bg-red-700"
-                  disabled
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full rounded-md bg-red-600 px-4 py-2 mt-3 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-70"
                 >
-                  GET IN TOUCH
+                  {submitting ? "Sending..." : "GET IN TOUCH"}
                 </button>
-              </div>
+                {statusMsg && (
+                  <p className="text-sm mt-2 text-white/80">{statusMsg}</p>
+                )}
+              </form>
 
               {/* Socials */}
               <div className="flex items-center gap-10 pt-5 mt-10">
