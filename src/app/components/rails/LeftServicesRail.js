@@ -93,7 +93,7 @@ export default function LeftServicesRail({ menuOpen }) {
   return (
     <div className="absolute left-0 top-1/2 -translate-y-1/2 z-30 mt-13">
       {/* Desktop panel */}
-      <div className="bg-neutral-900/25 backdrop-blur-m rounded-r-sm rounded-l-none py-3  md:block">
+      <div className="bg-neutral-900/25 backdrop-blur-m rounded-r-sm rounded-l-none py-3 md:block">
         <div className="flex flex-col">
           {ITEMS.map(({ title, Icon, href }) => (
             <Link
@@ -101,7 +101,7 @@ export default function LeftServicesRail({ menuOpen }) {
               href={href}
               aria-label={title}
               className="
-                group flex h-10 w-[410px] items-center overflow-hidden
+                group flex h-10 w-[360px] md:w-[450px] items-center overflow-hidden
                 bg-transparent hover:bg-red-600 transition-colors duration-200
                 rounded-r-md rounded-l-none
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70
@@ -112,10 +112,11 @@ export default function LeftServicesRail({ menuOpen }) {
                 <Icon className="h-5 w-5 text-gray-200 group-hover:text-white" />
               </span>
 
-              {/* Label: hide on mobile when menu open */}
+              {/* Label: sm on mobile, lg on desktop */}
               <span
                 className={`
-                  inline-flex h-full items-center text-m font-bold leading-none
+                  inline-flex h-full items-center 
+                  text-sm md:text-lg font-bold leading-none
                   whitespace-nowrap text-gray-200 group-hover:text-white
                   transition-all duration-200
                   ${menuOpen ? "hidden" : "inline-flex"}
