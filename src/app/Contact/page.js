@@ -101,7 +101,7 @@ export default function ContactPage() {
                 type="text"
                 placeholder="Your Name"
                 required
-                className="mt-2 mb-4 w-full rounded-lg border bg-white px-4 py-3 text-gray-900"
+                className="mt-2 mb-4 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/50"
               />
 
               <label htmlFor="phone" className="block text-sm font-medium text-black">
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 name="phone"
                 type="tel"
                 placeholder="Phone"
-                className="mt-2 mb-4 w-full rounded-lg border bg-white px-4 py-3 text-gray-900"
+                className="mt-2 mb-4 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/50"
               />
 
               <label htmlFor="email" className="block text-sm font-medium text-black">
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 type="email"
                 placeholder="Email Address"
                 required
-                className="mt-2 mb-4 w-full rounded-lg border bg-white px-4 py-3 text-gray-900"
+                className="mt-2 mb-4 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/50"
               />
 
               <label htmlFor="subject" className="block text-sm font-medium text-black">
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 name="subject"
                 type="text"
                 placeholder="I Want To"
-                className="mt-2 mb-4 w-full rounded-lg border bg-white px-4 py-3 text-gray-900"
+                className="mt-2 mb-4 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/50"
               />
 
               <label htmlFor="message" className="block text-sm font-medium text-black">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                 name="message"
                 rows={5}
                 placeholder="Your Message"
-                className="mt-2 mb-6 w-full rounded-lg border bg-white px-4 py-3 text-gray-900"
+                className="mt-2 mb-4 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-red-500/50"
               />
 
               <button

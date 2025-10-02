@@ -80,7 +80,6 @@ const Oud = (p) => (
   </svg>
 );
 
-
 const Hockey = (p) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -107,13 +106,13 @@ const Hockey = (p) => (
   </svg>
 );
 
-
 const Villa = (p) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="36"
     height="24"
     viewBox="0 0 36 24"
+    {...p}
   >
     <path
       fill="currentColor"
@@ -121,7 +120,7 @@ const Villa = (p) => (
     />
     <path
       fill="currentColor"
-      d="M33.552 22.112v-4.409h.665l.618-.611l-7.322-7.322h-.909v1.269h-2.13L23.205 9.77h-3.516l-7.314 7.314l.618.618h.979v4.409h-1.911C9.203 19.377 8.443 13.176 8.71 8.563l.047-.094h.023c1.25 0 2.358.606 3.048 1.54l.007.01c.52.703.833 1.588.833 2.545c0 .66-.148 1.285-.414 1.844l.011-.026a3.84 3.84 0 0 0 1.518-.78l-.006.005a4.25 4.25 0 0 0 1.461-3.213c0-.955-.314-1.836-.844-2.546l.008.011A3.71 3.71 0 0 0 10.28 6.48l.026-.007c.265-.165.57-.311.891-.422l.032-.01a3.9 3.9 0 0 1 1.363-.241c1.083 0 2.064.433 2.781 1.134l-.001-.001a3.5 3.5 0 0 0-.093-1.685l.007.025a3.786 3.786 0 0 0-4.991-2.293l.025-.009a5 5 0 0 0-.702.303l.029-.014a4.6 4.6 0 0 0-.301-.909l.012.029C8.478.407 6.46-.525 4.847.29a3 3 0 0 0-1.09.95l-.006.01A3.66 3.66 0 0 1 6.53 3.003l.009.016a5 5 0 0 0-1.179-.417l-.034-.006C2.846 2.063.486 3.41.063 5.611a3.74 3.74 0 0 0 .109 1.812l-.007-.026a4.55 4.55 0 0 1 4.543-1.402l-.032-.007c.409.086.771.21 1.11.373l-.029-.013a4.11 4.11 0 0 0-4.117 2.04l-.011.02a4.6 4.6 0 0 0-.643 2.357c0 1.568.777 2.954 1.968 3.794l.015.01a4 4 0 0 0 1.709.648l.021.002a4.67 4.67 0 0 1-.671-2.423c0-.873.237-1.691.651-2.392l-.012.022a4.2 4.2 0 0 1 2.927-2.048l.025-.004c-1.417 6.453-1.809 10.949-.64 13.736H3.573v1.88h32.148v-1.88h-2.169zm-7.95-4.307h7.166v4.307h-7.166zm-10.861-.854l4.95-4.95l4.95 4.95v5.161h-5.435v-3.884h-2.749v3.884h-1.722v-5.161z"
+      d="M33.552 22.112v-4.409h.665l.618-.611l-7.322-7.322h-.909v1.269h-2.13L23.205 9.77h-3.516l-7.314 7.314l.618.618h.979v4.409h-1.911C9.203 19.377 8.443 13.176 8.71 8.563l.047-.094h.023c1.25 0 2.358.606 3.048 1.54l.007.01c.52.703.833 1.588.833 2.545c0 .66-.148 1.285-.414 1.844a3.84 3.84 0 0 0 1.518-.78a4.25 4.25 0 0 0 1.461-3.213c0-.955-.314-1.836-.844-2.546a3.71 3.71 0 0 0-3.923-1.66c.265-.165.57-.311.891-.422c.446-.155.886-.241 1.363-.241c1.083 0 2.064.433 2.781 1.134a3.5 3.5 0 0 0-.093-1.685a3.786 3.786 0 0 0-4.991-2.293a5 5 0 0 0-.702.303a4.6 4.6 0 0 0-.301-.909C8.478.407 6.46-.525 4.847.29a3 3 0 0 0-1.09.95A3.66 3.66 0 0 1 6.53 3.003a5 5 0 0 0-1.179-.417C2.846 2.063.486 3.41.063 5.611a3.74 3.74 0 0 0 .109 1.812a4.55 4.55 0 0 1 4.543-1.402c.409.086.771.21 1.11.373A4.11 4.11 0 0 0 1.708 8.59a4.6 4.6 0 0 0-.643 2.357c0 1.568.777 2.954 1.968 3.794a4 4 0 0 0 1.709.648a4.67 4.67 0 0 1-.671-2.423c0-.873.237-1.691.651-2.392a4.2 4.2 0 0 1 2.927-2.048c-1.417 6.453-1.809 10.949-.64 13.736H3.573v1.88h32.148v-1.88h-2.169zm-7.95-4.307h7.166v4.307h-7.166zm-10.861-.854l4.95-4.95l4.95 4.95v5.161h-5.435v-3.884h-2.749v3.884h-1.722v-5.161z"
     />
   </svg>
 );
@@ -143,26 +142,23 @@ const Spark = (p) => (
   </svg>
 );
 
-
 const Coop = (p) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 1024 1024">
-		<path fill="currentColor" d="M320 288v-22.336C320 154.688 405.504 64 512 64s192 90.688 192 201.664v22.4h131.072a32 32 0 0 1 31.808 28.8l57.6 576a32 32 0 0 1-31.808 35.2H131.328a32 32 0 0 1-31.808-35.2l57.6-576a32 32 0 0 1 31.808-28.8H320zm64 0h256v-22.336C640 189.248 582.272 128 512 128s-128 61.248-128 137.664v22.4zm-64 64H217.92l-51.2 512h690.56l-51.264-512H704v96a32 32 0 1 1-64 0v-96H384v96a32 32 0 0 1-64 0z" />
-	</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 1024 1024" {...p}>
+    <path fill="currentColor" d="M320 288v-22.336C320 154.688 405.504 64 512 64s192 90.688 192 201.664v22.4h131.072a32 32 0 0 1 31.808 28.8l57.6 576a32 32 0 0 1-31.808 35.2H131.328a32 32 0 0 1-31.808-35.2l57.6-576a32 32 0 0 1 31.808-28.8H320zm64 0h256v-22.336C640 189.248 582.272 128 512 128s-128 61.248-128 137.664v22.4zm-64 64H217.92l-51.2 512h690.56l-51.264-512H704v96a32 32 0 1 1-64 0v-96H384v96a32 32 0 0 1-64 0z" />
+  </svg>
 );
 
 const Villaa = (p) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 15 15">
-		<path fill="currentColor" d="M6.176 1.176a.25.25 0 0 0-.352 0l-4.4 4.4A.25.25 0 0 0 1.6 6H3v6.751a.25.25 0 0 0 .249.249h3.5A.25.25 0 0 0 7 12.753v-7.43c0-.066.026-.13.073-.176L8.5 3.5zM6 11H5v-1h1zm0-2H5V8h1zm0-3v1H5V6zm6.75-3h-.5a.25.25 0 0 0-.25.25V5l-1.324-1.824a.25.25 0 0 0-.352 0L8.056 5.932A.25.25 0 0 0 8 6.088v6.66a.25.25 0 0 0 .246.252h1.5a.253.253 0 0 0 .254-.252V11h1v1.747a.253.253 0 0 0 .253.253h1.5a.25.25 0 0 0 .247-.249V3.25a.25.25 0 0 0-.25-.25M10 8H9V7h1zm2 0h-1V7h1zm-2 2H9V9h1zm2 0h-1V9h1z" />
-	</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 15 15" {...p}>
+    <path fill="currentColor" d="M6.176 1.176a.25.25 0 0 0-.352 0l-4.4 4.4A.25.25 0 0 0 1.6 6H3v6.751a.25.25 0 0 0 .249.249h3.5A.25.25 0 0 0 7 12.753v-7.43c0-.066.026-.13.073-.176L8.5 3.5zM6 11H5v-1h1zm0-2H5V8h1zm0-3v1H5V6zm6.75-3h-.5a.25.25 0 0 0-.25.25V5l-1.324-1.824a.25.25 0 0 0-.352 0L8.056 5.932A.25.25 0 0 0 8 6.088v6.66a.25.25 0 0 0 .246.252h1.5a.253.253 0 0 0 .254-.252V11h1v1.747a.253.253 0 0 0 .253.253h1.5a.25.25 0 0 0 .247-.249V3.25a.25.25 0 0 0-.25-.25M10 8H9V7h1zm2 0h-1V7h1zm-2 2H9V9h1zm2 0h-1V9h1z" />
+  </svg>
 );
-
 
 const Peach = (p) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-		<path fill="currentColor" d="M10 1H9v2h1c.462 0 .847.338 1.157 1.144l.019.049c-2.093-.333-4.646.066-6.729 1.955c-1.755 1.592-2.979 4.629-2.215 7.873c1.117 4.748 5.655 7.44 9.872 9.104c3.744-2.547 6.171-6.44 5.783-11.085c-.228-2.728-1.552-5.292-3.846-6.772c2.89 1.584 4.687 4.598 4.959 7.851c.206 2.46-.355 4.693-1.437 6.663c1.503-1.09 3.084-2.585 3.797-4.434c1.634-4.236-.027-8.333-2.99-10.025c-1.723-.984-3.33-1.262-4.566-1.088l.033-.09C14.148 3.34 14.535 3 15 3h1V1h-1c-1.214 0-2.003.668-2.502 1.404C12 1.668 11.213 1 10 1" />
-	</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" {...p}>
+    <path fill="currentColor" d="M10 1H9v2h1c.462 0 .847.338 1.157 1.144l.019.049c-2.093-.333-4.646.066-6.729 1.955c-1.755 1.592-2.979 4.629-2.215 7.873c1.117 4.748 5.655 7.44 9.872 9.104c3.744-2.547 6.171-6.44 5.783-11.085c-.228-2.728-1.552-5.292-3.846-6.772c2.89 1.584 4.687 4.598 4.959 7.851c.206 2.46-.355 4.693-1.437 6.663c1.503-1.09 3.084-2.585 3.797-4.434c1.634-4.236-.027-8.333-2.99-10.025c-1.723-.984-3.33-1.262-4.566-1.088l.033-.09C14.148 3.34 14.535 3 15 3h1V1h-1c-1.214 0-2.003.668-2.502 1.404C12 1.668 11.213 1 10 1" />
+  </svg>
 );
-
 
 const Care = (p) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="36" height="29" viewBox="0 0 24 24" {...p}>
@@ -185,8 +181,25 @@ const Mall = (p) => (
       d="M43 45H5V21.998C5 19.236 7.236 17 9.995 17.124c8.854.4 20.827 1.755 28.989 3.87c2.442.633 4.016 2.9 4.016 5.423zM5 33h38M3 45h42M17.5 33v12m13-12v12M34 13v6.5m-6.932-9.36c.096 1.462 1.154 2.58 2.614 2.704c1.02.087 2.426.156 4.318.156s3.298-.069 4.318-.156c1.46-.124 2.518-1.242 2.614-2.704c.04-.613.068-1.332.068-2.14s-.028-1.527-.068-2.14c-.096-1.462-1.154-2.58-2.614-2.704C37.298 3.069 35.892 3 34 3s-3.298.069-4.318.156c-1.46.124-2.518 1.242-2.614 2.704A33 33 0 0 0 27 8c0 .808.028 1.527.068 2.14"
     />
   </svg>
+
+  );
+
+const Resid = (p) => (
+
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 15 15">
+		<path fill="currentColor" d="M14 6H1a11.4 11.4 0 0 1 1-4h11a11.4 11.4 0 0 1 1 4M3 7h9v6h-1V8H8v5H3zm1 3h3V8H4z" />
+	</svg>
+
 );
 
+const Comm = (p) => (
+
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="24" viewBox="0 0 15 15">
+		<path fill="currentColor" d="M11.8 12.5V10c.7-.1 1.2-.7 1.2-1.5S12.3 7 11.5 7S10 7.7 10 8.5c0 .7.5 1.4 1.2 1.5v2.5H7V1H2v11.5H1v.5h13v-.5zM6 10H3V9h3zm0-2H3V7h3zm0-2H3V5h3zm0-2H3V3h3z" />
+	</svg>
+
+
+);
 
 
 /* ================= DATA ================= */
@@ -215,18 +228,25 @@ const SERVICES = [
   },
 ];
 
-/** Separate data for Our Support (mirrors Services for now — edit later) */
-const SUPPORT = [
+/** Categories shown under "Our Projects" */
+const SUPPORT_CATEGORIES = [
+  { key: "commercial", title: "Commercials", Icon: Resid, href: "#" },
+  { key: "residential", title: "Residentials", Icon: Comm, href: "#" },
+];
+
+/** Projects for each category (4 each) */
+const COMMERCIAL_PROJECTS = [
   { title: "Arabian Oud", Icon: Oud, href: "/Our-Project/Arabian-Oud" },
   { title: "Galaxy Hockey", Icon: Hockey, href: "/Our-Project/Galaxy-Hockey" },
-  { title: "Hashim Villa", Icon: Villa, href: "/Our-Project/Hashim-Villa" },
-  { title: "Jorge", Icon: Coop, href: "/Our-Project/Jorgee" },
-    { title: "Sufoh Villa", Icon: Villaa, href: "/Our-Project/Sufoh-Villa" },
-  { title: "Peach Passion", Icon: Peach, href: "/Our-Project/Peach-Passion" },
+  { title: "Jarge", Icon: Coop, href: "/Our-Project/Jorgee" },
   { title: "Ayur Care", Icon: Care, href: "/Our-Project/Ayur-Care" },
-  { title: "Wafi Mall", Icon: Mall, href: "/Our-Project/Wafi-Mall" },
- 
+];
 
+const RESIDENTIAL_PROJECTS = [
+  { title: "Hashim Villa", Icon: Villa, href: "/Our-Project/Hashim-Villa" },
+  { title: "Sufoh Villa", Icon: Villaa, href: "/Our-Project/Sufoh-Villa" },
+  { title: "Peach Passion", Icon: Peach, href: "/Our-Project/Peach-Passion" },
+  { title: "Wafi Mall", Icon: Mall, href: "/Our-Project/Wafi-Mall" },
 ];
 
 export default function Navbar({
@@ -239,6 +259,9 @@ export default function Navbar({
   const [mServices, setMServices] = useState(false); // mobile services accordion
   const [mSupport, setMSupport] = useState(false); // mobile support accordion
   const [showBg, setShowBg] = useState(false);
+
+  // which category is hovered inside the Support dropdown
+  const [hoveredSupportKey, setHoveredSupportKey] = useState(null); // "commercial" | "residential" | null
 
   const navRef = useRef(null);
   const thresholdRef = useRef(80);
@@ -285,6 +308,7 @@ export default function Navbar({
       setOpenMenu("none");
       setMServices(false);
       setMSupport(false);
+      setHoveredSupportKey(null);
     }
   }, []);
   useEffect(() => {
@@ -312,12 +336,15 @@ export default function Navbar({
   };
   const scheduleClose = () => {
     clearCloseTimer();
-    closeTimerRef.current = window.setTimeout(() => setOpenMenu("none"), 160);
+    closeTimerRef.current = window.setTimeout(() => {
+      setOpenMenu("none");
+      setHoveredSupportKey(null);
+    }, 160);
   };
 
   const LOGO_SRC = "/images/2.png";
 
-  /** Reusable dropdown panel */
+  /** Reusable dropdown panel (Services) */
   const Dropdown = ({ id, open, items }) => (
     <div
       id={id}
@@ -329,6 +356,8 @@ export default function Navbar({
           : "opacity-0 scale-95 pointer-events-none"
       } absolute left-1/2 top-full -translate-x-1/2 mt-4 z-[60] w-[720px]
          rounded-2xl bg-gray-800 text-white shadow-2xl transition duration-150 origin-top`}
+      onMouseEnter={clearCloseTimer}
+      onMouseLeave={scheduleClose}
     >
       <div className="p-4 sm:p-5">
         <div className="grid grid-cols-2 gap-x-10 gap-y-3">
@@ -348,6 +377,74 @@ export default function Navbar({
       </div>
     </div>
   );
+
+  /** Specialized dropdown for Our Projects
+   *  - First row: 2 columns => Commercials, Residentials
+   *  - Directly UNDER that row: show 4 projects (2 columns) for the hovered category
+   */
+  const SupportDropdown = ({ id, open }) => {
+    const active =
+      hoveredSupportKey === "commercial"
+        ? COMMERCIAL_PROJECTS
+        : hoveredSupportKey === "residential"
+        ? RESIDENTIAL_PROJECTS
+        : null;
+
+    return (
+      <div
+        id={id}
+        role="menu"
+        aria-label={id}
+        className={`${
+          open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
+        } absolute left-1/2 top-full -translate-x-1/2 mt-4 z-[60] w-[720px]
+           rounded-2xl bg-gray-800 text-white shadow-2xl transition duration-150 origin-top`}
+        onMouseEnter={clearCloseTimer}
+        onMouseLeave={scheduleClose}
+      >
+        <div className="p-4 sm:p-5">
+          {/* Row of two category tabs */}
+          <div className="grid grid-cols-2 gap-3">
+            {SUPPORT_CATEGORIES.map(({ key, title, Icon }, i) => (
+              <button
+                key={i}
+                type="button"
+                onMouseEnter={() => setHoveredSupportKey(key)}
+                className={`group flex items-center gap-3 rounded-xl p-3 text-left
+                            ${hoveredSupportKey === key ? "bg-white/10" : "hover:bg-white/10"}`}
+              >
+                <Icon className="h-6 w-6" />
+                <span className="text-sm font-semibold leading-snug">{title}</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Projects panel appears directly UNDER the categories */}
+          {active ? (
+            <div className="mt-4 border-t border-white/10 pt-4">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                {active.map(({ title, Icon, href }, idx) => (
+                  <Link
+                    key={idx}
+                    href={href}
+                    role="menuitem"
+                    className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
+                    onClick={() => {
+                      setOpenMenu("none");
+                      setHoveredSupportKey(null);
+                    }}
+                  >
+                    <Icon className="h-6 w-6" />
+                    <span className="text-sm font-medium leading-snug">{title}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <>
@@ -430,7 +527,7 @@ export default function Navbar({
               />
             </li>
 
-            {/* Desktop: Our Support */}
+            {/* Desktop: Our Projects (two categories + projects directly underneath) */}
             <li
               className="relative"
               onMouseEnter={() => {
@@ -461,11 +558,8 @@ export default function Navbar({
                   <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
                 </svg>
               </button>
-              <Dropdown
-                id="support-menu"
-                open={openMenu === "support"}
-                items={SUPPORT}
-              />
+
+              <SupportDropdown id="support-menu" open={openMenu === "support"} />
             </li>
 
             <li>
@@ -629,49 +723,123 @@ export default function Navbar({
               </div>
             </li>
 
-            {/* Our Support (MOBILE) */}
-            <li>
-              <button
-                type="button"
-                onClick={() => setMSupport((v) => !v)}
-                className="w-full flex items-center justify-between text-base font-medium hover:text-white/80"
-                aria-expanded={mSupport}
-                aria-controls="m-support"
-              >
-                <span>Our Products</span>
-                <svg
-                  aria-hidden="true"
-                  className={`h-4 w-4 transition-transform ${
-                    mSupport ? "rotate-180" : ""
-                  }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
-                </svg>
-              </button>
+      {/* Our Projects (MOBILE) */}
+<li>
+  <button
+    type="button"
+    onClick={() => setMSupport((v) => !v)}
+    className="w-full flex items-center justify-between text-base font-medium hover:text-white/80"
+    aria-expanded={mSupport}
+    aria-controls="m-support"
+  >
+    <span>Our Projects</span>
+    <svg
+      aria-hidden="true"
+      className={`h-4 w-4 transition-transform ${
+        mSupport ? "rotate-180" : ""
+      }`}
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+    </svg>
+  </button>
 
-              <div
-                id="m-support"
-                className={`overflow-hidden transition-all duration-200 ${
-                  mSupport ? "max-h-[1000px] mt-3" : "max-h-0"
-                }`}
-              >
-                <div className="grid grid-cols-1 gap-2">
-                  {SUPPORT.map(({ title, Icon, href }, i) => (
-                    <Link
-                      key={i}
-                      href={href}
-                      onClick={() => setOpen(false)}
-                      className="group flex items-center gap-3 rounded-lg p-2.5 hover:bg-red-600"
-                    >
-                      <Icon className="h-6 w-6" />
-                      <span className="text-sm font-medium">{title}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </li>
+  <div
+    id="m-support"
+    className={`overflow-hidden transition-all duration-200 ${
+      mSupport ? "max-h-[1000px] mt-3" : "max-h-0"
+    }`}
+  >
+    {/* Commercials */}
+    <div className="mb-2">
+      <button
+        type="button"
+        onClick={() =>
+          setHoveredSupportKey(
+            hoveredSupportKey === "commercial" ? null : "commercial"
+          )
+        }
+        className="w-full flex items-center justify-between text-sm font-medium p-2 rounded-lg hover:bg-red-600"
+      >
+        <span>Commercials</span>
+        <svg
+          aria-hidden="true"
+          className={`h-3.5 w-3.5 transition-transform ${
+            hoveredSupportKey === "commercial" ? "rotate-180" : ""
+          }`}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-200 ${
+          hoveredSupportKey === "commercial" ? "max-h-[1000px] mt-2" : "max-h-0"
+        }`}
+      >
+        <div className="grid grid-cols-1 gap-2">
+          {COMMERCIAL_PROJECTS.map(({ title, Icon, href }, i) => (
+            <Link
+              key={i}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="group flex items-center gap-3 rounded-lg p-2.5 hover:bg-red-600"
+            >
+              <Icon className="h-6 w-6" />
+              <span className="text-sm font-medium">{title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Residentials */}
+    <div>
+      <button
+        type="button"
+        onClick={() =>
+          setHoveredSupportKey(
+            hoveredSupportKey === "residential" ? null : "residential"
+          )
+        }
+        className="w-full flex items-center justify-between text-sm font-medium p-2 rounded-lg hover:bg-red-600"
+      >
+        <span>Residentials</span>
+        <svg
+          aria-hidden="true"
+          className={`h-3.5 w-3.5 transition-transform ${
+            hoveredSupportKey === "residential" ? "rotate-180" : ""
+          }`}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+        </svg>
+      </button>
+      <div
+        className={`overflow-hidden transition-all duration-200 ${
+          hoveredSupportKey === "residential" ? "max-h-[1000px] mt-2" : "max-h-0"
+        }`}
+      >
+        <div className="grid grid-cols-1 gap-2">
+          {RESIDENTIAL_PROJECTS.map(({ title, Icon, href }, i) => (
+            <Link
+              key={i}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="group flex items-center gap-3 rounded-lg p-2.5 hover:bg-red-600"
+            >
+              <Icon className="h-6 w-6" />
+              <span className="text-sm font-medium">{title}</span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
 
             {/* About */}
             <li>

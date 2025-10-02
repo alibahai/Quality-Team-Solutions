@@ -101,7 +101,7 @@ export default function LeftServicesRail({ menuOpen }) {
               href={href}
               aria-label={title}
               className="
-                group flex h-10 w-[350px] items-center overflow-hidden
+                group flex h-10 w-[410px] items-center overflow-hidden
                 bg-transparent hover:bg-red-600 transition-colors duration-200
                 rounded-r-md rounded-l-none
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70
@@ -115,7 +115,7 @@ export default function LeftServicesRail({ menuOpen }) {
               {/* Label: hide on mobile when menu open */}
               <span
                 className={`
-                  inline-flex h-full items-center text-sm font-medium leading-none
+                  inline-flex h-full items-center text-m font-bold leading-none
                   whitespace-nowrap text-gray-200 group-hover:text-white
                   transition-all duration-200
                   ${menuOpen ? "hidden" : "inline-flex"}
