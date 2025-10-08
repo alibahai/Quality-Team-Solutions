@@ -8,39 +8,43 @@ import { Icon } from "@iconify/react";
 export default function Footer({ year }) {
   const BG_URL = "/images/footer.jpg";
 
-  // Read dynamic values from env
+  // 🔧 Environment variables
   const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE_E164 || "+971568068070";
   const PHONE_DISPLAY =
     process.env.NEXT_PUBLIC_PHONE_DISPLAY || "+971 56 806 8070";
   const EMAIL = process.env.NEXT_PUBLIC_EMAIL || "info@qts-fitout.com";
 
-  // state for footer form
+  // 📨 Form state
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [statusMsg, setStatusMsg] = useState("");
 
+  // 🧠 Submit handler
   async function onSubmit(e) {
     e.preventDefault();
     setSubmitting(true);
     setStatusMsg("");
 
     try {
-      const res = await fetch("http://localhost:5173/api/get-in-touch", {
+      // ✅ Use same-origin API
+      const res = await fetch("/api/get-in-touch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
       const data = await res.json();
-      if (data.ok) {
-        setStatusMsg("Thanks! We’ll be in touch soon.");
+      console.log("📩 Footer API response:", data);
+
+      if (res.ok && data.ok) {
+        setStatusMsg("✅ Thanks! We’ll be in touch soon.");
         setEmail("");
       } else {
-        setStatusMsg("Something went wrong. Please try again.");
+        setStatusMsg("❌ Something went wrong. Please try again.");
       }
     } catch (err) {
-      console.error("Footer submit error", err);
-      setStatusMsg("Network error. Try again later.");
+      console.error("Footer submit error:", err);
+      setStatusMsg("⚠️ Network error. Try again later.");
     } finally {
       setSubmitting(false);
     }
@@ -48,7 +52,7 @@ export default function Footer({ year }) {
 
   return (
     <div className="relative w-full">
-      {/* Background image */}
+      {/* Background */}
       <div
         className="absolute inset-0 bg-center bg-cover"
         style={{ backgroundImage: `url(${BG_URL})` }}
@@ -58,81 +62,6 @@ export default function Footer({ year }) {
 
       <footer className="relative z-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-white">
-          {/* Mobile layout */}
-          <div className="block md:hidden text-center">
-            <div className="w-28 mx-auto">
-              <Image
-                src="/images/2.png"
-                alt="QTS - Quality Team Solution"
-                width={160}
-                height={80}
-                className="h-auto w-full"
-                priority
-              />
-            </div>
-
-            <p className="mt-6 text-sm leading-6 text-white/80">
-              Quality Team Solution (QTS) is Dubai’s leading interior design and
-              fit-out partner, known for turning ideas into exceptional spaces.
-              We deliver innovative, functional, and timeless designs — serving
-              clients across the UAE and beyond.
-            </p>
-
-            <p className="mt-6 text-sm text-white/80">
-              Office 706, Business Bay Tower, Business Bay, Dubai, UAE
-            </p>
-
-            {/* Dynamic phone */}
-            <a
-              href={`tel:${PHONE_E164}`}
-              className="mt-6 block text-sm text-white/80 hover:text-white"
-              aria-label={`Call ${PHONE_DISPLAY}`}
-            >
-              {PHONE_DISPLAY}
-            </a>
-
-            {/* Dynamic email */}
-            <a
-              href={`mailto:${EMAIL}`}
-              className="mt-6 block text-sm text-white/80 hover:text-white"
-              aria-label={`Email ${EMAIL}`}
-            >
-              {EMAIL}
-            </a>
-
-            {/* Social icons */}
-            <div className="flex justify-center gap-8 mt-8">
-              <a
-                href="https://wa.me/971568068070"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="logos:whatsapp-icon" width="28" height="28" />
-              </a>
-              <a
-                href="https://wa.me/971568068070"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="logos:youtube-icon" width="28" height="28" />
-              </a>
-              <a
-                href="https://wa.me/971568068070"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="skill-icons:instagram" width="28" height="28" />
-              </a>
-              <a
-                href="https://wa.me/971568068070"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon="logos:facebook" width="28" height="28" />
-              </a>
-            </div>
-          </div>
-
           {/* Desktop layout */}
           <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-4">
             {/* Column 1: Brand */}
@@ -171,52 +100,35 @@ export default function Footer({ year }) {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Servicess/Demolishing"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Demolishing" className="hover:text-white">
                     Demolition, Build &amp; Refurbish
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Servicess/Mep"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Mep" className="hover:text-white">
                     MEP Works
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Servicess/Joinery-work"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Joinery-work" className="hover:text-white">
                     Joinery Works
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Servicess/Turnkey-Fit"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Turnkey-Fit" className="hover:text-white">
                     Turnkey Fit-Outs
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Servicess/Design-Drawings"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Design-Drawings" className="hover:text-white">
                     Design and Space Planning
                   </Link>
                 </li>
               </ul>
 
-              {/* Dynamic phone */}
               <a
                 href={`tel:${PHONE_E164}`}
                 className="mt-12 block text-sm text-white/80 ml-12 hover:text-white"
-                aria-label={`Call ${PHONE_DISPLAY}`}
               >
                 {PHONE_DISPLAY}
               </a>
@@ -251,11 +163,9 @@ export default function Footer({ year }) {
                 </li>
               </ul>
 
-              {/* Dynamic email */}
               <a
                 href={`mailto:${EMAIL}`}
                 className="mt-28 block text-sm text-white/80 ml-12 hover:text-white"
-                aria-label={`Email ${EMAIL}`}
               >
                 {EMAIL}
               </a>
@@ -289,34 +199,18 @@ export default function Footer({ year }) {
                 )}
               </form>
 
-              {/* Socials */}
+              {/* Social Icons */}
               <div className="flex items-center gap-10 pt-5 mt-10">
-                <a
-                  href="https://wa.me/971568068070"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://wa.me/971568068070" target="_blank">
                   <Icon icon="logos:whatsapp-icon" width="30" height="30" />
                 </a>
-                <a
-                  href="https://wa.me/971568068070"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.youtube.com" target="_blank">
                   <Icon icon="logos:youtube-icon" width="30" height="30" />
                 </a>
-                <a
-                  href="https://wa.me/971568068070"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.instagram.com" target="_blank">
                   <Icon icon="skill-icons:instagram" width="30" height="30" />
                 </a>
-                <a
-                  href="https://wa.me/971568068070"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.facebook.com" target="_blank">
                   <Icon icon="logos:facebook" width="30" height="30" />
                 </a>
               </div>
@@ -324,7 +218,7 @@ export default function Footer({ year }) {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom Bar */}
         <div className="hidden md:block border-t border-white/10">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
             <p>© {year} Quality Team Solution (QTS)</p>
