@@ -191,8 +191,8 @@ export default function ServicesRailExact({
 }
 
 const DEFAULT_SERVICES = [
-  { title: "Arabian Oud", location: "Jeddah, Saudi Arabia", year: "2024", image: "/images/oud.png", href: "/Our-Project/Arabian-Oud" },
-  { title: "Galaxy Hockey", location: "Taif, Saudi Arabia", year: "2025", image: "/images/hockey.png", href: "/Our-Project/Galaxy-Hockey" },
-  { title: "Hashim Villa", location: "Jeddah, Saudi Arabia", year: "2025", image: "/images/villa.png", href: "/Our-Project/Hashim-Villa" },
-  { title: "Jorgee", location: "Riyadh, Saudi Arabia", year: "2025", image: "/images/jorge.png", href: "/Our-Project/Jorgee" },
+  { title: "Arabian Oud", location: "Jeddah, Saudi Arabia", year: "2024", image: "/images/oud.png", href: "/our-project/arabian-oud" },
+  { title: "Galaxy Hockey", location: "Taif, Saudi Arabia", year: "2025", image:     "/images/gh2.jpg", href: "/our-project/galaxy-hockey" },
+  { title: "Hashim Villa", location: "Jeddah, Saudi Arabia", year: "2025", image: "/images/villa.png", href: "/our-project/hashim-villa" },
+  { title: "Jorgee", location: "Riyadh, Saudi Arabia", year: "2025", image: "/images/jorge.png", href: "/our-project/jorgee" },
 ];

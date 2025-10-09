@@ -12,37 +12,37 @@ export default function Space() {
       {
         key: "concept",
         title: "Architectural & Interior Drawings",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "Architectural & Interior Drawings — Delivering precise plans that bridge creativity with construction accuracy.",
         image: "/images/space5.jpg",
       },
       {
         key: "planning",
         title: "MEP Drawings for Compliance",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "MEP Drawings for Compliance , and plumbing designs meet all safety and regulatory standards.",
         image: "/images/MEP.jpeg",
       },
       {
         key: "ergonomics",
         title: "Authority Submissions & Follow-Ups",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "Authority Submissions & Follow-Ups — Managing approvals and documentation to ensure smooth regulatory clearance.",
         image: "/images/space3.jpg",
       },
       {
         key: "renders",
         title: "Regulation Advisory",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "Regulation Advisory — Guiding projects to align with codes, permits, and legal standards.",
         image: "/images/space2.jpg",
       },
       {
         key: "sustainability",
         title: "Fast-Track Approvals",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "Fast-Track Approvals — Accelerating permit processes for timely and hassle-free project execution.",
         image: "/images/space.png",
       },
       {
         key: "furnishing",
         title: "Revision & Update Handling",
-        desc: "Accurate technical plans meeting authority standards.",
+        desc: "Revision & Update Handling — Managing design changes seamlessly to keep projects accurate and up to date.",
         image: "/images/space3.jpg",
       },
     ],
@@ -91,7 +91,7 @@ export default function Space() {
           <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Image: changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+              <div className="relative h-64 sm:h-80 lg:h-[29rem] overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
                   key={active.image}
                   src={active.image}

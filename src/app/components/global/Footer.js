@@ -61,7 +61,6 @@ export default function Footer({ year }) {
 
       <footer className="relative z-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-white">
-
           {/* ✅ MOBILE LAYOUT */}
           <div className="block md:hidden text-center">
             <div className="w-28 mx-auto">
@@ -89,8 +88,11 @@ export default function Footer({ year }) {
             <p className="mt-6 text-sm text-white/80">{PHONE_DISPLAY}</p>
             <p className="mt-6 text-sm text-white/80">{EMAIL}</p>
 
-            {/* Newsletter (optional for mobile) */}
-            <form onSubmit={onSubmit} className="space-y-3 mt-6">
+            {/* Newsletter (hidden on mobile) */}
+            <form
+              onSubmit={onSubmit}
+              className="space-y-3 mt-6 hidden md:block"
+            >
               <div className="flex items-center justify-center">
                 <input
                   type="email"
@@ -121,7 +123,10 @@ export default function Footer({ year }) {
               <a href="https://www.youtube.com" target="_blank">
                 <Icon icon="logos:youtube-icon" width="28" height="28" />
               </a>
-              <a href="https://www.instagram.com" target="_blank">
+              <a
+                href="https://www.instagram.com/qualityteamsolution/"
+                target="_blank"
+              >
                 <Icon icon="skill-icons:instagram" width="28" height="28" />
               </a>
               <a href="https://www.facebook.com" target="_blank">
@@ -173,12 +178,18 @@ export default function Footer({ year }) {
               <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
-                  <Link href="/Servicess/Drawings-Approvals" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Drawings-Approvals"
+                    className="hover:text-white"
+                  >
                     Design Drawings &amp; Approvals
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Servicess/Demolishing" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Demolishing"
+                    className="hover:text-white"
+                  >
                     Demolition, Build &amp; Refurbish
                   </Link>
                 </li>
@@ -188,17 +199,26 @@ export default function Footer({ year }) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Servicess/Joinery-work" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Joinery-work"
+                    className="hover:text-white"
+                  >
                     Joinery Works
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Servicess/Turnkey-Fit" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Turnkey-Fit"
+                    className="hover:text-white"
+                  >
                     Turnkey Fit-Outs
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Servicess/Design-Drawings" className="hover:text-white">
+                  <Link
+                    href="/Servicess/Design-Drawings"
+                    className="hover:text-white"
+                  >
                     Design and Space Planning
                   </Link>
                 </li>
@@ -231,7 +251,10 @@ export default function Footer({ year }) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/Our-Project/Arabian-Oud" className="hover:text-white">
+                  <Link
+                    href="/Our-Project/Arabian-Oud"
+                    className="hover:text-white"
+                  >
                     Our Projects
                   </Link>
                 </li>
@@ -275,17 +298,31 @@ export default function Footer({ year }) {
 
               {/* Social Icons */}
               <div className="flex items-center gap-10 pt-5 mt-10">
-                <a href="https://wa.me/971568068070" target="_blank">
-                  <Icon icon="logos:whatsapp-icon" width="30" height="30" />
-                </a>
-                <a href="https://www.youtube.com" target="_blank">
-                  <Icon icon="logos:youtube-icon" width="30" height="30" />
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
+                <a
+                  href="https://www.instagram.com/qualityteamsolution/"
+                  target="_blank"
+                >
                   <Icon icon="skill-icons:instagram" width="30" height="30" />
                 </a>
-                <a href="https://www.facebook.com" target="_blank">
-                  <Icon icon="logos:facebook" width="30" height="30" />
+                <a
+                  href="https://www.linkedin.com/company/quality-team-solutions/about/"
+                  target="_blank"
+                >
+                  <Icon icon="logos:linkedin-icon" width="30" height="30" />
+                </a>
+                <a
+                  href="https://www.snapchat.com/@qualityteamsol0"
+                  target="_blank"
+                  className="flex items-center justify-center w-180 h-10 rounded-full bg-yellow-400 text-white hover:opacity-90 transition"
+                >
+                  <Icon icon="uil:snapchat-ghost" width="38" height="24" />
+                </a>
+
+                <a
+                  href="https://www.tiktok.com/@qualityteamsolution"
+                  target="_blank"
+                >
+                  <Icon icon="logos:tiktok-icon" width="30" height="30" />
                 </a>
               </div>
             </div>
@@ -293,19 +330,33 @@ export default function Footer({ year }) {
         </div>
 
         {/* Bottom Bar for Desktop */}
-        <div className="hidden md:block border-t border-white/10">
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
-            <p>© {year} Quality Team Solution (QTS)</p>
-            <div className="flex items-center gap-6">
-              <Link href="#" className="hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white mr-10">
-                Terms and Conditions
-              </Link>
-            </div>
-          </div>
-        </div>
+      {/* Bottom Bar for Desktop */}
+<div className="hidden md:block border-t border-white/10">
+  <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2">
+    <div className="flex justify-center items-center gap-2 w-full text-center mt-4 mb-4 relative bottom-2">
+      <Image
+        src="/images/0908.png"
+        alt="Intercraft Solutions Logo"
+        width={18}
+        height={18}
+        // If the logo has a WHITE background (JPG): use multiply to blend it in
+        className="object-contain mix-blend-multiply opacity-90"
+        // If your logo is a transparent PNG, 'screen' often looks nicer:
+        // className="object-contain mix-blend-screen opacity-90"
+        priority
+      />
+
+      <Link
+        href="https://www.intercraftsol.com"
+        target="_blank"
+        className="hover:text-white text-white/80 transition"
+      >
+        www.intercraftsol.com
+      </Link>
+    </div>
+  </div>
+</div>
+
       </footer>
     </div>
   );

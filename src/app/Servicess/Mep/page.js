@@ -11,37 +11,37 @@ export default function Mep() {
       {
         key: "concept",
         title: "HVAC Design & Installation",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "HVAC Design & Installation — Delivering efficient climate control systems with precision  design.",
         image: "/images/buildings.jpg",
       },
       {
         key: "planning",
         title: "Electrical Systems & Smart Lighting",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "Electrical Systems & Smart Lighting — Powering spaces with intelligent, efficient solutions.",
         image: "/images/MEP.jpeg",
       },
       {
         key: "ergonomics",
         title: "Plumbing & Water Supply",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "Plumbing & Water Supply — Ensuring reliable flow and efficient water management through precise installation and design.",
         image: "/images/plumbing.jpeg",
       },
       {
         key: "renders",
         title: "Drainage & Waste Systems",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "Drainage & Waste Systems — Designing efficient networks for safe, hygienic, and sustainable waste disposal.",
         image: "/images/drain.jpeg",
       },
       {
         key: "sustainability",
         title: "Fire Safety & Alarm Systems",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "Fire Safety & Alarm Systems — Protecting lives and property with reliable, compliant, and responsive safety solutions.",
         image: "/images/fire.jpeg",
       },
       {
         key: "furnishing",
         title: "Energy Efficiency Integration",
-        desc: "Safe, innovative, and energy-saving solutions.",
+        desc: "Energy Efficiency Integration — Optimizing systems to reduce consumption and enhance sustainable performance.",
         image: "/images/energy.jpeg",
       },
     ],
@@ -88,7 +88,7 @@ export default function Mep() {
           <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Image: Changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+              <div className="relative h-64 sm:h-80 lg:h-[29rem] overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
                   key={active.image}
                   src={active.image}

@@ -12,37 +12,37 @@ export default function Joinery() {
       {
         key: "concept",
         title: "Bespoke Furniture & Cabinetry",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Bespoke Furniture & Cabinetry — Designing handcrafted pieces that reflect individuality, elegance, and precision.",
         image: "/images/stands.png",
       },
       {
         key: "planning",
         title: "Wooden Partitions & Panels",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Wooden Partitions & Panels — Defining spaces with warm, elegant, and durable wooden craftsmanship.",
         image: "/images/fit.jpg",
       },
       {
         key: "ergonomics",
         title: "Reception Counters & Wardrobes",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Reception Counters & Wardrobes — Crafting elegant, functional storage and greeting spaces with precision.",
         image: "/images/counter.jpg",
       },
       {
         key: "renders",
         title: "Shelving & Display Units",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Shelving & Display Units — Showcasing style and functionality through smart, space-efficient designs.",
         image: "/images/shelves.jpeg",
       },
       {
         key: "sustainability",
         title: "Premium Finishes & Materials",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Premium Finishes & Materials — Elevating interiors with high-quality textures and refined craftsmanship.",
         image: "/images/villa.png",
       },
       {
         key: "furnishing",
         title: "Custom Joinery Design Solutions",
-        desc: "Functional and aesthetic space dividers.",
+        desc: "Custom Joinery Design Solutions — Delivering precision-built joinery that merges functionality with timeless design.",
         image: "/images/about3.jpg",
       },
     ],
@@ -85,7 +85,7 @@ export default function Joinery() {
           <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Image: changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+              <div className="relative h-64 sm:h-80 lg:h-[29rem] overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
                   key={active.image}
                   src={active.image}

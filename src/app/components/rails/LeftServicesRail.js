@@ -80,12 +80,12 @@ const IconBuilding = (p) => (
 
 /* ================= DATA ================= */
 const ITEMS = [
-  { title: "Designing and Space Planning", Icon: IconBook, href: "/Servicess/Design-Drawings" },
-  { title: "Joinery Work", Icon: IconPencil, href: "/Servicess/Joinery-work" },
-  { title: "Drawing and Approvals", Icon: IconCompass, href: "/Servicess/Drawings-Approvals" },
-  { title: "MEP Works", Icon: IconGauge, href: "/Servicess/Mep" },
-  { title: "Turnkey Fit Outs", Icon: IconBarcode, href: "/Servicess/Turnkey-Fit" },
-  { title: "Demolishing, Construction and Refurbishment", Icon: IconBuilding, href: "/Servicess/Demolishing" },
+  { title: "Designing and Space Planning", Icon: IconBook, href: "/servicess/design-drawings" },
+  { title: "Joinery Work", Icon: IconPencil, href: "/servicess/joinery-work" },
+  { title: "Drawing and Approvals", Icon: IconCompass, href: "/servicess/drawings-approvals" },
+  { title: "MEP Works", Icon: IconGauge, href: "/servicess/mep" },
+  { title: "Turnkey Fit Outs", Icon: IconBarcode, href: "/servicess/turnkey-fit" },
+  { title: "Demolishing, Construction and Refurbishment", Icon: IconBuilding, href: "/servicess/demolishing" },
 ];
 
 /* =============== COMPONENT =============== */

@@ -38,75 +38,72 @@ function useCountUp(startWhenVisibleRef, targets, duration = 1400) {
 }
 
 export default function SectorWeServe() {
- const services = useMemo(
-  () => [
-    {
-      key: "ceiling",
-      title: "Ceiling & Partitions",
-      blurb: "Suspended ceilings, acoustic panels, and partitions.",
-      image: "/images/space2.jpg",            // ⬅️ more on-theme than buildings.jpg
-    },
-    {
-      key: "fitout",
-      title: "Fitout Interior & MEP Services",
-      blurb: "Turnkey interiors fully integrated with MEP.",
-      image: "/images/turnkey.png",           // ⬅️ pairs with fit-out scope
-    },
-    {
-      key: "gym",
-      title: "Gym Fitout",
-      blurb: "Shock-absorbing floors, mirrors, and ventilation.",
-      image: "/images/gym.jpeg",
-    },
-    {
-      key: "office",
-      title: "Office Fitout",
-      blurb: "Ergonomic workstations, meeting rooms, and  control.",
-      image: "/images/buildings.jpg",         // ⬅️ clean, neutral office vibe
-    },
-    {
-      key: "restaurant",
-      title: "Restaurant Fitout",
-      blurb: "Kitchen-fronts, hygienic finishes, and guest flow.",
-      image: "/images/retail.png",            // ⬅️ storefront/retail-facing visual
-    },
-    {
-      key: "residential",
-      title: "Residential Fitout",
-      blurb: "Bespoke cabinetry, premium finishes, and smart storage.",
-      image: "/images/C1.JPG",
-    },
-    {
-      key: "retail",
-      title: "Retail Fitout",
-      blurb: "Modular displays, cashwraps, and visual merchandising.",
-      image: "/images/P5.jpg",
-    },
-  ],
-  []
-);
-
+  const services = useMemo(
+    () => [
+      {
+        key: "ceiling",
+        title: "Ceiling & Partitions",
+        blurb: "Suspended ceilings, acoustic panels, and partitions.",
+        image: "/images/jr55.jpg",
+      },
+      {
+        key: "fitout",
+        title: "Fitout Interior & MEP Services",
+        blurb: "Turnkey interiors fully integrated with MEP.",
+        image: "/images/turnkey.png",
+      },
+      {
+        key: "gym",
+        title: "Gym Fitout",
+        blurb: "Shock-absorbing floors, mirrors, and ventilation.",
+        image: "/images/gym.jpeg",
+      },
+      {
+        key: "office",
+        title: "Office Fitout",
+        blurb: "Ergonomic workstations, meeting rooms, and control.",
+        image: "/images/about1.jpg",
+      },
+      {
+        key: "restaurant",
+        title: "Restaurant Fitout",
+        blurb: "Kitchen-fronts, hygienic finishes, and guest flow.",
+        image: "/images/P5.jpg",
+      },
+      {
+        key: "residential",
+        title: "Residential Fitout",
+        blurb: "Bespoke cabinetry, premium finishes, and smart storage.",
+        image: "/images/C1.JPG",
+      },
+      {
+        key: "retail",
+        title: "Retail Fitout",
+        blurb: "Modular displays, cashwraps, and visual merchandising.",
+        image: "/images/space3.jpg",
+      },
+    ],
+    []
+  );
 
   const [activeKey, setActiveKey] = useState(services[0].key);
   const active = services.find((s) => s.key === activeKey) || services[0];
 
-  /** Stats (will count-up on scroll) */
   const statsRef = useRef(null);
   const statTargets = [18, 500, 490, 50];
   const statValues = useCountUp(statsRef, statTargets, 1400);
 
   return (
-    /* ➜ Add bottom padding so there is space AFTER stats at the end of the section */
     <section className="w-full pb-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 mt-12 lg:px-8 py-12">
         {/* Mobile heading */}
         <div className="block lg:hidden text-center">
-          <h2 className="text-4xl font-bold tracking-widest mb-4  text-[#F58321]">
+          <h2 className="text-4xl font-bold tracking-widest mb-4 text-[#F58321]">
             SECTOR WE SERVE
           </h2>
           <h2 className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
-            Experience The <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of{" "}
-             This Platform
+            Experience The{" "}
+            <span className="text-[#F58321]"> Craft Of Bespoke Design </span> Of This Platform
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-600">
             QTS delivers a complete design experience, offering clients access to a wide
@@ -120,14 +117,15 @@ export default function SectorWeServe() {
           <h2 className="text-4xl font-bold tracking-widest mb-6 text-[#F58321]">
             SECTOR WE SERVE
           </h2>
-          <p className="mt-2 text-xl sm:text-3xl  leading-tight text-gray-900">
+          <p className="mt-2 text-xl sm:text-3xl leading-tight text-gray-900">
             Experience The <span className="text-[#F58321]">Craft Of Bespoke Design</span>
           </p>
           <p className="mt-3 text-base sm:text-lg text-gray-600 whitespace-nowrap">
             QTS delivers a complete design experience, offering clients access to a wide
             selection of products and customization options.
-            <br /> Through premium materials and expert artisan know-how, we transform spaces
-            into personalized living environments.
+            <br />
+            Through premium materials and expert artisan know-how, we transform spaces into
+            personalized living environments.
           </p>
         </div>
 
@@ -157,9 +155,7 @@ export default function SectorWeServe() {
                   <li key={s.key} className="pb-5 border-b border-gray-200 mb-9">
                     <button
                       type="button"
-                      /* ➜ Desktop hover should preview: set active on hover */
                       onMouseEnter={() => setActiveKey(s.key)}
-                      /* keep click too (nice for accessibility / sticky selection) */
                       onClick={() => setActiveKey(s.key)}
                       className="w-full text-left group"
                     >
@@ -184,17 +180,21 @@ export default function SectorWeServe() {
             </ul>
           </div>
 
-          {/* Mobile tabs row (no borders, no blurb) */}
-          <div className="lg:col-span-5 lg:hidden ">
-            <ul className="mt-5 grid grid-cols-4 gap-2 text-center">
+          {/* ✅ Mobile tabs row (scrollable pills) */}
+          <div className="lg:hidden">
+            <ul
+              className="flex gap-3 overflow-x-auto no-scrollbar pb-4 mt-5"
+              role="tablist"
+            >
               {services.map((s) => {
                 const isActive = s.key === activeKey;
                 return (
-                  <li key={s.key}>
+                  <li key={s.key} className="shrink-0">
                     <button
                       type="button"
                       onClick={() => setActiveKey(s.key)}
-                      className={`w-full rounded-md px-2 py-2 text-xs sm:text-sm font-semibold
+                      className={`px-3 py-2 rounded-md text-xs sm:text-sm font-semibold whitespace-nowrap
+                        shadow-sm ring-1 ring-black/5
                         ${isActive ? "bg-[#F58321] text-white" : "bg-white text-gray-900"}
                         active:scale-95 transition`}
                     >

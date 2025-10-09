@@ -138,10 +138,17 @@ function Card({ size = "md", children }) {
 }
 
 const DEMO_IMAGES = [
-  { src: "/images/new1.jpg", size: "md", alt: "Project A" },
+  { src: "/images/ao1.jpg", size: "md", alt: "Project A" },
   { src: "/images/random2.png", size: "sm", alt: "Project B" },
   { src: "/images/new2.jpg", size: "lg", alt: "Project C" },
   { src: "/images/outdoor.png", size: "md", alt: "Project D" },
   { src: "/images/new3.jpg", size: "sm", alt: "Project E" },
   { src: "/images/random4.png", size: "lg", alt: "Project F" },
+
+  { src: "/images/drawing4.jpeg", size: "md", alt: "Project A" },
+  { src: "/images/P2.jpg", size: "sm", alt: "Project B" },
+  { src: "/images/pr3.jpg", size: "lg", alt: "Project C" },
+  { src: "/images/senso1.jpg", size: "md", alt: "Project D" },
+  { src: "/images/ss2.jpg", size: "sm", alt: "Project E" },
+  { src: "/images/tr4.jpg", size: "lg", alt: "Project F" },
 ];

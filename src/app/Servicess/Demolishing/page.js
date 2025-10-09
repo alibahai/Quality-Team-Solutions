@@ -10,11 +10,11 @@ export default function Demolishing() {
   const tabs = useMemo(
     () => [
       { key: "concept",       title: "Safe & Controlled Demolitions",  desc: "Reinventing spaces with modern design solution", image: "/images/buildings.jpg" },
-      { key: "planning",      title: "Structural & Interior Construction", desc: "Reinventing spaces with modern design solution", image: "/images/turnkey.png" },
-      { key: "ergonomics",    title: "Refurbishment & Remodeling",     desc: "Reinventing spaces with modern design solution", image: "/images/fit.jpg" },
-      { key: "renders",       title: "Sustainable Waste Management",   desc: "Reinventing spaces with modern design solution", image: "/images/drain.jpeg" },
-      { key: "sustainability",title: "Material Reuse & Recycling",     desc: "Reinventing spaces with modern design solution", image: "/images/MEP.jpeg" },
-      { key: "furnishing",    title: "Future-Ready Construction",      desc: "Reinventing spaces with modern design solution", image: "/images/outdoor.png" },
+      { key: "planning",      title: "Structural & Interior Construction", desc: "Building strength and beauty through seamless structural and interior craftsmanship.", image: "/images/turnkey.png" },
+      { key: "ergonomics",    title: "Refurbishment & Remodeling",     desc: "Transforming existing spaces into renewed, functional, and modern environments.", image: "/images/fit.jpg" },
+      { key: "renders",       title: "Sustainable Waste Management",   desc: "Promoting eco-friendly practices to reduce, reuse, and responsibly manage waste.", image: "/images/drain.jpeg" },
+      { key: "sustainability",title: "Material Reuse & Recycling",     desc: "Giving materials a second life through smart reuse and efficient recycling.", image: "/images/MEP.jpeg" },
+      { key: "furnishing",    title: "Future-Ready Construction",      desc: "Building innovative, resilient structures designed to last for generations.", image: "/images/outdoor.png" },
     ],
     []
   );
@@ -52,7 +52,7 @@ export default function Demolishing() {
           <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Image: Changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <div className="relative h-64 sm:h-80 lg:h-[28rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+              <div className="relative h-64 sm:h-80 lg:h-[29rem] overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
                   key={active.image}
                   src={active.image}

@@ -12,37 +12,37 @@ export default function Drawing() {
       {
         key: "concept",
         title: "Concept Development & Mood Boards",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "Concept Development & Mood Boards — Crafting visual stories that capture your project’s vision and atmosphere.",
         image: "/images/drawing1.jpeg",
       },
       {
         key: "planning",
         title: "Detailed Floor Planning & Zoning",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "Detailed Floor Planning & Zoning — Designing efficient layouts that balance function, flow, and aesthetic harmony.",
         image: "/images/drawing2.jpeg",
       },
       {
         key: "ergonomics",
         title: "Ergonomic & Functional Optimization",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "Ergonomic & Functional Optimization — Enhancing comfort and productivity through smart, human-centered design.",
         image: "/images/drawing3.jpeg",
       },
       {
         key: "renders",
         title: "3D Visualizations & Renders",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "3D Visualizations & Renders — Bringing ideas to life with realistic, immersive digital representations.",
         image: "/images/drawing4.jpeg",
       },
       {
         key: "sustainability",
         title: "Sustainability & Materials",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "Sustainability & Materials — Building responsibly with eco-conscious design and durable resources.",
         image: "/images/drawing5.jpeg",
       },
       {
         key: "furnishing",
         title: "Custom Furnishing Solutions",
-        desc: "Clear, buildable plans that optimize flow, accessibility, and compliance.",
+        desc: "Custom Furnishing Solutions — Creating tailor-made furniture that blends style, comfort, and functionality.",
         image: "/images/new.jpg",
       },
     ],
@@ -98,7 +98,7 @@ export default function Drawing() {
           <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Image: changes with active tab */}
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <div className="relative h-64 sm:h-80 lg:h-[29.5rem] overflow-hidden rounded-lg ring-1 ring-black/10">
+              <div className="relative h-64 sm:h-80 lg:h-[29rem] overflow-hidden rounded-lg ring-1 ring-black/10">
                 <Image
                   key={active.image}
                   src={active.image}
