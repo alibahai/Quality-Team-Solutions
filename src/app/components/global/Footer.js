@@ -26,7 +26,6 @@ export default function Footer({ year }) {
     setStatusMsg("");
 
     try {
-      // ✅ Use same-origin API
       const res = await fetch("/api/get-in-touch", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -62,7 +61,89 @@ export default function Footer({ year }) {
 
       <footer className="relative z-10">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-4 lg:py-6 text-white">
-          {/* Desktop layout */}
+
+          {/* ✅ MOBILE LAYOUT */}
+          <div className="block md:hidden text-center">
+            <div className="w-28 mx-auto">
+              <Image
+                src="/images/2.png"
+                alt="QTS - Quality Team Solution"
+                width={160}
+                height={80}
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+
+            <p className="mt-6 text-sm leading-6 text-white/80">
+              Quality Team Solution (QTS) is Dubai’s leading interior design and
+              fit-out partner, known for turning ideas into exceptional spaces.
+              We deliver innovative, functional, and timeless designs — serving
+              clients across the UAE and beyond.
+            </p>
+
+            <p className="mt-6 text-sm text-white/80">
+              Office 706, Business Bay Tower, Business Bay, Dubai, UAE
+            </p>
+
+            <p className="mt-6 text-sm text-white/80">{PHONE_DISPLAY}</p>
+            <p className="mt-6 text-sm text-white/80">{EMAIL}</p>
+
+            {/* Newsletter (optional for mobile) */}
+            <form onSubmit={onSubmit} className="space-y-3 mt-6">
+              <div className="flex items-center justify-center">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full max-w-xs rounded-md border border-white/30 bg-transparent px-3 py-2 text-sm text-white placeholder:text-white/60 outline-none focus:border-white"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full max-w-xs mx-auto rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-70"
+              >
+                {submitting ? "Sending..." : "GET IN TOUCH"}
+              </button>
+              {statusMsg && (
+                <p className="text-sm mt-2 text-white/80">{statusMsg}</p>
+              )}
+            </form>
+
+            {/* Social icons */}
+            <div className="flex justify-center gap-8 mt-8">
+              <a href="https://wa.me/971568068070" target="_blank">
+                <Icon icon="logos:whatsapp-icon" width="28" height="28" />
+              </a>
+              <a href="https://www.youtube.com" target="_blank">
+                <Icon icon="logos:youtube-icon" width="28" height="28" />
+              </a>
+              <a href="https://www.instagram.com" target="_blank">
+                <Icon icon="skill-icons:instagram" width="28" height="28" />
+              </a>
+              <a href="https://www.facebook.com" target="_blank">
+                <Icon icon="logos:facebook" width="28" height="28" />
+              </a>
+            </div>
+
+            {/* Bottom Bar for Mobile */}
+            <div className="mt-8 border-t border-white/10 pt-3 text-sm text-white/70">
+              <p>© {year} Quality Team Solution (QTS)</p>
+              <div className="flex justify-center gap-4 mt-2">
+                <Link href="#" className="hover:text-white">
+                  Privacy Policy
+                </Link>
+                <Link href="#" className="hover:text-white">
+                  Terms & Conditions
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* 🖥️ DESKTOP LAYOUT */}
           <div className="hidden md:grid grid-cols-1 gap-8 md:grid-cols-4">
             {/* Column 1: Brand */}
             <div className="space-y-4">
@@ -92,10 +173,7 @@ export default function Footer({ year }) {
               <h3 className="mb-6 text-xl font-bold ml-12">Services</h3>
               <ul className="space-y-4 text-sm ml-12 text-white/80">
                 <li>
-                  <Link
-                    href="/Servicess/Drawings-Approvals"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Servicess/Drawings-Approvals" className="hover:text-white">
                     Design Drawings &amp; Approvals
                   </Link>
                 </li>
@@ -125,7 +203,6 @@ export default function Footer({ year }) {
                   </Link>
                 </li>
               </ul>
-
               <a
                 href={`tel:${PHONE_E164}`}
                 className="mt-12 block text-sm text-white/80 ml-12 hover:text-white"
@@ -154,10 +231,7 @@ export default function Footer({ year }) {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/Our-Project/Arabian-Oud"
-                    className="hover:text-white"
-                  >
+                  <Link href="/Our-Project/Arabian-Oud" className="hover:text-white">
                     Our Projects
                   </Link>
                 </li>
@@ -218,7 +292,7 @@ export default function Footer({ year }) {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar for Desktop */}
         <div className="hidden md:block border-t border-white/10">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-3 text-sm text-white/70 md:flex-row md:items-center md:justify-between">
             <p>© {year} Quality Team Solution (QTS)</p>

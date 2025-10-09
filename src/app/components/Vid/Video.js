@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function Video({
-  src = "https://res.cloudinary.com/dwwibqeao/video/upload/4_ei6xcd.mp4",
+  src = "https://res.cloudinary.com/dyckgorsz/video/upload/v1759922310/4_v03fmy.mp4",
   poster = "/images/2ndImage.jpg",
   autoPlay = true,
   loop = true,

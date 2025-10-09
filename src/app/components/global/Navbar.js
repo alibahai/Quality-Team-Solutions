@@ -240,6 +240,21 @@ const COMMERCIAL_PROJECTS = [
   { title: "Galaxy Hockey", Icon: Hockey, href: "/Our-Project/Galaxy-Hockey" },
   { title: "Jarge", Icon: Coop, href: "/Our-Project/Jorgee" },
   { title: "Ayur Care", Icon: Care, href: "/Our-Project/Ayur-Care" },
+  { title: "Hareer", Icon: Care, href: "/Our-Project/hareer" },
+  { title: "Professor", Icon: Care, href: "/Our-Project/professor" },
+  { title: "Fitn Glam", Icon: Care, href: "/Our-Project/fitnglam" },
+  { title: "Tous Les Jours", Icon: Care, href: "/Our-Project/tous-les-jours" },
+  { title: "Adore", Icon: Care, href: "/Our-Project/adore" },
+  { title: "Turkish Icecreeam", Icon: Care, href: "/Our-Project/turkish-icecream" },
+  { title: "Bianco", Icon: Care, href: "/Our-Project/bianco" },
+  { title: "Cold Station", Icon: Care, href: "/Our-Project/coldstation" },
+  { title: "Creep & Go", Icon: Care, href: "/Our-Project/creep&go" },
+  { title: "Exibition", Icon: Care, href: "/Our-Project/exibition" },
+  { title: "Mania", Icon: Care, href: "/Our-Project/mania" },
+  { title: "Maria Fashion", Icon: Care, href: "/Our-Project/maria-fashion" },
+  { title: "Senso Shop", Icon: Care, href: "/Our-Project/senso-shop" },
+  { title: "Toyo Station", Icon: Care, href: "/Our-Project/toyo-station" },
+
 ];
 
 const RESIDENTIAL_PROJECTS = [
@@ -247,6 +262,16 @@ const RESIDENTIAL_PROJECTS = [
   { title: "Sufoh Villa", Icon: Villaa, href: "/Our-Project/Sufoh-Villa" },
   { title: "Peach Passion", Icon: Peach, href: "/Our-Project/Peach-Passion" },
   { title: "Wafi Mall", Icon: Mall, href: "/Our-Project/Wafi-Mall" },
+  { title: "Gym", Icon: Mall, href: "/Our-Project/gym" },
+  { title: "Barsha Mall", Icon: Mall, href: "/Our-Project/barsha-mall" },
+  { title: "Bungalaw Mall", Icon: Mall, href: "/Our-Project/bungalaw-mall" },
+  { title: "Courtyard Mall", Icon: Mall, href: "/Our-Project/courtyard-mall" },
+  { title: "Deeny", Icon: Mall, href: "/Our-Project/deeny" },
+  { title: "Jumeriah Road", Icon: Care, href: "/Our-Project/jumeriah-road" },
+  { title: "Maliha Road ", Icon: Care, href: "/Our-Project/maliha-road " },
+  { title: "Senso City", Icon: Care, href: "/Our-Project/senso-city" },
+  { title: "Senso-Outlet", Icon: Care, href: "/Our-Project/senso-outlet" },
+
 ];
 
 export default function Navbar({
@@ -420,27 +445,51 @@ export default function Navbar({
           </div>
 
           {/* Projects panel appears directly UNDER the categories */}
-          {active ? (
-            <div className="mt-4 border-t border-white/10 pt-4">
-              <div className="grid grid-cols-2 gap-x-8 gap-y-3">
-                {active.map(({ title, Icon, href }, idx) => (
-                  <Link
-                    key={idx}
-                    href={href}
-                    role="menuitem"
-                    className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
-                    onClick={() => {
-                      setOpenMenu("none");
-                      setHoveredSupportKey(null);
-                    }}
-                  >
-                    <Icon className="h-6 w-6" />
-                    <span className="text-sm font-medium leading-snug">{title}</span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ) : null}
+       {/* Projects panel appears directly UNDER the categories */}
+{active ? (
+  <div className="mt-4 border-t border-white/10 pt-4">
+    {/* ✅ Scrollable container for desktop */}
+    <div className="hidden lg:block max-h-[220px] overflow-y-auto pr-1">
+      <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+        {active.map(({ title, Icon, href }, idx) => (
+          <Link
+            key={idx}
+            href={href}
+            role="menuitem"
+            className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
+            onClick={() => {
+              setOpenMenu("none");
+              setHoveredSupportKey(null);
+            }}
+          >
+            <Icon className="h-6 w-6" />
+            <span className="text-sm font-medium leading-snug">{title}</span>
+          </Link>
+        ))}
+      </div>
+    </div>
+
+    {/* Mobile: normal list, no scroll limit */}
+    <div className="lg:hidden grid grid-cols-2 gap-x-8 gap-y-3">
+      {active.map(({ title, Icon, href }, idx) => (
+        <Link
+          key={idx}
+          href={href}
+          role="menuitem"
+          className="group flex items-center gap-3 rounded-xl p-2.5 hover:bg-red-600"
+          onClick={() => {
+            setOpenMenu("none");
+            setHoveredSupportKey(null);
+          }}
+        >
+          <Icon className="h-6 w-6" />
+          <span className="text-sm font-medium leading-snug">{title}</span>
+        </Link>
+      ))}
+    </div>
+  </div>
+) : null}
+
         </div>
       </div>
     );

@@ -7,11 +7,10 @@ import { useEffect, useRef, useState } from "react";
 export default function Arabian() {
   // 🔧 Add/adjust images here
   const images = [
-    "/images/drawing1.jpeg",
-    "/images/hockey1.JPG",
-    "/images/hockey2.JPG",
-    "/images/hockey2.JPG", // (note: duplicate)
-    // "/images/your-more-images.png",
+    "/images/gh1.jpg",
+    "/images/gh2.jpg",
+    "/images/gh3.jpg",
+    "/images/gh4.jpg", 
   ];
 
   return (

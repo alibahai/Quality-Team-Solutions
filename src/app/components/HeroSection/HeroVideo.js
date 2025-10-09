@@ -5,7 +5,8 @@ import LeftServicesRail from "../rails/LeftServicesRail";
 import RightContactRail from "../rails/RightContactRail";
 
 export default function HeroVideo() {
-  const VIDEO_SRC = "https://res.cloudinary.com/dwwibqeao/video/upload/v1758281716/QTS_1_jvullu.mp4";
+  const VIDEO_SRC =
+    "https://res.cloudinary.com/dyckgorsz/video/upload/v1759921866/QTS_a9pvzw.mp4";
   const POSTER_SRC = "/images/2ndImage.jpg";
 
   const videoRef = useRef(null);
@@ -36,13 +37,16 @@ export default function HeroVideo() {
 
   return (
     // 👇 id same rehne do
-    <section id="hero" className="relative min-h-screen w-full overflow-hidden -mt-20">
+    <section
+      id="hero"
+      className="relative min-h-screen w-full overflow-hidden -mt-20"
+    >
       <video
         ref={videoRef}
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         poster={POSTER_SRC}
-        preload="none"     // 👉 don't prefetch
-        autoPlay           // autoplay allowed (muted + playsInline)
+        preload="none" // 👉 don't prefetch
+        autoPlay // autoplay allowed (muted + playsInline)
         muted
         playsInline
         loop

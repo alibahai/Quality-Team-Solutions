@@ -31,7 +31,7 @@ export default function HomePage() {
           </section>
 
           <Video
-              src="https://res.cloudinary.com/dwwibqeao/video/upload/4_ei6xcd.mp4"           // place file at public/videos/your-video.mp4
+              src="https://res.cloudinary.com/dyckgorsz/video/upload/v1759922310/4_v03fmy.mp4"           // place file at public/videos/your-video.mp4
               autoPlay={true}
               loop={true}
               muted={true}                            // keep true for autoplay on mobile
