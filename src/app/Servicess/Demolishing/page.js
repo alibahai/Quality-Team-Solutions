@@ -11,7 +11,7 @@ export default function Demolishing() {
     () => [
       { key: "concept",       title: "Safe & Controlled Demolitions",  desc: "Reinventing spaces with modern design solution", image: "/images/buildings.jpg" },
       { key: "planning",      title: "Structural & Interior Construction", desc: "Building strength and beauty through seamless structural and interior craftsmanship.", image: "/images/turnkey.png" },
-      { key: "ergonomics",    title: "Refurbishment & Remodeling",     desc: "Transforming existing spaces into renewed, functional, and modern environments.", image: "/images/fit.jpg" },
+      { key: "ergonomics",    title: "Refurbishment & Remodeling",     desc: "Transformings existing spaces into renewed, functional, and modern environments.", image: "/images/fit.jpg" },
       { key: "renders",       title: "Sustainable Waste Management",   desc: "Promoting eco-friendly practices to reduce, reuse, and responsibly manage waste.", image: "/images/drain.jpeg" },
       { key: "sustainability",title: "Material Reuse & Recycling",     desc: "Giving materials a second life through smart reuse and efficient recycling.", image: "/images/MEP.jpeg" },
       { key: "furnishing",    title: "Future-Ready Construction",      desc: "Building innovative, resilient structures designed to last for generations.", image: "/images/outdoor.png" },
